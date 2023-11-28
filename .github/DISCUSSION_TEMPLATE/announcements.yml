@@ -14,8 +14,8 @@ body:
         1.
         2.
         3.
+        TEST
         ...
-      render: bash
     validations:
       required: true
   - type: markdown
