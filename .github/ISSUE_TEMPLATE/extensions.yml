@@ -64,7 +64,7 @@ body:
       label: EA Model file
       description: 
       placeholder: Upload a zip file containg the EA model file!
-      value: ""
+      value: "test"
     validations:
       required: true
   - type: textarea
@@ -73,7 +73,7 @@ body:
       label: XMI Model file
       description: 
       placeholder: Upload a zip file containg the XMI file!
-      value: ""
+      value: "test"
     validations:
       required: false
   - type: textarea
@@ -82,7 +82,7 @@ body:
       label: XML schema files
       description: 
       placeholder: Upload a zip file containg the XML schemas!
-      value: ""
+      value: "test"
     validations:
       required: false
   - type: textarea
@@ -91,7 +91,7 @@ body:
       label: PDF documentation
       description: 
       placeholder: Upload a PDF file containg documentation!
-      value: ""
+      value: "test"
     validations:
       required: false
   - type: dropdown
