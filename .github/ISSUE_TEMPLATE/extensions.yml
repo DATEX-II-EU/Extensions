@@ -4,7 +4,7 @@ title: "[Ext]: "
 labels: ["extension", "request"]
 projects: ["octo-org/1", "octo-org/44"]
 assignees:
-  - Datex
+  - paalaas
 body:
   - type: markdown
     attributes:
