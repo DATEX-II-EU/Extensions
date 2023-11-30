@@ -16,7 +16,7 @@ body:
       description: Contact Person Name?
       placeholder: 
     validations:
-      required: false
+      required: true
   - type: input
     id: contact
     attributes:
@@ -24,7 +24,7 @@ body:
       description: How can we get in touch with you if we need more info?
       placeholder: ex. email@example.com
     validations:
-      required: false
+      required: true
   - type: input
     id: organization
     attributes:
@@ -61,36 +61,32 @@ body:
     id: eaFile
     attributes:
       label: EA Model file
-      description: 
+      description: Upload a zip file containg the EA model file!
       placeholder: Upload a zip file containg the EA model file!
-      value: "Upload a zip file containg the EA model file!"
     validations:
       required: true
   - type: textarea
     id: xmiFile
     attributes:
       label: XMI Model file
-      description: 
+      description: Upload a zip file containg the XMI file!
       placeholder: Upload a zip file containg the XMI file!
-      value: "Upload a zip file containg the XMI file!"
     validations:
       required: false
   - type: textarea
     id: xmlSchema
     attributes:
       label: XML schema files
-      description: 
+      description: Upload a zip file containg the XML schemas!
       placeholder: Upload a zip file containg the XML schemas!
-      value: "Upload a zip file containg the XML schemas!"
     validations:
       required: false
   - type: textarea
     id: documentation
     attributes:
       label: PDF documentation
-      description: 
+      description: Upload a PDF file containg documentation!
       placeholder: Upload a PDF file containg documentation!
-      value: "Upload a PDF file containg documentation!"
     validations:
       required: false
   - type: dropdown
