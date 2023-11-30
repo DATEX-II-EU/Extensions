@@ -1,0 +1,122 @@
+name: Extensions
+description: Submit a request to add an extension to the repository
+title: "[Ext]: "
+labels: ["extension", "request"]
+projects: ["octo-org/1", "octo-org/44"]
+assignees:
+  - Datex
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking sharing your extension
+  - type: input
+    id: contactName
+    attributes:
+      label: Contact Name
+      description: Contact Person Name?
+      placeholder: 
+    validations:
+      required: false
+  - type: input
+    id: contact
+    attributes:
+      label: Contact e-mail address
+      description: How can we get in touch with you if we need more info?
+      placeholder: ex. email@example.com
+    validations:
+      required: false
+  - type: input
+    id: organization
+    attributes:
+      label: Organization
+      description: Name of organization?
+      placeholder: 
+    validations:
+      required: false
+  - type: input
+    id: organizationDescription
+    attributes:
+      label: Organization description
+      description: Describe shortly your organization?
+      placeholder: 
+    validations:
+      required: false
+  - type: input
+    id: website
+    attributes:
+      label: Website
+      description: 
+      placeholder: 
+    validations:
+      required: false
+  - type: input
+    id: country
+    attributes:
+      label: Country / Region
+      description: 
+      placeholder: 
+    validations:
+      required: false
+  - type: textarea
+    id: eaFile
+    attributes:
+      label: EA Model file
+      description: 
+      placeholder: Upload a zip file containg the EA model file!
+      value: ""
+    validations:
+      required: true
+  - type: textarea
+    id: xmiFile
+    attributes:
+      label: XMI Model file
+      description: 
+      placeholder: Upload a zip file containg the XMI file!
+      value: ""
+    validations:
+      required: false
+  - type: textarea
+    id: xmlSchema
+    attributes:
+      label: XML schema files
+      description: 
+      placeholder: Upload a zip file containg the XML schemas!
+      value: ""
+    validations:
+      required: false
+  - type: textarea
+    id: documentation
+    attributes:
+      label: PDF documentation
+      description: 
+      placeholder: Upload a PDF file containg documentation!
+      value: ""
+    validations:
+      required: false
+  - type: dropdown
+    id: version
+    attributes:
+      label: Version
+      description: What version of DATEX?
+      options:
+        - 2
+        - 3
+        - 4
+      default: 0
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant log output
+      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
+      render: shell
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com)
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true
