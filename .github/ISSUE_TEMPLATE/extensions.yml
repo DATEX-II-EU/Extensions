@@ -64,7 +64,7 @@ body:
       label: EA Model file
       description: 
       placeholder: Upload a zip file containg the EA model file!
-      value: "test"
+      value: "Upload a zip file containg the EA model file!"
     validations:
       required: true
   - type: textarea
@@ -73,7 +73,7 @@ body:
       label: XMI Model file
       description: 
       placeholder: Upload a zip file containg the XMI file!
-      value: "test"
+      value: "Upload a zip file containg the XMI file!"
     validations:
       required: false
   - type: textarea
@@ -82,7 +82,7 @@ body:
       label: XML schema files
       description: 
       placeholder: Upload a zip file containg the XML schemas!
-      value: "test"
+      value: "Upload a zip file containg the XML schemas!"
     validations:
       required: false
   - type: textarea
@@ -91,7 +91,7 @@ body:
       label: PDF documentation
       description: 
       placeholder: Upload a PDF file containg documentation!
-      value: "test"
+      value: "Upload a PDF file containg documentation!"
     validations:
       required: false
   - type: dropdown
@@ -106,12 +106,6 @@ body:
       default: 0
     validations:
       required: true
-  - type: textarea
-    id: logs
-    attributes:
-      label: Relevant log output
-      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
-      render: shell
   - type: checkboxes
     id: terms
     attributes:
