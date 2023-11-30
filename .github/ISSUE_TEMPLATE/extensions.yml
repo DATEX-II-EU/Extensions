@@ -2,9 +2,8 @@ name: Extensions
 description: Submit a request to add an extension to the repository
 title: "[Ext]: "
 labels: ["extension", "request"]
-projects: ["octo-org/1", "octo-org/44"]
 assignees:
-  - paalaas
+  - Datex
 body:
   - type: markdown
     attributes:
