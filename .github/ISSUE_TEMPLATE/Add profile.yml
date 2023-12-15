@@ -1,5 +1,5 @@
-name: Add Extension
-description: Submit a request to add an extension to the repository
+name: Add Profile
+description: Submit a request to add a profile to the repository
 title: "[Ext]: "
 labels: ["extension", "request"]
 assignees:
@@ -8,7 +8,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for sharing your extension
+        Thanks for sharing your profile
   - type: input
     id: contactName
     attributes:
