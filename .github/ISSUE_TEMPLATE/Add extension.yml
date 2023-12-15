@@ -1,9 +1,9 @@
-name: Extensions
+name: Add Extension
 description: Submit a request to add an extension to the repository
 title: "[Ext]: "
 labels: ["extension", "request"]
 assignees:
-  - Datex
+  - paalaas
 body:
   - type: markdown
     attributes:
@@ -104,8 +104,8 @@ body:
   - type: checkboxes
     id: terms
     attributes:
-      label: Code of Conduct
-      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com)
+      label: Disclaimer
+      description: By submitting this form, you agree that the data supplied can be published on the internet.
       options:
-        - label: I agree to follow this project's Code of Conduct
+        - label: I agree to publish this data
           required: true
