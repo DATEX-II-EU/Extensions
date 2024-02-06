@@ -1,5 +1,4 @@
-AgoraC extension
-****************
+#AgoraC extension
 
 Submitted by jaderberg on Friday, 2 September, 2011 - 15:59
 
@@ -35,8 +34,3 @@ Sweden
 Centre type
 TMC
 
-XMI file
-http://repo.datex2.eu/sites/default/files/agorac_extension.xml
-
-XML schema
-http://repo.datex2.eu/sites/default/files/DATEXIISchema_1_0_1_0.xsd
