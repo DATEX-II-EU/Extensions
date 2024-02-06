@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<xs:schema elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:d2="http://levelC/schema/3/d2Payload" version="3.0" targetNamespace="http://levelC/schema/3/d2Payload" xmlns:com="http://levelC/schema/3/common" xmlns:loc="http://levelC/schema/3/locationReferencing" xmlns:raz="http://levelC/schema/3/regulatedAccesZone" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://levelC/schema/3/regulatedAccesZone" schemaLocation="LevelC_3_RegulatedAccesZone.xsd" />
+  <xs:import namespace="http://levelC/schema/3/locationReferencing" schemaLocation="LevelC_3_LocationReferencing.xsd" />
+  <xs:import namespace="http://levelC/schema/3/common" schemaLocation="LevelC_3_Common.xsd" />
+  <xs:element name="payload" type="com:PayloadPublication">
+    <xs:unique name="_payloadRegulatedAccessZoneConstraint">
+      <xs:selector xpath=".//raz:regulatedAccessZone" />
+      <xs:field xpath="@id" />
+      <xs:field xpath="@version" />
+    </xs:unique>
+    <xs:unique name="_payloadRegulatedAccessZoneRestrictionConstraint">
+      <xs:selector xpath=".//raz:regulatedAccessZoneRestriction" />
+      <xs:field xpath="@id" />
+      <xs:field xpath="@version" />
+    </xs:unique>
+    <xs:unique name="_payloadExemptionConstraint">
+      <xs:selector xpath=".//raz:exemption" />
+      <xs:field xpath="@id" />
+      <xs:field xpath="@version" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

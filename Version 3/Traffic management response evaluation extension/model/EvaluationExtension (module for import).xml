@@ -1,0 +1,2018 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<xmi:XMI xmi:version="2.1" xmlns:uml="http://schema.omg.org/spec/UML/2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:UML_Profile_for_DATEX_II="http://www.sparxsystems.com/profiles/UML_Profile_for_DATEX_II/1.0">
+	<xmi:Documentation exporter="Enterprise Architect" exporterVersion="6.5"/>
+	<uml:Model xmi:type="uml:Model" name="EA_Model" visibility="public">
+		<packagedElement xmi:type="uml:Package" xmi:id="EAPK_9A5C7AFB_B8F0_42a6_8819_5904121F5C60" name="ResponseEvaluation" visibility="public">
+			<packagedElement xmi:type="uml:Package" xmi:id="EAPK_20576AC2_BA92_471b_9799_4ABB4BBD3C63" name="Classes" visibility="public">
+				<ownedComment xmi:type="uml:Comment" xmi:id="EAID_DEAD8BA0_FF56_44fd_8BAC_196565D92D1F" body="A concrete Kpi subclass should use appropriate concrete KpiDetails. The generic KpiDetails is concrete and may be used where the details consist only of cost.">
+					<annotatedElement xmi:idref="EAID_E5B7C3C6_EEA2_43b9_B57F_191E84D486CF"/>
+					<annotatedElement xmi:idref="EAID_4D04FA8D_D594_4610_BF75_69D6997A96ED"/>
+				</ownedComment>
+				<ownedComment xmi:type="uml:Comment" xmi:id="EAID_8E688F6C_55D8_4072_A46E_C8E82936C9E8" body="DelayKpi should use DelayKpiDetails">
+					<annotatedElement xmi:idref="EAID_EA327FC7_4C90_443e_9E12_627BA77FA33C"/>
+				</ownedComment>
+				<ownedComment xmi:type="uml:Comment" xmi:id="EAID_58043B3D_9AD9_4039_BB7C_B312AFC3322E" body="There should be at most one Kpi element of each concrete type">
+					<annotatedElement xmi:idref="EAID_750E14FF_0AFB_4aab_9791_54D5605EF8F4"/>
+				</ownedComment>
+				<ownedComment xmi:type="uml:Comment" xmi:id="EAID_0B1996D6_E1E6_42ac_B4DE_EDD7A2EC4E97" body="AirQualityKpi should use AirQualityKpiDetails">
+					<annotatedElement xmi:idref="EAID_4458F944_FEFA_4456_892F_936C87AD30DD"/>
+				</ownedComment>
+				<packagedElement xmi:type="uml:Class" xmi:id="EAID_4458F944_FEFA_4456_892F_936C87AD30DD" name="AirQualityKpi" visibility="public">
+					<generalization xmi:type="uml:Generalization" xmi:id="EAID_51D3B26C_B401_49da_B500_0FCD78B84009" general="EAID_4D04FA8D_D594_4610_BF75_69D6997A96ED"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Class" xmi:id="EAID_6ADADB04_4333_4e66_9FA3_6AF48699394F" name="AirQualityKpiDetails" visibility="public">
+					<generalization xmi:type="uml:Generalization" xmi:id="EAID_6DE624DE_B03A_4761_A845_74A04B5D05D1" general="EAID_E5B7C3C6_EEA2_43b9_B57F_191E84D486CF"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Association" xmi:id="EAID_10758CD4_74F8_47d4_92B6_0739D27395D0" visibility="public">
+					<memberEnd xmi:idref="EAID_dst758CD4_74F8_47d4_92B6_0739D27395D0"/>
+					<memberEnd xmi:idref="EAID_src758CD4_74F8_47d4_92B6_0739D27395D0"/>
+					<ownedEnd xmi:type="uml:Property" xmi:id="EAID_src758CD4_74F8_47d4_92B6_0739D27395D0" visibility="public" association="EAID_10758CD4_74F8_47d4_92B6_0739D27395D0" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="composite">
+						<type xmi:idref="EAID_BCB2A033_0658_47fb_BF23_38BBE357E1E6"/>
+						<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000001__74F8_47d4_92B6_0739D27395D0" value="0"/>
+						<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000002__74F8_47d4_92B6_0739D27395D0" value="-1"/>
+					</ownedEnd>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Class" xmi:id="EAID_EA327FC7_4C90_443e_9E12_627BA77FA33C" name="DelayKpi" visibility="public">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_5CDB4D32_2557_4e28_982F_798D94480373" name="detourDelay" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+						<type xmi:idref="EAID_A63B7C97_DE4F_4bb7_8C1A_E4C3A3513549"/>
+						<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000003_2557_4e28_982F_798D94480373" value="1"/>
+						<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000004_2557_4e28_982F_798D94480373" value="1"/>
+					</ownedAttribute>
+					<generalization xmi:type="uml:Generalization" xmi:id="EAID_77F122C4_B249_4c3e_8D78_1BE7FF2A20C8" general="EAID_4D04FA8D_D594_4610_BF75_69D6997A96ED"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Class" xmi:id="EAID_118EAE62_649C_46de_98C6_0B7AFA55F8A3" name="DelayKpiDetails" visibility="public">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_EE29F483_1CCC_441a_83B5_023C3A7F1F5B" name="delay" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+						<type xmi:idref="EAID_A63B7C97_DE4F_4bb7_8C1A_E4C3A3513549"/>
+						<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000005_1CCC_441a_83B5_023C3A7F1F5B" value="1"/>
+						<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000006_1CCC_441a_83B5_023C3A7F1F5B" value="1"/>
+					</ownedAttribute>
+					<generalization xmi:type="uml:Generalization" xmi:id="EAID_824EF445_5CE2_4079_9400_301A60FCB7D0" general="EAID_E5B7C3C6_EEA2_43b9_B57F_191E84D486CF"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Class" xmi:id="EAID_4D04FA8D_D594_4610_BF75_69D6997A96ED" name="Kpi" visibility="public" isAbstract="true">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dst0E14FF_0AFB_4aab_9791_54D5605EF8F4" visibility="public" association="EAID_750E14FF_0AFB_4aab_9791_54D5605EF8F4" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+						<type xmi:idref="EAID_07971335_D3C0_44e5_ADF0_B467AA0A1B19"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Association" xmi:id="EAID_750E14FF_0AFB_4aab_9791_54D5605EF8F4" visibility="public">
+					<memberEnd xmi:idref="EAID_dst0E14FF_0AFB_4aab_9791_54D5605EF8F4"/>
+					<memberEnd xmi:idref="EAID_src0E14FF_0AFB_4aab_9791_54D5605EF8F4"/>
+					<ownedEnd xmi:type="uml:Property" xmi:id="EAID_src0E14FF_0AFB_4aab_9791_54D5605EF8F4" visibility="public" association="EAID_750E14FF_0AFB_4aab_9791_54D5605EF8F4" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="composite">
+						<type xmi:idref="EAID_4D04FA8D_D594_4610_BF75_69D6997A96ED"/>
+						<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000019__0AFB_4aab_9791_54D5605EF8F4" value="0"/>
+						<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000020__0AFB_4aab_9791_54D5605EF8F4" value="-1"/>
+					</ownedEnd>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Association" xmi:id="EAID_42456CE6_9554_4c06_B638_1DD51F2EE2DC" visibility="public">
+					<memberEnd xmi:idref="EAID_dst456CE6_9554_4c06_B638_1DD51F2EE2DC"/>
+					<memberEnd xmi:idref="EAID_src456CE6_9554_4c06_B638_1DD51F2EE2DC"/>
+					<ownedEnd xmi:type="uml:Property" xmi:id="EAID_src456CE6_9554_4c06_B638_1DD51F2EE2DC" name="withResponse" visibility="public" association="EAID_42456CE6_9554_4c06_B638_1DD51F2EE2DC" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="composite">
+						<type xmi:idref="EAID_E5B7C3C6_EEA2_43b9_B57F_191E84D486CF"/>
+						<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000007__9554_4c06_B638_1DD51F2EE2DC" value="1"/>
+						<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000008__9554_4c06_B638_1DD51F2EE2DC" value="1"/>
+					</ownedEnd>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Association" xmi:id="EAID_D5EBF80F_FA9B_4933_8D54_02875251E67C" visibility="public">
+					<memberEnd xmi:idref="EAID_dstEBF80F_FA9B_4933_8D54_02875251E67C"/>
+					<memberEnd xmi:idref="EAID_srcEBF80F_FA9B_4933_8D54_02875251E67C"/>
+					<ownedEnd xmi:type="uml:Property" xmi:id="EAID_srcEBF80F_FA9B_4933_8D54_02875251E67C" name="withoutResponse" visibility="public" association="EAID_D5EBF80F_FA9B_4933_8D54_02875251E67C" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="composite">
+						<type xmi:idref="EAID_E5B7C3C6_EEA2_43b9_B57F_191E84D486CF"/>
+						<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000009__FA9B_4933_8D54_02875251E67C" value="1"/>
+						<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000010__FA9B_4933_8D54_02875251E67C" value="1"/>
+					</ownedEnd>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Class" xmi:id="EAID_E5B7C3C6_EEA2_43b9_B57F_191E84D486CF" name="KpiDetails" visibility="public">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_638EACFD_A2BF_4ede_90A9_695E8E6BF0F0" name="monetaryCost" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+						<type xmi:idref="EAID_6C9E978A_D363_48d7_B414_9E4A4CF634B2"/>
+						<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000011_A2BF_4ede_90A9_695E8E6BF0F0" value="0"/>
+						<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000012_A2BF_4ede_90A9_695E8E6BF0F0" value="1"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dst456CE6_9554_4c06_B638_1DD51F2EE2DC" visibility="public" association="EAID_42456CE6_9554_4c06_B638_1DD51F2EE2DC" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+						<type xmi:idref="EAID_4D04FA8D_D594_4610_BF75_69D6997A96ED"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dstEBF80F_FA9B_4933_8D54_02875251E67C" visibility="public" association="EAID_D5EBF80F_FA9B_4933_8D54_02875251E67C" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+						<type xmi:idref="EAID_4D04FA8D_D594_4610_BF75_69D6997A96ED"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Class" xmi:id="EAID_07971335_D3C0_44e5_ADF0_B467AA0A1B19" name="MeasureEvaluation" visibility="public">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_86620E6D_BE8B_4cd1_B16C_3CA89BB5F5D5" name="changeInDemand" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+						<type xmi:idref="EAID_4E6BDBFC_6A87_45b3_B2B3_A62D0F0B1D72"/>
+						<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000013_BE8B_4cd1_B16C_3CA89BB5F5D5" value="0"/>
+						<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000014_BE8B_4cd1_B16C_3CA89BB5F5D5" value="1"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_F60857E1_53C8_42c1_9F32_EE7CB640CD5C" name="measureId" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+						<type xmi:idref="EAID_2F116A16_BB10_47f1_8AA1_CCD87CF38625"/>
+						<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000015_53C8_42c1_9F32_EE7CB640CD5C" value="1"/>
+						<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000016_53C8_42c1_9F32_EE7CB640CD5C" value="1"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_605E1751_9E4A_422a_8759_67529F397006" name="utility" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+						<type xmi:idref="EAID_6C9E978A_D363_48d7_B414_9E4A4CF634B2"/>
+						<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000017_9E4A_422a_8759_67529F397006" value="0"/>
+						<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000018_9E4A_422a_8759_67529F397006" value="1"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dst0E5DC7_204B_4072_8FAE_5921C8143909" visibility="public" association="EAID_870E5DC7_204B_4072_8FAE_5921C8143909" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+						<type xmi:idref="EAID_5454DD3B_B26C_4454_A229_524E42AAB33F"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dst3B1033_2624_4477_8FAF_A9D51E502768" visibility="public" association="EAID_E03B1033_2624_4477_8FAF_A9D51E502768" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+						<type xmi:idref="EAID_5454DD3B_B26C_4454_A229_524E42AAB33F"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Association" xmi:id="EAID_870E5DC7_204B_4072_8FAE_5921C8143909" visibility="public">
+					<memberEnd xmi:idref="EAID_dst0E5DC7_204B_4072_8FAE_5921C8143909"/>
+					<memberEnd xmi:idref="EAID_src0E5DC7_204B_4072_8FAE_5921C8143909"/>
+					<ownedEnd xmi:type="uml:Property" xmi:id="EAID_src0E5DC7_204B_4072_8FAE_5921C8143909" name="usedMeasures" visibility="public" association="EAID_870E5DC7_204B_4072_8FAE_5921C8143909" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="composite">
+						<type xmi:idref="EAID_07971335_D3C0_44e5_ADF0_B467AA0A1B19"/>
+						<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000027__204B_4072_8FAE_5921C8143909" value="0"/>
+						<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000028__204B_4072_8FAE_5921C8143909" value="-1"/>
+					</ownedEnd>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Association" xmi:id="EAID_E03B1033_2624_4477_8FAF_A9D51E502768" visibility="public">
+					<memberEnd xmi:idref="EAID_dst3B1033_2624_4477_8FAF_A9D51E502768"/>
+					<memberEnd xmi:idref="EAID_src3B1033_2624_4477_8FAF_A9D51E502768"/>
+					<ownedEnd xmi:type="uml:Property" xmi:id="EAID_src3B1033_2624_4477_8FAF_A9D51E502768" name="unusedMeasures" visibility="public" association="EAID_E03B1033_2624_4477_8FAF_A9D51E502768" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="composite">
+						<type xmi:idref="EAID_07971335_D3C0_44e5_ADF0_B467AA0A1B19"/>
+						<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000029__2624_4477_8FAF_A9D51E502768" value="0"/>
+						<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000030__2624_4477_8FAF_A9D51E502768" value="-1"/>
+					</ownedEnd>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Class" xmi:id="EAID_BCB2A033_0658_47fb_BF23_38BBE357E1E6" name="PollutionExtended" visibility="public">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_C18B1AD9_D594_4238_911C_5FCDF7EBFD47" name="absoluteEmissions" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+						<type xmi:idref="EAID_AF17E1DD_C630_4739_86DF_C7CC30BA3409"/>
+						<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000021_D594_4238_911C_5FCDF7EBFD47" value="1"/>
+						<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000022_D594_4238_911C_5FCDF7EBFD47" value="1"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dst758CD4_74F8_47d4_92B6_0739D27395D0" visibility="public" association="EAID_10758CD4_74F8_47d4_92B6_0739D27395D0" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+						<type xmi:idref="EAID_6ADADB04_4333_4e66_9FA3_6AF48699394F"/>
+					</ownedAttribute>
+					<generalization xmi:type="uml:Generalization" xmi:id="EAID_D2A2CB07_D7F7_4cea_B67D_0FB50AAD7575" general="EAID_890BB8E3_8CFE_4524_9D3D_9DDE17CE1B1D"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Class" xmi:id="EAID_5454DD3B_B26C_4454_A229_524E42AAB33F" name="ResponseEvaluation" visibility="public">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_53C6B23A_DE07_4a83_8CBE_DC386C42AE38" name="bestCombinedUtility" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+						<type xmi:idref="EAID_6C9E978A_D363_48d7_B414_9E4A4CF634B2"/>
+						<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000023_DE07_4a83_8CBE_DC386C42AE38" value="0"/>
+						<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000024_DE07_4a83_8CBE_DC386C42AE38" value="1"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_C698684B_DBB2_4325_B5A9_87F745496DB9" name="evaluationSource" visibility="public" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false">
+						<type xmi:idref="EAID_DD0FAA46_EDB3_4ba6_A191_377D87F4D303"/>
+						<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000025_DBB2_4325_B5A9_87F745496DB9" value="1"/>
+						<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000026_DBB2_4325_B5A9_87F745496DB9" value="1"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dst6E50D2_5922_44b2_AF51_73C7A309979F" visibility="public" association="EAID_A96E50D2_5922_44b2_AF51_73C7A309979F" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+						<type xmi:idref="EAID_BAAD1988_574E_42ad_87AC_75EDD47CBE73"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="EAID_dst77FBC1_F945_4cb4_9628_2B60BA1A8DE1" visibility="public" association="EAID_EA77FBC1_F945_4cb4_9628_2B60BA1A8DE1" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="none">
+						<type xmi:idref="EAID_CE1D655C_F357_4e1f_9565_C48F4A4C993D"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Association" xmi:id="EAID_A96E50D2_5922_44b2_AF51_73C7A309979F" visibility="public">
+					<memberEnd xmi:idref="EAID_dst6E50D2_5922_44b2_AF51_73C7A309979F"/>
+					<memberEnd xmi:idref="EAID_src6E50D2_5922_44b2_AF51_73C7A309979F"/>
+					<ownedEnd xmi:type="uml:Property" xmi:id="EAID_src6E50D2_5922_44b2_AF51_73C7A309979F" visibility="public" association="EAID_A96E50D2_5922_44b2_AF51_73C7A309979F" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="composite">
+						<type xmi:idref="EAID_5454DD3B_B26C_4454_A229_524E42AAB33F"/>
+						<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000033__5922_44b2_AF51_73C7A309979F" value="1"/>
+						<upperValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000034__5922_44b2_AF51_73C7A309979F" value="1"/>
+					</ownedEnd>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Association" xmi:id="EAID_EA77FBC1_F945_4cb4_9628_2B60BA1A8DE1" visibility="public">
+					<memberEnd xmi:idref="EAID_dst77FBC1_F945_4cb4_9628_2B60BA1A8DE1"/>
+					<memberEnd xmi:idref="EAID_src77FBC1_F945_4cb4_9628_2B60BA1A8DE1"/>
+					<ownedEnd xmi:type="uml:Property" xmi:id="EAID_src77FBC1_F945_4cb4_9628_2B60BA1A8DE1" visibility="public" association="EAID_EA77FBC1_F945_4cb4_9628_2B60BA1A8DE1" isStatic="false" isReadOnly="false" isDerived="false" isOrdered="false" isUnique="true" isDerivedUnion="false" aggregation="composite">
+						<type xmi:idref="EAID_5454DD3B_B26C_4454_A229_524E42AAB33F"/>
+						<lowerValue xmi:type="uml:LiteralInteger" xmi:id="EAID_LI000031__F945_4cb4_9628_2B60BA1A8DE1" value="0"/>
+						<upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="EAID_LI000032__F945_4cb4_9628_2B60BA1A8DE1" value="-1"/>
+					</ownedEnd>
+				</packagedElement>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Package" xmi:id="EAPK_FB84F054_CA05_4d85_AA7D_C676FEB1F6BF" name="DataTypes" visibility="public">
+				<packagedElement xmi:type="uml:DataType" xmi:id="EAID_6C9E978A_D363_48d7_B414_9E4A4CF634B2" name="AmountOfMoney" visibility="public">
+					<generalization xmi:type="uml:Generalization" xmi:id="EAID_43B48F52_EE59_49e5_9D2B_BE39B7F8548A" general="EAID_6594CF20_4A46_49cf_8682_CDF7A3370A8B"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:DataType" xmi:id="EAID_AF17E1DD_C630_4739_86DF_C7CC30BA3409" name="Kilograms" visibility="public">
+					<generalization xmi:type="uml:Generalization" xmi:id="EAID_A8C61FF1_A069_4255_BB41_1807CA7B8097" general="EAID_6D9A1FCE_0D84_4c83_9683_2AE099B41685"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:DataType" xmi:id="EAID_A63B7C97_DE4F_4bb7_8C1A_E4C3A3513549" name="VehicleHours" visibility="public">
+					<generalization xmi:type="uml:Generalization" xmi:id="EAID_A6AAB926_E501_48b6_93BB_15130B2EFFE1" general="EAID_6D9A1FCE_0D84_4c83_9683_2AE099B41685"/>
+				</packagedElement>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Package" xmi:id="EAPK_5CE506F1_CAA6_42f0_8744_2DE52E5301B4" name="EvaluatedActionsPublication" visibility="public">
+				<packagedElement xmi:type="uml:Class" xmi:id="EAID_CE1D655C_F357_4e1f_9565_C48F4A4C993D" name="EvaluatedActionsPublication" visibility="public">
+					<generalization xmi:type="uml:Generalization" xmi:id="EAID_EA5895D4_3566_4840_8641_0A7A2A66B4C1" general="EAID_BD02A0FE_482D_4bc0_ADA1_B01FBC4C0BD8"/>
+				</packagedElement>
+			</packagedElement>
+			<packagedElement xmi:type="uml:Package" xmi:id="EAPK_E37BFB5C_DF65_4cb9_A64F_91C50C763BA2" name="EvaluationResultsPublication" visibility="public">
+				<packagedElement xmi:type="uml:Class" xmi:id="EAID_BAAD1988_574E_42ad_87AC_75EDD47CBE73" name="EvaluationResultsPublication" visibility="public">
+					<generalization xmi:type="uml:Generalization" xmi:id="EAID_342D874B_8FA3_42ec_925C_BE203B411979" general="EAID_D4561516_6FE3_4481_BBFB_71ED4D598378"/>
+				</packagedElement>
+			</packagedElement>
+		</packagedElement>
+		<UML_Profile_for_DATEX_II:D2Namespace base_Package="EAPK_9A5C7AFB_B8F0_42a6_8819_5904121F5C60" definition="Package with constructs to describe results of evaluation of traffic management responses" prefix="eval"/>
+		<UML_Profile_for_DATEX_II:D2Class base_Class="EAID_4458F944_FEFA_4456_892F_936C87AD30DD" definition="Evaluation results for one response measure, for the metric of air quality."/>
+		<UML_Profile_for_DATEX_II:D2Class base_Class="EAID_6ADADB04_4333_4e66_9FA3_6AF48699394F" definition="Evaluation results relating to one response measure, for the metric of air quality, representing either the scenario that the measure is in effect or the scenario that it is not in effect."/>
+		<UML_Profile_for_DATEX_II:D2Relation base_Association="EAID_10758CD4_74F8_47d4_92B6_0739D27395D0" order="1"/>
+		<UML_Profile_for_DATEX_II:D2Class base_Class="EAID_EA327FC7_4C90_443e_9E12_627BA77FA33C" definition="The evaluation results for one response measure, for the metric of delay."/>
+		<UML_Profile_for_DATEX_II:D2Attribute base_Property="EAID_5CDB4D32_2557_4e28_982F_798D94480373" definition="Ignoring congestion effects, the total extra time taken by vehicles due to the response measure." order="1"/>
+		<UML_Profile_for_DATEX_II:D2Class base_Class="EAID_118EAE62_649C_46de_98C6_0B7AFA55F8A3" definition="Evaluation results relating to one response measure, for the metric of delay, representing either the scenario that the measure is in effect or the scenario that it is not in effect."/>
+		<UML_Profile_for_DATEX_II:D2Attribute base_Property="EAID_EE29F483_1CCC_441a_83B5_023C3A7F1F5B" definition="The total extra time (compared with freely flowing conditions) taken by vehicles in this scenario" order="1"/>
+		<UML_Profile_for_DATEX_II:D2Class base_Class="EAID_4D04FA8D_D594_4610_BF75_69D6997A96ED" definition="The evaluation results for one response measure for one kind of metric"/>
+		<UML_Profile_for_DATEX_II:D2Relation base_Association="EAID_750E14FF_0AFB_4aab_9791_54D5605EF8F4" order="1"/>
+		<UML_Profile_for_DATEX_II:D2Relation base_Association="EAID_42456CE6_9554_4c06_B638_1DD51F2EE2DC" definition="Evaluation results for the scenario that the response measure is in effect" order="1"/>
+		<UML_Profile_for_DATEX_II:D2Relation base_Association="EAID_D5EBF80F_FA9B_4933_8D54_02875251E67C" definition="Evaluation results for the scenario that the response measure is not in effect" order="2"/>
+		<UML_Profile_for_DATEX_II:D2Class base_Class="EAID_E5B7C3C6_EEA2_43b9_B57F_191E84D486CF" definition="Evaluation results relating to one response measure, for a single scenario: either the scenario that the measure is in effect or the scenario that it is not in effect."/>
+		<UML_Profile_for_DATEX_II:D2Attribute base_Property="EAID_638EACFD_A2BF_4ede_90A9_695E8E6BF0F0" definition="The total of monetized costs assigned for this particular metric for a given response and scenario" order="1"/>
+		<UML_Profile_for_DATEX_II:D2Class base_Class="EAID_07971335_D3C0_44e5_ADF0_B467AA0A1B19" definition="The evaluation results for one response measure. "/>
+		<UML_Profile_for_DATEX_II:D2Attribute base_Property="EAID_86620E6D_BE8B_4cd1_B16C_3CA89BB5F5D5" definition="Expected change in traffic demand caused by this measure while it is active. For example, for a diversion this quantity will divert from the original route to the alternative route while the diversion is active." order="1"/>
+		<UML_Profile_for_DATEX_II:D2Attribute base_Property="EAID_F60857E1_53C8_42c1_9F32_EE7CB640CD5C" definition="Identifies the measure for which these results apply." targetClass="sit:OperatorAction" order="2"/>
+		<UML_Profile_for_DATEX_II:D2Attribute base_Property="EAID_605E1751_9E4A_422a_8759_67529F397006" definition="The contribution to utility made by the measure, expressed as a money value. A positive value means a benefit, a negative value means a cost." order="3"/>
+		<UML_Profile_for_DATEX_II:D2Relation base_Association="EAID_870E5DC7_204B_4072_8FAE_5921C8143909" definition="The evaluation results for response measures that are included in the set that produced the best combined utility. If all combinations of measures have been evaluated to be worse than making no response, this will be empty." order="1"/>
+		<UML_Profile_for_DATEX_II:D2Relation base_Association="EAID_E03B1033_2624_4477_8FAF_A9D51E502768" definition="The evaluation results for response measures that are not included in the set that produced the best combined utility – i.e. the responses which, if added to the best set, would make things worse." order="2"/>
+		<UML_Profile_for_DATEX_II:D2Class base_Class="EAID_BCB2A033_0658_47fb_BF23_38BBE357E1E6" definition="Details of emissions of pollutants and atmospheric pollution levels"/>
+		<UML_Profile_for_DATEX_II:D2Attribute base_Property="EAID_C18B1AD9_D594_4238_911C_5FCDF7EBFD47" definition="The total quantity of emissions of the specified pollutant" order="1"/>
+		<UML_Profile_for_DATEX_II:D2Class base_Class="EAID_5454DD3B_B26C_4454_A229_524E42AAB33F" definition="The results of an evaluation of potential traffic management plans"/>
+		<UML_Profile_for_DATEX_II:D2Attribute base_Property="EAID_53C6B23A_DE07_4a83_8CBE_DC386C42AE38" definition="The best result (most savings, or least costs) from evaluated permutations of responses. This is expressed as a money value in units of Euros. A positive value means a benefit, a negative value means a cost." order="1"/>
+		<UML_Profile_for_DATEX_II:D2Attribute base_Property="EAID_C698684B_DBB2_4325_B5A9_87F745496DB9" definition="Identifies the service that produced these evaluation results." order="2"/>
+		<UML_Profile_for_DATEX_II:D2Relation base_Association="EAID_A96E50D2_5922_44b2_AF51_73C7A309979F" order="1"/>
+		<UML_Profile_for_DATEX_II:D2Relation base_Association="EAID_EA77FBC1_F945_4cb4_9628_2B60BA1A8DE1" order="1"/>
+		<UML_Profile_for_DATEX_II:D2Package base_Package="EAPK_20576AC2_BA92_471b_9799_4ABB4BBD3C63" definition="Classes for expressing results of evaluation of traffic management plans"/>
+		<UML_Profile_for_DATEX_II:D2Datatype base_DataType="EAID_6C9E978A_D363_48d7_B414_9E4A4CF634B2" definition="Identical semantics to the type in Parking which should be promoted to Common"/>
+		<UML_Profile_for_DATEX_II:D2Datatype base_DataType="EAID_AF17E1DD_C630_4739_86DF_C7CC30BA3409" definition="A value of weight expressed in units of kilograms"/>
+		<UML_Profile_for_DATEX_II:D2Datatype base_DataType="EAID_A63B7C97_DE4F_4bb7_8C1A_E4C3A3513549" definition="An absolute value (not a rate) of traffic delay in vehicle hours"/>
+		<UML_Profile_for_DATEX_II:D2Package base_Package="EAPK_FB84F054_CA05_4d85_AA7D_C676FEB1F6BF" definition="data types"/>
+		<UML_Profile_for_DATEX_II:D2Class base_Class="EAID_CE1D655C_F357_4e1f_9565_C48F4A4C993D" definition="Publication of situations with evaluation results for operator actions representing potential or running traffic management plans"/>
+		<UML_Profile_for_DATEX_II:D2ModelRoot base_Class="EAID_CE1D655C_F357_4e1f_9565_C48F4A4C993D" definition="Publication of situations with evaluation results for operator actions representing potential or running traffic management plans" extensionVersion="1.0" extensionName="ResponseEvaluation"/>
+		<UML_Profile_for_DATEX_II:D2Package base_Package="EAPK_5CE506F1_CAA6_42f0_8744_2DE52E5301B4" definition="Constructs for publishing situations with evaluation results for operator actions representing potential or running traffic management plans"/>
+		<UML_Profile_for_DATEX_II:D2Class base_Class="EAID_BAAD1988_574E_42ad_87AC_75EDD47CBE73" definition="Publication of results of evaluation of potential traffic management plans"/>
+		<UML_Profile_for_DATEX_II:D2ModelRoot base_Class="EAID_BAAD1988_574E_42ad_87AC_75EDD47CBE73" definition="Publication of results of evaluation of potential traffic management plans" extensionVersion="1.0" extensionName="ResponseEvaluation"/>
+		<UML_Profile_for_DATEX_II:D2Package base_Package="EAPK_E37BFB5C_DF65_4cb9_A64F_91C50C763BA2" definition="Constructs for publishing results of evaluation of potential traffic management plans"/>
+	</uml:Model>
+	<xmi:Extension extender="Enterprise Architect" extenderID="6.5">
+		<elements>
+			<element xmi:idref="EAPK_9A5C7AFB_B8F0_42a6_8819_5904121F5C60" xmi:type="uml:Package" name="ResponseEvaluation" scope="public">
+				<model package2="EAID_9A5C7AFB_B8F0_42a6_8819_5904121F5C60" package="EAPK_E1407A8C_C9B7_4e32_A8FF_CF4B769A80CC" tpos="0" ea_localid="2627" ea_eleType="package"/>
+				<properties isSpecification="false" sType="Package" nType="0" alias="D2Namespace" scope="public" stereotype="D2Namespace"/>
+				<project author="COR19759" version="1.0" phase="1.0" created="2018-04-11 10:31:30" modified="2018-04-11 10:31:31" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags>
+					<tag xmi:id="EAID_465BEE89_8E02_0c8e_9514_AF8C0B052780" name="definition" value="Package with constructs to describe results of evaluation of traffic management responses" modelElement="EAID_9A5C7AFB_B8F0_42a6_8819_5904121F5C60"/>
+					<tag xmi:id="EAID_0D89D20E_9D07_cb9d_B218_B0CFA642C88C" name="prefix" value="eval" modelElement="EAID_9A5C7AFB_B8F0_42a6_8819_5904121F5C60"/>
+					<tag xmi:id="EAID_6F40CEE6_F8FF_bbf8_9745_5B89F5F8299A" name="version" modelElement="EAID_9A5C7AFB_B8F0_42a6_8819_5904121F5C60"/>
+				</tags>
+				<xrefs value="$XREFPROP=$XID={567A28FE-AB83-491d-9E99-98E23F82F7A6}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=D2Namespace;GUID={BED082D8-AAD9-491c-AA57-03E93D00643F};FQName=UML Profile for DATEX II::D2Namespace;@ENDSTEREO;$DES;$CLT={9A5C7AFB-B8F0-42a6-8819-5904121F5C60}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Extension"/>
+				<packageproperties version="1.0"/>
+				<paths/>
+				<times created="2018-04-11 10:31:30" modified="2018-04-11 10:31:31"/>
+				<flags iscontrolled="FALSE" isprotected="FALSE" usedtd="FALSE" logxml="FALSE"/>
+			</element>
+			<element xmi:idref="EAPK_20576AC2_BA92_471b_9799_4ABB4BBD3C63" xmi:type="uml:Package" name="Classes" scope="public">
+				<model package2="EAID_20576AC2_BA92_471b_9799_4ABB4BBD3C63" package="EAPK_9A5C7AFB_B8F0_42a6_8819_5904121F5C60" tpos="0" ea_localid="2623" ea_eleType="package"/>
+				<properties isSpecification="false" sType="Package" nType="0" alias="D2Package" scope="public" stereotype="D2Package"/>
+				<project author="COR19759" version="1.0" phase="1.0" created="2018-04-04 15:56:18" modified="2018-04-11 10:31:45" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags>
+					<tag xmi:id="EAID_465BEE89_BD21_bebd_BB2C_5090BD12FC12" name="definition" value="Classes for expressing results of evaluation of traffic management plans" modelElement="EAID_20576AC2_BA92_471b_9799_4ABB4BBD3C63"/>
+				</tags>
+				<xrefs value="$XREFPROP=$XID={AEC118C6-0C87-4f72-9476-4BA177524BD6}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=D2Package;GUID={4CB599A2-5F98-494f-8BFF-4FBC186B59CC};FQName=UML Profile for DATEX II::D2Package;@ENDSTEREO;$DES;$CLT={20576AC2-BA92-471b-9799-4ABB4BBD3C63}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="ResponseEvaluation"/>
+				<packageproperties version="1.0"/>
+				<paths/>
+				<times created="2018-04-04 15:56:18" modified="2018-04-04 17:30:34"/>
+				<flags iscontrolled="FALSE" isprotected="FALSE" usedtd="FALSE" logxml="FALSE"/>
+			</element>
+			<element xmi:idref="EAID_4458F944_FEFA_4456_892F_936C87AD30DD" xmi:type="uml:Class" name="AirQualityKpi" scope="public">
+				<model package="EAPK_20576AC2_BA92_471b_9799_4ABB4BBD3C63" tpos="0" ea_localid="18116" ea_eleType="element"/>
+				<properties isSpecification="false" sType="Class" nType="0" scope="public" stereotype="D2Class" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="COR19759" version="1.0" phase="1.0" created="2018-04-04 16:52:33" modified="2018-04-04 16:52:40" complexity="1" status="Proposed"/>
+				<code product_name="Java" gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags>
+					<tag xmi:id="EAID_465BEE89_A2AB_73a2_BF7B_0963A62A285D" name="definition" value="Evaluation results for one response measure, for the metric of air quality." modelElement="EAID_4458F944_FEFA_4456_892F_936C87AD30DD"/>
+					<tag xmi:id="EAID_8D3D7693_5855_9958_BDE8_7405F7E8A901" name="regulatoryContext" modelElement="EAID_4458F944_FEFA_4456_892F_936C87AD30DD"/>
+				</tags>
+				<xrefs value="$XREFPROP=$XID={06DF16DA-8A60-4395-B1CE-5A8433F8F45F}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=D2Class;GUID={E756F19A-7523-44b5-A118-887E32C2229C};FQName=UML Profile for DATEX II::D2Class;@ENDSTEREO;$DES;$CLT={4458F944-FEFA-4456-892F-936C87AD30DD}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Classes"/>
+				<links>
+					<Generalization xmi:id="EAID_51D3B26C_B401_49da_B500_0FCD78B84009" start="EAID_4458F944_FEFA_4456_892F_936C87AD30DD" end="EAID_4D04FA8D_D594_4610_BF75_69D6997A96ED"/>
+					<NoteLink xmi:id="EAID_566F9E83_3636_4682_AB39_FE74F820C1A5" start="EAID_0B1996D6_E1E6_42ac_B4DE_EDD7A2EC4E97" end="EAID_4458F944_FEFA_4456_892F_936C87AD30DD"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_6ADADB04_4333_4e66_9FA3_6AF48699394F" xmi:type="uml:Class" name="AirQualityKpiDetails" scope="public">
+				<model package="EAPK_20576AC2_BA92_471b_9799_4ABB4BBD3C63" tpos="0" ea_localid="18108" ea_eleType="element"/>
+				<properties isSpecification="false" sType="Class" nType="0" scope="public" stereotype="D2Class" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="COR19759" version="1.0" phase="1.0" created="2018-04-04 15:57:51" modified="2018-04-04 16:39:02" complexity="1" status="Proposed"/>
+				<code product_name="Java" gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags>
+					<tag xmi:id="EAID_465BEE89_A2AB_73a2_827B_564586FD4F39" name="definition" value="Evaluation results relating to one response measure, for the metric of air quality, representing either the scenario that the measure is in effect or the scenario that it is not in effect." modelElement="EAID_6ADADB04_4333_4e66_9FA3_6AF48699394F"/>
+					<tag xmi:id="EAID_8D3D7693_5855_9958_9B61_9D0DD6D6D134" name="regulatoryContext" modelElement="EAID_6ADADB04_4333_4e66_9FA3_6AF48699394F"/>
+				</tags>
+				<xrefs value="$XREFPROP=$XID={72496356-EB63-4aed-B2AF-1BAF8104A9B1}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=D2Class;GUID={E756F19A-7523-44b5-A118-887E32C2229C};FQName=UML Profile for DATEX II::D2Class;@ENDSTEREO;$DES;$CLT={6ADADB04-4333-4e66-9FA3-6AF48699394F}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Classes"/>
+				<links>
+					<Generalization xmi:id="EAID_6DE624DE_B03A_4761_A845_74A04B5D05D1" start="EAID_6ADADB04_4333_4e66_9FA3_6AF48699394F" end="EAID_E5B7C3C6_EEA2_43b9_B57F_191E84D486CF"/>
+					<Aggregation xmi:id="EAID_10758CD4_74F8_47d4_92B6_0739D27395D0" start="EAID_BCB2A033_0658_47fb_BF23_38BBE357E1E6" end="EAID_6ADADB04_4333_4e66_9FA3_6AF48699394F"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_EA327FC7_4C90_443e_9E12_627BA77FA33C" xmi:type="uml:Class" name="DelayKpi" scope="public">
+				<model package="EAPK_20576AC2_BA92_471b_9799_4ABB4BBD3C63" tpos="0" ea_localid="18106" ea_eleType="element"/>
+				<properties isSpecification="false" sType="Class" nType="0" scope="public" stereotype="D2Class" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="COR19759" version="1.0" phase="1.0" created="2018-04-04 15:57:26" modified="2018-04-04 16:33:41" complexity="1" status="Proposed"/>
+				<code product_name="Java" gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags>
+					<tag xmi:id="EAID_465BEE89_A2AB_73a2_B07E_D0DD68581AE4" name="definition" value="The evaluation results for one response measure, for the metric of delay." modelElement="EAID_EA327FC7_4C90_443e_9E12_627BA77FA33C"/>
+					<tag xmi:id="EAID_8D3D7693_5855_9958_8235_2F85CBD914F2" name="regulatoryContext" modelElement="EAID_EA327FC7_4C90_443e_9E12_627BA77FA33C"/>
+				</tags>
+				<xrefs value="$XREFPROP=$XID={FD765B4B-5B9D-4d74-A0F4-A7E6C5DB8DEB}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=D2Class;GUID={E756F19A-7523-44b5-A118-887E32C2229C};FQName=UML Profile for DATEX II::D2Class;@ENDSTEREO;$DES;$CLT={EA327FC7-4C90-443e-9E12-627BA77FA33C}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Classes"/>
+				<attributes>
+					<attribute xmi:idref="EAID_5CDB4D32_2557_4e28_982F_798D94480373" name="detourDelay" scope="Public">
+						<initial/>
+						<documentation/>
+						<model ea_localid="64354" ea_guid="{5CDB4D32-2557-4e28-982F-798D94480373}"/>
+						<properties type="VehicleHours" derived="0" collection="false" length="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0"/>
+						<containment containment="Not Specified" position="0"/>
+						<stereotype stereotype="D2Attribute"/>
+						<bounds lower="1" upper="1"/>
+						<options/>
+						<style/>
+						<styleex value="volatile=0;union=0;"/>
+						<tags>
+							<tag xmi:id="EAID_0818D9FC_39FC_1339_90FE_3B102001F3FC" name="order" value="1"/>
+							<tag xmi:id="EAID_8D3D7693_3E73_803e_A43F_386225E47BA1" name="regulatoryContext"/>
+							<tag xmi:id="EAID_45F52665_6645_d966_A629_53F6F718EF88" name="schemaAttribute"/>
+							<tag xmi:id="EAID_3BB2EAF2_BED2_17be_9849_991784ADB096" name="schemaName"/>
+							<tag xmi:id="EAID_5876D7BD_279D_7627_9990_9FCE5C88B073" name="targetClass"/>
+							<tag xmi:id="EAID_465BEE89_4E89_d24e_94DE_37284CAE0CA3" name="definition" value="Ignoring congestion effects, the total extra time taken by vehicles due to the response measure."/>
+						</tags>
+						<xrefs value="$XREFPROP=$XID={FAE7A3A4-CABF-4f1a-8C9D-0088B6AAA08A}$XID;$NAM=Stereotypes$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=D2Attribute;GUID={FE24CB28-2F5F-4a09-9C1E-99C91643EB39};FQName=UML Profile for DATEX II::D2Attribute;@ENDSTEREO;$DES;$CLT={5CDB4D32-2557-4e28-982F-798D94480373}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+					</attribute>
+				</attributes>
+				<links>
+					<Generalization xmi:id="EAID_77F122C4_B249_4c3e_8D78_1BE7FF2A20C8" start="EAID_EA327FC7_4C90_443e_9E12_627BA77FA33C" end="EAID_4D04FA8D_D594_4610_BF75_69D6997A96ED"/>
+					<NoteLink xmi:id="EAID_72D934F2_DA97_4345_AE70_7CD57E265B48" start="EAID_8E688F6C_55D8_4072_A46E_C8E82936C9E8" end="EAID_EA327FC7_4C90_443e_9E12_627BA77FA33C"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_118EAE62_649C_46de_98C6_0B7AFA55F8A3" xmi:type="uml:Class" name="DelayKpiDetails" scope="public">
+				<model package="EAPK_20576AC2_BA92_471b_9799_4ABB4BBD3C63" tpos="0" ea_localid="18119" ea_eleType="element"/>
+				<properties isSpecification="false" sType="Class" nType="0" scope="public" stereotype="D2Class" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="COR19759" version="1.0" phase="1.0" created="2018-04-04 16:59:04" modified="2018-04-04 16:59:11" complexity="1" status="Proposed"/>
+				<code product_name="Java" gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags>
+					<tag xmi:id="EAID_465BEE89_A2AB_73a2_9209_FCAAE6161573" name="definition" value="Evaluation results relating to one response measure, for the metric of delay, representing either the scenario that the measure is in effect or the scenario that it is not in effect." modelElement="EAID_118EAE62_649C_46de_98C6_0B7AFA55F8A3"/>
+					<tag xmi:id="EAID_8D3D7693_5855_9958_A9FC_BC966EFC5238" name="regulatoryContext" modelElement="EAID_118EAE62_649C_46de_98C6_0B7AFA55F8A3"/>
+				</tags>
+				<xrefs value="$XREFPROP=$XID={EC5AA677-EDB1-488a-A9A5-49A1F0129DDE}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=D2Class;GUID={E756F19A-7523-44b5-A118-887E32C2229C};FQName=UML Profile for DATEX II::D2Class;@ENDSTEREO;$DES;$CLT={118EAE62-649C-46de-98C6-0B7AFA55F8A3}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Classes"/>
+				<attributes>
+					<attribute xmi:idref="EAID_EE29F483_1CCC_441a_83B5_023C3A7F1F5B" name="delay" scope="Public">
+						<initial/>
+						<documentation/>
+						<model ea_localid="64357" ea_guid="{EE29F483-1CCC-441a-83B5-023C3A7F1F5B}"/>
+						<properties type="VehicleHours" derived="0" collection="false" length="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0"/>
+						<containment containment="Not Specified" position="0"/>
+						<stereotype stereotype="D2Attribute"/>
+						<bounds lower="1" upper="1"/>
+						<options/>
+						<style/>
+						<styleex value="volatile=0;union=0;"/>
+						<tags>
+							<tag xmi:id="EAID_465BEE89_4E89_d24e_B79E_49AFCB6273FD" name="definition" value="The total extra time (compared with freely flowing conditions) taken by vehicles in this scenario"/>
+							<tag xmi:id="EAID_0818D9FC_39FC_1339_9FF7_F7CDEA951115" name="order" value="1"/>
+							<tag xmi:id="EAID_8D3D7693_3E73_803e_8F3B_4103B81A81F4" name="regulatoryContext"/>
+							<tag xmi:id="EAID_45F52665_6645_d966_B965_7AF1492E89ED" name="schemaAttribute"/>
+							<tag xmi:id="EAID_3BB2EAF2_BED2_17be_9359_8F1616A2B651" name="schemaName"/>
+							<tag xmi:id="EAID_5876D7BD_279D_7627_9095_0DFF3DF08AE2" name="targetClass"/>
+						</tags>
+						<xrefs value="$XREFPROP=$XID={8F1F2A5D-D8B0-4bc7-B259-68E19D7708D4}$XID;$NAM=Stereotypes$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=D2Attribute;GUID={FE24CB28-2F5F-4a09-9C1E-99C91643EB39};FQName=UML Profile for DATEX II::D2Attribute;@ENDSTEREO;$DES;$CLT={EE29F483-1CCC-441a-83B5-023C3A7F1F5B}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+					</attribute>
+				</attributes>
+				<links>
+					<Generalization xmi:id="EAID_824EF445_5CE2_4079_9400_301A60FCB7D0" start="EAID_118EAE62_649C_46de_98C6_0B7AFA55F8A3" end="EAID_E5B7C3C6_EEA2_43b9_B57F_191E84D486CF"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_4D04FA8D_D594_4610_BF75_69D6997A96ED" xmi:type="uml:Class" name="Kpi" scope="public">
+				<model package="EAPK_20576AC2_BA92_471b_9799_4ABB4BBD3C63" tpos="0" ea_localid="18112" ea_eleType="element"/>
+				<properties isSpecification="false" sType="Class" nType="0" scope="public" stereotype="D2Class" isRoot="false" isLeaf="false" isAbstract="true" isActive="false"/>
+				<project author="COR19759" version="1.0" phase="1.0" created="2018-04-04 16:23:55" modified="2018-04-04 16:51:31" complexity="1" status="Proposed"/>
+				<code product_name="Java" gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags>
+					<tag xmi:id="EAID_465BEE89_A2AB_73a2_83BF_7CDF95381A02" name="definition" value="The evaluation results for one response measure for one kind of metric" modelElement="EAID_4D04FA8D_D594_4610_BF75_69D6997A96ED"/>
+					<tag xmi:id="EAID_8D3D7693_5855_9958_9773_48800AE82A1C" name="regulatoryContext" modelElement="EAID_4D04FA8D_D594_4610_BF75_69D6997A96ED"/>
+				</tags>
+				<xrefs value="$XREFPROP=$XID={A0C48E3B-8722-4e01-B5E3-4434229D72E2}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=D2Class;GUID={E756F19A-7523-44b5-A118-887E32C2229C};FQName=UML Profile for DATEX II::D2Class;@ENDSTEREO;$DES;$CLT={4D04FA8D-D594-4610-BF75-69D6997A96ED}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Classes"/>
+				<links>
+					<Aggregation xmi:id="EAID_750E14FF_0AFB_4aab_9791_54D5605EF8F4" start="EAID_4D04FA8D_D594_4610_BF75_69D6997A96ED" end="EAID_07971335_D3C0_44e5_ADF0_B467AA0A1B19"/>
+					<Aggregation xmi:id="EAID_42456CE6_9554_4c06_B638_1DD51F2EE2DC" start="EAID_E5B7C3C6_EEA2_43b9_B57F_191E84D486CF" end="EAID_4D04FA8D_D594_4610_BF75_69D6997A96ED"/>
+					<Generalization xmi:id="EAID_51D3B26C_B401_49da_B500_0FCD78B84009" start="EAID_4458F944_FEFA_4456_892F_936C87AD30DD" end="EAID_4D04FA8D_D594_4610_BF75_69D6997A96ED"/>
+					<Generalization xmi:id="EAID_77F122C4_B249_4c3e_8D78_1BE7FF2A20C8" start="EAID_EA327FC7_4C90_443e_9E12_627BA77FA33C" end="EAID_4D04FA8D_D594_4610_BF75_69D6997A96ED"/>
+					<NoteLink xmi:id="EAID_9B9B363F_B283_4c9b_8615_0D389E839BAD" start="EAID_DEAD8BA0_FF56_44fd_8BAC_196565D92D1F" end="EAID_4D04FA8D_D594_4610_BF75_69D6997A96ED"/>
+					<Aggregation xmi:id="EAID_D5EBF80F_FA9B_4933_8D54_02875251E67C" start="EAID_E5B7C3C6_EEA2_43b9_B57F_191E84D486CF" end="EAID_4D04FA8D_D594_4610_BF75_69D6997A96ED"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_E5B7C3C6_EEA2_43b9_B57F_191E84D486CF" xmi:type="uml:Class" name="KpiDetails" scope="public">
+				<model package="EAPK_20576AC2_BA92_471b_9799_4ABB4BBD3C63" tpos="0" ea_localid="18113" ea_eleType="element"/>
+				<properties isSpecification="false" sType="Class" nType="0" scope="public" stereotype="D2Class" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="COR19759" version="1.0" phase="1.0" created="2018-04-04 16:37:40" modified="2018-04-04 16:38:39" complexity="1" status="Proposed"/>
+				<code product_name="Java" gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags>
+					<tag xmi:id="EAID_465BEE89_A2AB_73a2_B691_E5A96F314FAB" name="definition" value="Evaluation results relating to one response measure, for a single scenario: either the scenario that the measure is in effect or the scenario that it is not in effect." modelElement="EAID_E5B7C3C6_EEA2_43b9_B57F_191E84D486CF"/>
+					<tag xmi:id="EAID_8D3D7693_5855_9958_AAD0_9FAE54C0BDED" name="regulatoryContext" modelElement="EAID_E5B7C3C6_EEA2_43b9_B57F_191E84D486CF"/>
+				</tags>
+				<xrefs value="$XREFPROP=$XID={AD77B615-F437-446c-83DF-743357E34FF3}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=D2Class;GUID={E756F19A-7523-44b5-A118-887E32C2229C};FQName=UML Profile for DATEX II::D2Class;@ENDSTEREO;$DES;$CLT={E5B7C3C6-EEA2-43b9-B57F-191E84D486CF}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Classes"/>
+				<attributes>
+					<attribute xmi:idref="EAID_638EACFD_A2BF_4ede_90A9_695E8E6BF0F0" name="monetaryCost" scope="Public">
+						<initial/>
+						<documentation/>
+						<model ea_localid="64351" ea_guid="{638EACFD-A2BF-4ede-90A9-695E8E6BF0F0}"/>
+						<properties type="AmountOfMoney" derived="0" collection="false" length="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0"/>
+						<containment containment="Not Specified" position="0"/>
+						<stereotype stereotype="D2Attribute"/>
+						<bounds lower="0" upper="1"/>
+						<options/>
+						<style/>
+						<styleex value="volatile=0;union=0;"/>
+						<tags>
+							<tag xmi:id="EAID_465BEE89_4E89_d24e_BD96_C4BE6C405231" name="definition" value="The total of monetized costs assigned for this particular metric for a given response and scenario"/>
+							<tag xmi:id="EAID_0818D9FC_39FC_1339_9685_EC83EF83A6F4" name="order" value="1"/>
+							<tag xmi:id="EAID_8D3D7693_3E73_803e_AE33_CB58F36D9B10" name="regulatoryContext"/>
+							<tag xmi:id="EAID_45F52665_6645_d966_845E_CEB6C17B99F1" name="schemaAttribute"/>
+							<tag xmi:id="EAID_3BB2EAF2_BED2_17be_A231_CDE7BB4F8820" name="schemaName"/>
+							<tag xmi:id="EAID_5876D7BD_279D_7627_9E12_6496E9E075AD" name="targetClass"/>
+						</tags>
+						<xrefs value="$XREFPROP=$XID={750C0121-2320-4e47-8B15-671157505680}$XID;$NAM=Stereotypes$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=D2Attribute;GUID={FE24CB28-2F5F-4a09-9C1E-99C91643EB39};FQName=UML Profile for DATEX II::D2Attribute;@ENDSTEREO;$DES;$CLT={638EACFD-A2BF-4ede-90A9-695E8E6BF0F0}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+					</attribute>
+				</attributes>
+				<links>
+					<Aggregation xmi:id="EAID_42456CE6_9554_4c06_B638_1DD51F2EE2DC" start="EAID_E5B7C3C6_EEA2_43b9_B57F_191E84D486CF" end="EAID_4D04FA8D_D594_4610_BF75_69D6997A96ED"/>
+					<Aggregation xmi:id="EAID_D5EBF80F_FA9B_4933_8D54_02875251E67C" start="EAID_E5B7C3C6_EEA2_43b9_B57F_191E84D486CF" end="EAID_4D04FA8D_D594_4610_BF75_69D6997A96ED"/>
+					<Generalization xmi:id="EAID_6DE624DE_B03A_4761_A845_74A04B5D05D1" start="EAID_6ADADB04_4333_4e66_9FA3_6AF48699394F" end="EAID_E5B7C3C6_EEA2_43b9_B57F_191E84D486CF"/>
+					<Generalization xmi:id="EAID_824EF445_5CE2_4079_9400_301A60FCB7D0" start="EAID_118EAE62_649C_46de_98C6_0B7AFA55F8A3" end="EAID_E5B7C3C6_EEA2_43b9_B57F_191E84D486CF"/>
+					<NoteLink xmi:id="EAID_8C970384_6320_4866_86C8_4C3BE20B7B4A" start="EAID_DEAD8BA0_FF56_44fd_8BAC_196565D92D1F" end="EAID_E5B7C3C6_EEA2_43b9_B57F_191E84D486CF"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_07971335_D3C0_44e5_ADF0_B467AA0A1B19" xmi:type="uml:Class" name="MeasureEvaluation" scope="public">
+				<model package="EAPK_20576AC2_BA92_471b_9799_4ABB4BBD3C63" tpos="0" ea_localid="18105" ea_eleType="element"/>
+				<properties isSpecification="false" sType="Class" nType="0" scope="public" stereotype="D2Class" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="COR19759" version="1.0" phase="1.0" created="2018-04-04 15:56:58" modified="2018-04-04 15:57:06" complexity="1" status="Proposed"/>
+				<code product_name="Java" gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags>
+					<tag xmi:id="EAID_465BEE89_A2AB_73a2_82EB_A6C6769A1954" name="definition" value="The evaluation results for one response measure. " modelElement="EAID_07971335_D3C0_44e5_ADF0_B467AA0A1B19"/>
+					<tag xmi:id="EAID_8D3D7693_5855_9958_8D39_8394D26E6674" name="regulatoryContext" modelElement="EAID_07971335_D3C0_44e5_ADF0_B467AA0A1B19"/>
+				</tags>
+				<xrefs value="$XREFPROP=$XID={EF2500FC-F1CF-4e5c-B071-D7C6976E5205}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=D2Class;GUID={E756F19A-7523-44b5-A118-887E32C2229C};FQName=UML Profile for DATEX II::D2Class;@ENDSTEREO;$DES;$CLT={07971335-D3C0-44e5-ADF0-B467AA0A1B19}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Classes"/>
+				<attributes>
+					<attribute xmi:idref="EAID_86620E6D_BE8B_4cd1_B16C_3CA89BB5F5D5" name="changeInDemand" scope="Public">
+						<initial/>
+						<documentation/>
+						<model ea_localid="64353" ea_guid="{86620E6D-BE8B-4cd1-B16C-3CA89BB5F5D5}"/>
+						<properties type="VehiclesPerHour" derived="0" collection="false" length="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0"/>
+						<containment containment="Not Specified" position="0"/>
+						<stereotype stereotype="D2Attribute"/>
+						<bounds lower="0" upper="1"/>
+						<options/>
+						<style/>
+						<styleex value="volatile=0;union=0;"/>
+						<tags>
+							<tag xmi:id="EAID_465BEE89_4E89_d24e_85F4_449AA307BE31" name="definition" value="Expected change in traffic demand caused by this measure while it is active. For example, for a diversion this quantity will divert from the original route to the alternative route while the diversion is active."/>
+							<tag xmi:id="EAID_0818D9FC_39FC_1339_A823_CB435F49F6D0" name="order" value="1"/>
+							<tag xmi:id="EAID_8D3D7693_3E73_803e_8091_089AEDD73F59" name="regulatoryContext"/>
+							<tag xmi:id="EAID_45F52665_6645_d966_8C42_287EDB1D3B49" name="schemaAttribute"/>
+							<tag xmi:id="EAID_3BB2EAF2_BED2_17be_BC08_3943DFB405FF" name="schemaName"/>
+							<tag xmi:id="EAID_5876D7BD_279D_7627_9460_7C17BD8F189F" name="targetClass"/>
+						</tags>
+						<xrefs value="$XREFPROP=$XID={E8539085-D7B1-4751-BB91-65C845A0AB87}$XID;$NAM=Stereotypes$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=D2Attribute;GUID={FE24CB28-2F5F-4a09-9C1E-99C91643EB39};FQName=UML Profile for DATEX II::D2Attribute;@ENDSTEREO;$DES;$CLT={86620E6D-BE8B-4cd1-B16C-3CA89BB5F5D5}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+					</attribute>
+					<attribute xmi:idref="EAID_F60857E1_53C8_42c1_9F32_EE7CB640CD5C" name="measureId" scope="Public">
+						<initial/>
+						<documentation/>
+						<model ea_localid="64359" ea_guid="{F60857E1-53C8-42c1-9F32-EE7CB640CD5C}"/>
+						<properties type="Reference" derived="0" collection="false" length="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0"/>
+						<containment containment="Not Specified" position="0"/>
+						<stereotype stereotype="D2Attribute"/>
+						<bounds lower="1" upper="1"/>
+						<options/>
+						<style/>
+						<styleex value="volatile=0;union=0;"/>
+						<tags>
+							<tag xmi:id="EAID_465BEE89_4E89_d24e_8ECA_AF589D6FBA98" name="definition" value="Identifies the measure for which these results apply."/>
+							<tag xmi:id="EAID_0818D9FC_39FC_1339_9F3A_857F8860C941" name="order" value="2"/>
+							<tag xmi:id="EAID_8D3D7693_3E73_803e_8078_F854308FC8D4" name="regulatoryContext"/>
+							<tag xmi:id="EAID_45F52665_6645_d966_8C1F_338455D9D1C7" name="schemaAttribute"/>
+							<tag xmi:id="EAID_3BB2EAF2_BED2_17be_9543_82188890D847" name="schemaName"/>
+							<tag xmi:id="EAID_5876D7BD_279D_7627_BBDA_74FC1ADD3B9B" name="targetClass" value="sit:OperatorAction"/>
+						</tags>
+						<xrefs value="$XREFPROP=$XID={FB422578-95DC-4cc2-BFEB-15BA5324CEF6}$XID;$NAM=Stereotypes$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=D2Attribute;GUID={FE24CB28-2F5F-4a09-9C1E-99C91643EB39};FQName=UML Profile for DATEX II::D2Attribute;@ENDSTEREO;$DES;$CLT={F60857E1-53C8-42c1-9F32-EE7CB640CD5C}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+					</attribute>
+					<attribute xmi:idref="EAID_605E1751_9E4A_422a_8759_67529F397006" name="utility" scope="Public">
+						<initial/>
+						<documentation/>
+						<model ea_localid="64352" ea_guid="{605E1751-9E4A-422a-8759-67529F397006}"/>
+						<properties type="AmountOfMoney" derived="0" collection="false" length="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0"/>
+						<containment containment="Not Specified" position="0"/>
+						<stereotype stereotype="D2Attribute"/>
+						<bounds lower="0" upper="1"/>
+						<options/>
+						<style/>
+						<styleex value="volatile=0;union=0;"/>
+						<tags>
+							<tag xmi:id="EAID_465BEE89_4E89_d24e_BD18_34A3144DD8BE" name="definition" value="The contribution to utility made by the measure, expressed as a money value. A positive value means a benefit, a negative value means a cost."/>
+							<tag xmi:id="EAID_0818D9FC_39FC_1339_8E54_05B0E9B7FC25" name="order" value="3"/>
+							<tag xmi:id="EAID_8D3D7693_3E73_803e_BDF5_429CC72E35B7" name="regulatoryContext"/>
+							<tag xmi:id="EAID_45F52665_6645_d966_A493_5E4B0D08E5B0" name="schemaAttribute"/>
+							<tag xmi:id="EAID_3BB2EAF2_BED2_17be_9655_0F6FC159B511" name="schemaName"/>
+							<tag xmi:id="EAID_5876D7BD_279D_7627_A9E0_F2E90164F631" name="targetClass"/>
+						</tags>
+						<xrefs value="$XREFPROP=$XID={F07E9159-3439-4944-8EB9-DF619FE8DC1C}$XID;$NAM=Stereotypes$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=D2Attribute;GUID={FE24CB28-2F5F-4a09-9C1E-99C91643EB39};FQName=UML Profile for DATEX II::D2Attribute;@ENDSTEREO;$DES;$CLT={605E1751-9E4A-422a-8759-67529F397006}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+					</attribute>
+				</attributes>
+				<links>
+					<Aggregation xmi:id="EAID_870E5DC7_204B_4072_8FAE_5921C8143909" start="EAID_07971335_D3C0_44e5_ADF0_B467AA0A1B19" end="EAID_5454DD3B_B26C_4454_A229_524E42AAB33F"/>
+					<Aggregation xmi:id="EAID_E03B1033_2624_4477_8FAF_A9D51E502768" start="EAID_07971335_D3C0_44e5_ADF0_B467AA0A1B19" end="EAID_5454DD3B_B26C_4454_A229_524E42AAB33F"/>
+					<Aggregation xmi:id="EAID_750E14FF_0AFB_4aab_9791_54D5605EF8F4" start="EAID_4D04FA8D_D594_4610_BF75_69D6997A96ED" end="EAID_07971335_D3C0_44e5_ADF0_B467AA0A1B19"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_BCB2A033_0658_47fb_BF23_38BBE357E1E6" xmi:type="uml:Class" name="PollutionExtended" scope="public">
+				<model package="EAPK_20576AC2_BA92_471b_9799_4ABB4BBD3C63" tpos="0" ea_localid="18120" ea_eleType="element"/>
+				<properties isSpecification="false" sType="Class" nType="0" scope="public" stereotype="D2Class" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="COR19759" version="1.0" phase="1.0" created="2018-04-04 17:03:30" modified="2018-04-04 17:03:54" complexity="1" status="Proposed"/>
+				<code product_name="Java" gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags>
+					<tag xmi:id="EAID_465BEE89_A2AB_73a2_90C8_982C049AB3B1" name="definition" value="Details of emissions of pollutants and atmospheric pollution levels" modelElement="EAID_BCB2A033_0658_47fb_BF23_38BBE357E1E6"/>
+					<tag xmi:id="EAID_8D3D7693_5855_9958_8FD6_0426DE0A127E" name="regulatoryContext" modelElement="EAID_BCB2A033_0658_47fb_BF23_38BBE357E1E6"/>
+				</tags>
+				<xrefs value="$XREFPROP=$XID={213EA75D-AD1B-4aad-96EF-8D47FC705A33}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=D2Class;GUID={E756F19A-7523-44b5-A118-887E32C2229C};FQName=UML Profile for DATEX II::D2Class;@ENDSTEREO;$DES;$CLT={BCB2A033-0658-47fb-BF23-38BBE357E1E6}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Classes"/>
+				<attributes>
+					<attribute xmi:idref="EAID_C18B1AD9_D594_4238_911C_5FCDF7EBFD47" name="absoluteEmissions" scope="Public">
+						<initial/>
+						<documentation/>
+						<model ea_localid="64358" ea_guid="{C18B1AD9-D594-4238-911C-5FCDF7EBFD47}"/>
+						<properties type="Kilograms" derived="0" collection="false" length="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0"/>
+						<containment containment="Not Specified" position="0"/>
+						<stereotype stereotype="D2Attribute"/>
+						<bounds lower="1" upper="1"/>
+						<options/>
+						<style/>
+						<styleex value="volatile=0;union=0;"/>
+						<tags>
+							<tag xmi:id="EAID_465BEE89_4E89_d24e_8344_9A07C584E01A" name="definition" value="The total quantity of emissions of the specified pollutant"/>
+							<tag xmi:id="EAID_0818D9FC_39FC_1339_AA9C_DED3D0694173" name="order" value="1"/>
+							<tag xmi:id="EAID_8D3D7693_3E73_803e_A1DE_F6201B801B03" name="regulatoryContext"/>
+							<tag xmi:id="EAID_45F52665_6645_d966_9D95_FA706CBDA790" name="schemaAttribute"/>
+							<tag xmi:id="EAID_3BB2EAF2_BED2_17be_ABC1_D441702E9BA4" name="schemaName"/>
+							<tag xmi:id="EAID_5876D7BD_279D_7627_A3EF_82EF6E9C228A" name="targetClass"/>
+						</tags>
+						<xrefs value="$XREFPROP=$XID={8CF96113-662B-42e4-9B8F-53E6BCB30FAC}$XID;$NAM=Stereotypes$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=D2Attribute;GUID={FE24CB28-2F5F-4a09-9C1E-99C91643EB39};FQName=UML Profile for DATEX II::D2Attribute;@ENDSTEREO;$DES;$CLT={C18B1AD9-D594-4238-911C-5FCDF7EBFD47}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+					</attribute>
+				</attributes>
+				<links>
+					<Aggregation xmi:id="EAID_10758CD4_74F8_47d4_92B6_0739D27395D0" start="EAID_BCB2A033_0658_47fb_BF23_38BBE357E1E6" end="EAID_6ADADB04_4333_4e66_9FA3_6AF48699394F"/>
+					<Generalization xmi:id="EAID_D2A2CB07_D7F7_4cea_B67D_0FB50AAD7575" start="EAID_BCB2A033_0658_47fb_BF23_38BBE357E1E6" end="EAID_890BB8E3_8CFE_4524_9D3D_9DDE17CE1B1D"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_5454DD3B_B26C_4454_A229_524E42AAB33F" xmi:type="uml:Class" name="ResponseEvaluation" scope="public">
+				<model package="EAPK_20576AC2_BA92_471b_9799_4ABB4BBD3C63" tpos="0" ea_localid="18104" ea_eleType="element"/>
+				<properties isSpecification="false" sType="Class" nType="8" scope="public" stereotype="D2Class" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="COR19759" version="1.0" phase="1.0" created="2018-04-04 15:56:47" modified="2018-04-04 17:39:31" complexity="1" status="Proposed"/>
+				<code product_name="Java" gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags>
+					<tag xmi:id="EAID_465BEE89_A2AB_73a2_BAD4_F64BFB0F55EE" name="definition" value="The results of an evaluation of potential traffic management plans" modelElement="EAID_5454DD3B_B26C_4454_A229_524E42AAB33F"/>
+					<tag xmi:id="EAID_8D3D7693_5855_9958_8C6B_C6E2DF2430B1" name="regulatoryContext" modelElement="EAID_5454DD3B_B26C_4454_A229_524E42AAB33F"/>
+				</tags>
+				<xrefs value="$XREFPROP=$XID={4F6FA13B-6977-4bba-ABE4-25DB738FC676}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=D2Class;GUID={E756F19A-7523-44b5-A118-887E32C2229C};FQName=UML Profile for DATEX II::D2Class;@ENDSTEREO;$DES;$CLT={5454DD3B-B26C-4454-A229-524E42AAB33F}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;$XREFPROP=$XID={11442F7F-0EBA-4516-A721-56B675266961}$XID;$NAM=DefaultDiagram$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$CLT={5454DD3B-B26C-4454-A229-524E42AAB33F}$CLT;$SUP={FEA4C787-9218-4667-A3EA-2628D31973D2}$SUP;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="Classes" diagram="EAID_FEA4C787_9218_4667_A3EA_2628D31973D2"/>
+				<attributes>
+					<attribute xmi:idref="EAID_53C6B23A_DE07_4a83_8CBE_DC386C42AE38" name="bestCombinedUtility" scope="Public">
+						<initial/>
+						<documentation/>
+						<model ea_localid="64355" ea_guid="{53C6B23A-DE07-4a83-8CBE-DC386C42AE38}"/>
+						<properties type="AmountOfMoney" derived="0" collection="false" length="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0"/>
+						<containment containment="Not Specified" position="0"/>
+						<stereotype stereotype="D2Attribute"/>
+						<bounds lower="0" upper="1"/>
+						<options/>
+						<style/>
+						<styleex value="volatile=0;union=0;"/>
+						<tags>
+							<tag xmi:id="EAID_465BEE89_4E89_d24e_B71B_B9BF4B6990C1" name="definition" value="The best result (most savings, or least costs) from evaluated permutations of responses. This is expressed as a money value in units of Euros. A positive value means a benefit, a negative value means a cost."/>
+							<tag xmi:id="EAID_0818D9FC_39FC_1339_8BC7_EE857F3C6929" name="order" value="1"/>
+							<tag xmi:id="EAID_8D3D7693_3E73_803e_B09E_AA3D809FBD48" name="regulatoryContext"/>
+							<tag xmi:id="EAID_45F52665_6645_d966_AB1D_8E99009BBB4A" name="schemaAttribute"/>
+							<tag xmi:id="EAID_3BB2EAF2_BED2_17be_9CDC_17BE452D19A4" name="schemaName"/>
+							<tag xmi:id="EAID_5876D7BD_279D_7627_BFF8_27EBAB362FC5" name="targetClass"/>
+						</tags>
+						<xrefs value="$XREFPROP=$XID={9C8B28F1-CFBD-4ee1-B4EE-F91393097D79}$XID;$NAM=Stereotypes$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=D2Attribute;GUID={FE24CB28-2F5F-4a09-9C1E-99C91643EB39};FQName=UML Profile for DATEX II::D2Attribute;@ENDSTEREO;$DES;$CLT={53C6B23A-DE07-4a83-8CBE-DC386C42AE38}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+					</attribute>
+					<attribute xmi:idref="EAID_C698684B_DBB2_4325_B5A9_87F745496DB9" name="evaluationSource" scope="Public">
+						<initial/>
+						<documentation/>
+						<model ea_localid="64356" ea_guid="{C698684B-DBB2-4325-B5A9-87F745496DB9}"/>
+						<properties type="String" derived="0" collection="false" length="0" duplicates="0" changeability="changeable"/>
+						<coords ordered="0"/>
+						<containment containment="Not Specified" position="0"/>
+						<stereotype stereotype="D2Attribute"/>
+						<bounds lower="1" upper="1"/>
+						<options/>
+						<style/>
+						<styleex value="volatile=0;union=0;"/>
+						<tags>
+							<tag xmi:id="EAID_465BEE89_4E89_d24e_AC98_F4B9BFCD744D" name="definition" value="Identifies the service that produced these evaluation results."/>
+							<tag xmi:id="EAID_0818D9FC_39FC_1339_B846_37B396A5392E" name="order" value="2"/>
+							<tag xmi:id="EAID_8D3D7693_3E73_803e_8AD4_6FCAA6B242BF" name="regulatoryContext"/>
+							<tag xmi:id="EAID_45F52665_6645_d966_BD21_DD53E51229F5" name="schemaAttribute"/>
+							<tag xmi:id="EAID_3BB2EAF2_BED2_17be_B90B_A4AD1BA8A4D5" name="schemaName"/>
+							<tag xmi:id="EAID_5876D7BD_279D_7627_A9F8_D1A41E3F79A9" name="targetClass"/>
+						</tags>
+						<xrefs value="$XREFPROP=$XID={E644F80E-D4AA-455b-81A5-9D14F2AC35FD}$XID;$NAM=Stereotypes$NAM;$TYP=attribute property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=D2Attribute;GUID={FE24CB28-2F5F-4a09-9C1E-99C91643EB39};FQName=UML Profile for DATEX II::D2Attribute;@ENDSTEREO;$DES;$CLT={C698684B-DBB2-4325-B5A9-87F745496DB9}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+					</attribute>
+				</attributes>
+				<links>
+					<Aggregation xmi:id="EAID_A96E50D2_5922_44b2_AF51_73C7A309979F" start="EAID_5454DD3B_B26C_4454_A229_524E42AAB33F" end="EAID_BAAD1988_574E_42ad_87AC_75EDD47CBE73"/>
+					<Aggregation xmi:id="EAID_EA77FBC1_F945_4cb4_9628_2B60BA1A8DE1" start="EAID_5454DD3B_B26C_4454_A229_524E42AAB33F" end="EAID_CE1D655C_F357_4e1f_9565_C48F4A4C993D"/>
+					<Aggregation xmi:id="EAID_870E5DC7_204B_4072_8FAE_5921C8143909" start="EAID_07971335_D3C0_44e5_ADF0_B467AA0A1B19" end="EAID_5454DD3B_B26C_4454_A229_524E42AAB33F"/>
+					<Aggregation xmi:id="EAID_E03B1033_2624_4477_8FAF_A9D51E502768" start="EAID_07971335_D3C0_44e5_ADF0_B467AA0A1B19" end="EAID_5454DD3B_B26C_4454_A229_524E42AAB33F"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_0B1996D6_E1E6_42ac_B4DE_EDD7A2EC4E97" xmi:type="uml:Note" scope="public">
+				<model package="EAPK_20576AC2_BA92_471b_9799_4ABB4BBD3C63" tpos="0" ea_localid="18117" ea_eleType="element"/>
+				<properties documentation="AirQualityKpi should use AirQualityKpiDetails" isSpecification="false" sType="Note" nType="0" scope="public"/>
+				<project author="COR19759" version="1.0" phase="1.0" created="2018-04-04 16:53:52" modified="2018-04-04 16:54:09" complexity="1" status="Proposed"/>
+				<code gentype="&lt;none&gt;"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="Classes"/>
+				<links>
+					<NoteLink xmi:id="EAID_566F9E83_3636_4682_AB39_FE74F820C1A5" start="EAID_0B1996D6_E1E6_42ac_B4DE_EDD7A2EC4E97" end="EAID_4458F944_FEFA_4456_892F_936C87AD30DD"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_58043B3D_9AD9_4039_BB7C_B312AFC3322E" xmi:type="uml:Note" scope="public">
+				<model package="EAPK_20576AC2_BA92_471b_9799_4ABB4BBD3C63" tpos="0" ea_localid="18114" ea_eleType="element"/>
+				<properties documentation="There should be at most one Kpi element of each concrete type" isSpecification="false" sType="Note" nType="1" scope="public"/>
+				<project author="COR19759" version="1.0" phase="1.0" created="2018-04-04 16:41:58" modified="2018-04-04 16:42:35" complexity="1" status="Proposed"/>
+				<code gentype="&lt;none&gt;"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="Classes" relatedlinks="idref1=EAID_750E14FF_0AFB_4aab_9791_54D5605EF8F4;"/>
+			</element>
+			<element xmi:idref="EAID_8E688F6C_55D8_4072_A46E_C8E82936C9E8" xmi:type="uml:Note" scope="public">
+				<model package="EAPK_20576AC2_BA92_471b_9799_4ABB4BBD3C63" tpos="0" ea_localid="18118" ea_eleType="element"/>
+				<properties documentation="DelayKpi should use DelayKpiDetails" isSpecification="false" sType="Note" nType="0" scope="public"/>
+				<project author="COR19759" version="1.0" phase="1.0" created="2018-04-04 16:54:34" modified="2018-04-04 16:58:50" complexity="1" status="Proposed"/>
+				<code gentype="&lt;none&gt;"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="Classes"/>
+				<links>
+					<NoteLink xmi:id="EAID_72D934F2_DA97_4345_AE70_7CD57E265B48" start="EAID_8E688F6C_55D8_4072_A46E_C8E82936C9E8" end="EAID_EA327FC7_4C90_443e_9E12_627BA77FA33C"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_DEAD8BA0_FF56_44fd_8BAC_196565D92D1F" xmi:type="uml:Note" scope="public">
+				<model package="EAPK_20576AC2_BA92_471b_9799_4ABB4BBD3C63" tpos="0" ea_localid="18115" ea_eleType="element"/>
+				<properties documentation="A concrete Kpi subclass should use appropriate concrete KpiDetails. The generic KpiDetails is concrete and may be used where the details consist only of cost." isSpecification="false" sType="Note" nType="0" scope="public"/>
+				<project author="COR19759" version="1.0" phase="1.0" created="2018-04-04 16:47:28" modified="2018-04-04 16:58:41" complexity="1" status="Proposed"/>
+				<code gentype="&lt;none&gt;"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags/>
+				<xrefs/>
+				<extendedProperties tagged="0" package_name="Classes"/>
+				<links>
+					<NoteLink xmi:id="EAID_8C970384_6320_4866_86C8_4C3BE20B7B4A" start="EAID_DEAD8BA0_FF56_44fd_8BAC_196565D92D1F" end="EAID_E5B7C3C6_EEA2_43b9_B57F_191E84D486CF"/>
+					<NoteLink xmi:id="EAID_9B9B363F_B283_4c9b_8615_0D389E839BAD" start="EAID_DEAD8BA0_FF56_44fd_8BAC_196565D92D1F" end="EAID_4D04FA8D_D594_4610_BF75_69D6997A96ED"/>
+				</links>
+			</element>
+			<element xmi:idref="EAPK_FB84F054_CA05_4d85_AA7D_C676FEB1F6BF" xmi:type="uml:Package" name="DataTypes" scope="public">
+				<model package2="EAID_FB84F054_CA05_4d85_AA7D_C676FEB1F6BF" package="EAPK_9A5C7AFB_B8F0_42a6_8819_5904121F5C60" tpos="0" ea_localid="2624" ea_eleType="package"/>
+				<properties isSpecification="false" sType="Package" nType="0" alias="D2Package" scope="public" stereotype="D2Package"/>
+				<project author="COR19759" version="1.0" phase="1.0" created="2018-04-04 17:10:38" modified="2018-04-11 10:31:45" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags>
+					<tag xmi:id="EAID_465BEE89_BD21_bebd_A1E9_33DFAF9C9F2C" name="definition" value="data types" modelElement="EAID_FB84F054_CA05_4d85_AA7D_C676FEB1F6BF"/>
+				</tags>
+				<xrefs value="$XREFPROP=$XID={844F2319-D613-4d12-A97D-A35F0379C83D}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=D2Package;GUID={4CB599A2-5F98-494f-8BFF-4FBC186B59CC};FQName=UML Profile for DATEX II::D2Package;@ENDSTEREO;$DES;$CLT={FB84F054-CA05-4d85-AA7D-C676FEB1F6BF}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="ResponseEvaluation"/>
+				<packageproperties version="1.0"/>
+				<paths/>
+				<times created="2018-04-04 17:10:38" modified="2018-04-04 17:10:38"/>
+				<flags iscontrolled="FALSE" isprotected="FALSE" usedtd="FALSE" logxml="FALSE"/>
+			</element>
+			<element xmi:idref="EAID_6C9E978A_D363_48d7_B414_9E4A4CF634B2" xmi:type="uml:DataType" name="AmountOfMoney" scope="public">
+				<model package="EAPK_FB84F054_CA05_4d85_AA7D_C676FEB1F6BF" tpos="0" ea_localid="18122" ea_eleType="element"/>
+				<properties isSpecification="false" sType="DataType" nType="0" scope="public" stereotype="D2Datatype" isRoot="false" isLeaf="false" isAbstract="false"/>
+				<project author="COR19759" version="1.0" phase="1.0" created="2018-04-04 17:11:45" modified="2018-04-04 17:13:05" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags>
+					<tag xmi:id="EAID_465BEE89_7E51_e97e_9D50_9F3625F26886" name="definition" value="Identical semantics to the type in Parking which should be promoted to Common" modelElement="EAID_6C9E978A_D363_48d7_B414_9E4A4CF634B2"/>
+					<tag xmi:id="EAID_F5017F96_6B5E_ee6b_82D3_AB1F268E2605" name="facets" modelElement="EAID_6C9E978A_D363_48d7_B414_9E4A4CF634B2"/>
+					<tag xmi:id="EAID_8D3D7693_DD3B_3add_952B_19494244F12C" name="regulatoryContext" modelElement="EAID_6C9E978A_D363_48d7_B414_9E4A4CF634B2"/>
+					<tag xmi:id="EAID_3BB69BB3_9F5B_329f_908E_21E1A222B3A0" name="schemaType" modelElement="EAID_6C9E978A_D363_48d7_B414_9E4A4CF634B2"/>
+					<tag xmi:id="EAID_DB592677_E4FF_bfe4_9DBD_03577E02350C" name="schemaTypeInclude" modelElement="EAID_6C9E978A_D363_48d7_B414_9E4A4CF634B2"/>
+				</tags>
+				<xrefs value="$XREFPROP=$XID={6337BE38-43D8-4ed5-8727-0DF2610C28A3}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=D2Datatype;GUID={025E9EB1-2430-4f99-BC29-A64A286E5202};FQName=UML Profile for DATEX II::D2Datatype;@ENDSTEREO;$DES;$CLT={6C9E978A-D363-48d7-B414-9E4A4CF634B2}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="DataTypes" ea_attsclassified="{638EACFD-A2BF-4ede-90A9-695E8E6BF0F0},{605E1751-9E4A-422a-8759-67529F397006},{53C6B23A-DE07-4a83-8CBE-DC386C42AE38}"/>
+				<links>
+					<Generalization xmi:id="EAID_43B48F52_EE59_49e5_9D2B_BE39B7F8548A" start="EAID_6C9E978A_D363_48d7_B414_9E4A4CF634B2" end="EAID_6594CF20_4A46_49cf_8682_CDF7A3370A8B"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_AF17E1DD_C630_4739_86DF_C7CC30BA3409" xmi:type="uml:DataType" name="Kilograms" scope="public">
+				<model package="EAPK_FB84F054_CA05_4d85_AA7D_C676FEB1F6BF" tpos="0" ea_localid="18124" ea_eleType="element"/>
+				<properties isSpecification="false" sType="DataType" nType="0" scope="public" stereotype="D2Datatype" isRoot="false" isLeaf="false" isAbstract="false"/>
+				<project author="COR19759" version="1.0" phase="1.0" created="2018-04-04 17:24:56" modified="2018-04-04 17:26:11" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags>
+					<tag xmi:id="EAID_465BEE89_7E51_e97e_8F52_9DF72F37ECC4" name="definition" value="A value of weight expressed in units of kilograms" modelElement="EAID_AF17E1DD_C630_4739_86DF_C7CC30BA3409"/>
+					<tag xmi:id="EAID_F5017F96_6B5E_ee6b_A8CA_0009AFFF6F3F" name="facets" modelElement="EAID_AF17E1DD_C630_4739_86DF_C7CC30BA3409"/>
+					<tag xmi:id="EAID_8D3D7693_DD3B_3add_96A3_9D4DDADBD04C" name="regulatoryContext" modelElement="EAID_AF17E1DD_C630_4739_86DF_C7CC30BA3409"/>
+					<tag xmi:id="EAID_3BB69BB3_9F5B_329f_A1DF_EB4FC7E25917" name="schemaType" modelElement="EAID_AF17E1DD_C630_4739_86DF_C7CC30BA3409"/>
+					<tag xmi:id="EAID_DB592677_E4FF_bfe4_94CB_73594DA95807" name="schemaTypeInclude" modelElement="EAID_AF17E1DD_C630_4739_86DF_C7CC30BA3409"/>
+				</tags>
+				<xrefs value="$XREFPROP=$XID={07FE274B-0948-4e24-9DAD-A60192F22FD8}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=D2Datatype;GUID={025E9EB1-2430-4f99-BC29-A64A286E5202};FQName=UML Profile for DATEX II::D2Datatype;@ENDSTEREO;$DES;$CLT={AF17E1DD-C630-4739-86DF-C7CC30BA3409}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="DataTypes" ea_attsclassified="{C18B1AD9-D594-4238-911C-5FCDF7EBFD47}"/>
+				<links>
+					<Generalization xmi:id="EAID_A8C61FF1_A069_4255_BB41_1807CA7B8097" start="EAID_AF17E1DD_C630_4739_86DF_C7CC30BA3409" end="EAID_6D9A1FCE_0D84_4c83_9683_2AE099B41685"/>
+				</links>
+			</element>
+			<element xmi:idref="EAID_A63B7C97_DE4F_4bb7_8C1A_E4C3A3513549" xmi:type="uml:DataType" name="VehicleHours" scope="public">
+				<model package="EAPK_FB84F054_CA05_4d85_AA7D_C676FEB1F6BF" tpos="0" ea_localid="18123" ea_eleType="element"/>
+				<properties isSpecification="false" sType="DataType" nType="0" scope="public" stereotype="D2Datatype" isRoot="false" isLeaf="false" isAbstract="false"/>
+				<project author="COR19759" version="1.0" phase="1.0" created="2018-04-04 17:20:59" modified="2018-04-04 17:21:13" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags>
+					<tag xmi:id="EAID_465BEE89_7E51_e97e_B709_F2829460E746" name="definition" value="An absolute value (not a rate) of traffic delay in vehicle hours" modelElement="EAID_A63B7C97_DE4F_4bb7_8C1A_E4C3A3513549"/>
+					<tag xmi:id="EAID_F5017F96_6B5E_ee6b_9B7F_023D172F5281" name="facets" modelElement="EAID_A63B7C97_DE4F_4bb7_8C1A_E4C3A3513549"/>
+					<tag xmi:id="EAID_8D3D7693_DD3B_3add_A54B_59E878EFE800" name="regulatoryContext" modelElement="EAID_A63B7C97_DE4F_4bb7_8C1A_E4C3A3513549"/>
+					<tag xmi:id="EAID_3BB69BB3_9F5B_329f_B1A9_8AD779F9D486" name="schemaType" modelElement="EAID_A63B7C97_DE4F_4bb7_8C1A_E4C3A3513549"/>
+					<tag xmi:id="EAID_DB592677_E4FF_bfe4_AD98_37E4ADB3D05F" name="schemaTypeInclude" modelElement="EAID_A63B7C97_DE4F_4bb7_8C1A_E4C3A3513549"/>
+				</tags>
+				<xrefs value="$XREFPROP=$XID={82461D6B-990E-408b-BA2E-71631A8E849A}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=D2Datatype;GUID={025E9EB1-2430-4f99-BC29-A64A286E5202};FQName=UML Profile for DATEX II::D2Datatype;@ENDSTEREO;$DES;$CLT={A63B7C97-DE4F-4bb7-8C1A-E4C3A3513549}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="DataTypes" ea_attsclassified="{5CDB4D32-2557-4e28-982F-798D94480373},{EE29F483-1CCC-441a-83B5-023C3A7F1F5B}"/>
+				<links>
+					<Generalization xmi:id="EAID_A6AAB926_E501_48b6_93BB_15130B2EFFE1" start="EAID_A63B7C97_DE4F_4bb7_8C1A_E4C3A3513549" end="EAID_6D9A1FCE_0D84_4c83_9683_2AE099B41685"/>
+				</links>
+			</element>
+			<element xmi:idref="EAPK_5CE506F1_CAA6_42f0_8744_2DE52E5301B4" xmi:type="uml:Package" name="EvaluatedActionsPublication" scope="public">
+				<model package2="EAID_5CE506F1_CAA6_42f0_8744_2DE52E5301B4" package="EAPK_9A5C7AFB_B8F0_42a6_8819_5904121F5C60" tpos="0" ea_localid="2626" ea_eleType="package"/>
+				<properties isSpecification="false" sType="Package" nType="0" alias="D2Package" scope="public" stereotype="D2Package"/>
+				<project author="COR19759" version="1.0" phase="1.0" created="2018-04-04 17:34:26" modified="2018-04-11 10:31:45" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags>
+					<tag xmi:id="EAID_465BEE89_BD21_bebd_80E4_C7B2F0D86893" name="definition" value="Constructs for publishing situations with evaluation results for operator actions representing potential or running traffic management plans" modelElement="EAID_5CE506F1_CAA6_42f0_8744_2DE52E5301B4"/>
+				</tags>
+				<xrefs value="$XREFPROP=$XID={690DAB14-76B2-42c7-ACD4-7589EF7465BA}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=D2Package;GUID={4CB599A2-5F98-494f-8BFF-4FBC186B59CC};FQName=UML Profile for DATEX II::D2Package;@ENDSTEREO;$DES;$CLT={5CE506F1-CAA6-42f0-8744-2DE52E5301B4}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="ResponseEvaluation"/>
+				<packageproperties version="1.0"/>
+				<paths/>
+				<times created="2018-04-04 17:34:26" modified="2018-04-05 11:31:08"/>
+				<flags iscontrolled="FALSE" isprotected="FALSE" usedtd="FALSE" logxml="FALSE"/>
+			</element>
+			<element xmi:idref="EAID_CE1D655C_F357_4e1f_9565_C48F4A4C993D" xmi:type="uml:Class" name="EvaluatedActionsPublication" scope="public">
+				<model package="EAPK_5CE506F1_CAA6_42f0_8744_2DE52E5301B4" tpos="0" ea_localid="18102" ea_eleType="element"/>
+				<properties isSpecification="false" sType="Class" nType="0" scope="public" stereotype="D2Class" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="COR19759" version="1.0" phase="1.0" created="2018-04-04 15:55:16" modified="2018-04-04 17:34:47" complexity="1" status="Proposed"/>
+				<code product_name="Java" gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags>
+					<tag xmi:id="EAID_465BEE89_A2AB_73a2_B879_304BD243985D" name="definition" value="Publication of situations with evaluation results for operator actions representing potential or running traffic management plans" modelElement="EAID_CE1D655C_F357_4e1f_9565_C48F4A4C993D"/>
+					<tag xmi:id="EAID_155F257E_37FF_4637_811D_2B729E2F4920" name="extensionName" value="ResponseEvaluation" modelElement="EAID_CE1D655C_F357_4e1f_9565_C48F4A4C993D"/>
+					<tag xmi:id="EAID_93189A83_2964_c529_968E_866D7F8FEC15" name="extensionVersion" value="1.0" modelElement="EAID_CE1D655C_F357_4e1f_9565_C48F4A4C993D"/>
+					<tag xmi:id="EAID_8D3D7693_5855_9958_B8DB_F9C6ED48DEF5" name="regulatoryContext" modelElement="EAID_CE1D655C_F357_4e1f_9565_C48F4A4C993D"/>
+				</tags>
+				<xrefs value="$XREFPROP=$XID={9D5B37A5-D573-44ba-A245-6B31F2E76155}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=D2Class;GUID={E756F19A-7523-44b5-A118-887E32C2229C};FQName=UML Profile for DATEX II::D2Class;@ENDSTEREO;$DES;$CLT={CE1D655C-F357-4e1f-9565-C48F4A4C993D}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="EvaluatedActionsPublication"/>
+				<links>
+					<Generalization xmi:id="EAID_EA5895D4_3566_4840_8641_0A7A2A66B4C1" start="EAID_CE1D655C_F357_4e1f_9565_C48F4A4C993D" end="EAID_BD02A0FE_482D_4bc0_ADA1_B01FBC4C0BD8"/>
+					<Aggregation xmi:id="EAID_EA77FBC1_F945_4cb4_9628_2B60BA1A8DE1" start="EAID_5454DD3B_B26C_4454_A229_524E42AAB33F" end="EAID_CE1D655C_F357_4e1f_9565_C48F4A4C993D"/>
+				</links>
+			</element>
+			<element xmi:idref="EAPK_E37BFB5C_DF65_4cb9_A64F_91C50C763BA2" xmi:type="uml:Package" name="EvaluationResultsPublication" scope="public">
+				<model package2="EAID_E37BFB5C_DF65_4cb9_A64F_91C50C763BA2" package="EAPK_9A5C7AFB_B8F0_42a6_8819_5904121F5C60" tpos="0" ea_localid="2625" ea_eleType="package"/>
+				<properties isSpecification="false" sType="Package" nType="0" alias="D2Package" scope="public" stereotype="D2Package"/>
+				<project author="COR19759" version="1.0" phase="1.0" created="2018-04-04 17:34:07" modified="2018-04-11 10:31:45" complexity="1" status="Proposed"/>
+				<code gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags>
+					<tag xmi:id="EAID_465BEE89_BD21_bebd_8636_584E34349800" name="definition" value="Constructs for publishing results of evaluation of potential traffic management plans" modelElement="EAID_E37BFB5C_DF65_4cb9_A64F_91C50C763BA2"/>
+				</tags>
+				<xrefs value="$XREFPROP=$XID={CF933B7A-DF8E-4808-BFC6-D468DEF8D86D}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=D2Package;GUID={4CB599A2-5F98-494f-8BFF-4FBC186B59CC};FQName=UML Profile for DATEX II::D2Package;@ENDSTEREO;$DES;$CLT={E37BFB5C-DF65-4cb9-A64F-91C50C763BA2}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="ResponseEvaluation"/>
+				<packageproperties version="1.0"/>
+				<paths/>
+				<times created="2018-04-04 17:34:07" modified="2018-04-04 17:34:07"/>
+				<flags iscontrolled="FALSE" isprotected="FALSE" usedtd="FALSE" logxml="FALSE"/>
+			</element>
+			<element xmi:idref="EAID_BAAD1988_574E_42ad_87AC_75EDD47CBE73" xmi:type="uml:Class" name="EvaluationResultsPublication" scope="public">
+				<model package="EAPK_E37BFB5C_DF65_4cb9_A64F_91C50C763BA2" tpos="0" ea_localid="18125" ea_eleType="element"/>
+				<properties isSpecification="false" sType="Class" nType="0" scope="public" stereotype="D2Class" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+				<project author="COR19759" version="1.0" phase="1.0" created="2018-04-04 17:31:50" modified="2018-04-04 17:34:50" complexity="1" status="Proposed"/>
+				<code product_name="Java" gentype="Java"/>
+				<style appearance="BackColor=-1;BorderColor=-1;BorderWidth=-1;FontColor=-1;VSwimLanes=1;HSwimLanes=1;BorderStyle=0;"/>
+				<tags>
+					<tag xmi:id="EAID_465BEE89_A2AB_73a2_8E5A_14F85F71B259" name="definition" value="Publication of results of evaluation of potential traffic management plans" modelElement="EAID_BAAD1988_574E_42ad_87AC_75EDD47CBE73"/>
+					<tag xmi:id="EAID_155F257E_37FF_4637_A3DF_6CB688F1057E" name="extensionName" value="ResponseEvaluation" modelElement="EAID_BAAD1988_574E_42ad_87AC_75EDD47CBE73"/>
+					<tag xmi:id="EAID_93189A83_2964_c529_ACCA_E564B0E0DCEA" name="extensionVersion" value="1.0" modelElement="EAID_BAAD1988_574E_42ad_87AC_75EDD47CBE73"/>
+					<tag xmi:id="EAID_8D3D7693_5855_9958_85F0_75B1AA50CA30" name="regulatoryContext" modelElement="EAID_BAAD1988_574E_42ad_87AC_75EDD47CBE73"/>
+				</tags>
+				<xrefs value="$XREFPROP=$XID={314FC6C9-7114-4390-B876-4198CDA04CB0}$XID;$NAM=Stereotypes$NAM;$TYP=element property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=D2Class;GUID={E756F19A-7523-44b5-A118-887E32C2229C};FQName=UML Profile for DATEX II::D2Class;@ENDSTEREO;$DES;$CLT={BAAD1988-574E-42ad-87AC-75EDD47CBE73}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<extendedProperties tagged="0" package_name="EvaluationResultsPublication"/>
+				<links>
+					<Generalization xmi:id="EAID_342D874B_8FA3_42ec_925C_BE203B411979" start="EAID_BAAD1988_574E_42ad_87AC_75EDD47CBE73" end="EAID_D4561516_6FE3_4481_BBFB_71ED4D598378"/>
+					<Aggregation xmi:id="EAID_A96E50D2_5922_44b2_AF51_73C7A309979F" start="EAID_5454DD3B_B26C_4454_A229_524E42AAB33F" end="EAID_BAAD1988_574E_42ad_87AC_75EDD47CBE73"/>
+				</links>
+			</element>
+		</elements>
+		<connectors>
+			<connector xmi:idref="EAID_51D3B26C_B401_49da_B500_0FCD78B84009">
+				<source xmi:idref="EAID_4458F944_FEFA_4456_892F_936C87AD30DD">
+					<model ea_localid="18116" type="Class" name="AirQualityKpi"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_4D04FA8D_D594_4610_BF75_69D6997A96ED">
+					<model ea_localid="18112" type="Class" name="Kpi"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="15693"/>
+				<properties ea_type="Generalization" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_566F9E83_3636_4682_AB39_FE74F820C1A5">
+				<source xmi:idref="EAID_0B1996D6_E1E6_42ac_B4DE_EDD7A2EC4E97">
+					<model ea_localid="18117" type="Note"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_4458F944_FEFA_4456_892F_936C87AD30DD">
+					<model ea_localid="18116" type="Class" name="AirQualityKpi"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="15694"/>
+				<properties ea_type="NoteLink" direction="Source -&gt; Destination"/>
+				<modifiers isRoot="false" isLeaf="false"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_6DE624DE_B03A_4761_A845_74A04B5D05D1">
+				<source xmi:idref="EAID_6ADADB04_4333_4e66_9FA3_6AF48699394F">
+					<model ea_localid="18108" type="Class" name="AirQualityKpiDetails"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_E5B7C3C6_EEA2_43b9_B57F_191E84D486CF">
+					<model ea_localid="18113" type="Class" name="KpiDetails"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="15687"/>
+				<properties ea_type="Generalization" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_10758CD4_74F8_47d4_92B6_0739D27395D0">
+				<source xmi:idref="EAID_BCB2A033_0658_47fb_BF23_38BBE357E1E6">
+					<model ea_localid="18120" type="Class" name="PollutionExtended"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type multiplicity="0..*" aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_6ADADB04_4333_4e66_9FA3_6AF48699394F">
+					<model ea_localid="18108" type="Class" name="AirQualityKpiDetails"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="composite" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="15682"/>
+				<properties ea_type="Aggregation" subtype="Strong" stereotype="D2Relation" direction="Source -&gt; Destination"/>
+				<modifiers isRoot="false" isLeaf="false"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels lb="0..*" mb=" &#xA;«D2Relation»"/>
+				<extendedProperties conditional=" &#xA;«D2Relation»" virtualInheritance="0"/>
+				<style/>
+				<xrefs value="$XREFPROP=$XID={333B593D-DC15-4c67-AF0A-30E636F31E02}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=D2Relation;GUID={099D085B-C773-43b3-B30A-8D036F699B6E};FQName=UML Profile for DATEX II::D2Relation;@ENDSTEREO;$DES;$CLT={10758CD4-74F8-47d4-92B6-0739D27395D0}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<tags>
+					<tag xmi:id="EAID_0818D9FC_00A6_cf00_898A_69526057987E" name="order" value="1"/>
+					<tag xmi:id="EAID_465BEE89_CF73_66cf_9AD3_37E7B25CD7B4" name="definition"/>
+					<tag xmi:id="EAID_8D3D7693_541D_3154_8518_4AB8486BAC43" name="regulatoryContext"/>
+				</tags>
+			</connector>
+			<connector xmi:idref="EAID_77F122C4_B249_4c3e_8D78_1BE7FF2A20C8">
+				<source xmi:idref="EAID_EA327FC7_4C90_443e_9E12_627BA77FA33C">
+					<model ea_localid="18106" type="Class" name="DelayKpi"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_4D04FA8D_D594_4610_BF75_69D6997A96ED">
+					<model ea_localid="18112" type="Class" name="Kpi"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="15683"/>
+				<properties ea_type="Generalization" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_72D934F2_DA97_4345_AE70_7CD57E265B48">
+				<source xmi:idref="EAID_8E688F6C_55D8_4072_A46E_C8E82936C9E8">
+					<model ea_localid="18118" type="Note"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_EA327FC7_4C90_443e_9E12_627BA77FA33C">
+					<model ea_localid="18106" type="Class" name="DelayKpi"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="15695"/>
+				<properties ea_type="NoteLink" direction="Source -&gt; Destination"/>
+				<modifiers isRoot="false" isLeaf="false"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_824EF445_5CE2_4079_9400_301A60FCB7D0">
+				<source xmi:idref="EAID_118EAE62_649C_46de_98C6_0B7AFA55F8A3">
+					<model ea_localid="18119" type="Class" name="DelayKpiDetails"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_E5B7C3C6_EEA2_43b9_B57F_191E84D486CF">
+					<model ea_localid="18113" type="Class" name="KpiDetails"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="15696"/>
+				<properties ea_type="Generalization" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_750E14FF_0AFB_4aab_9791_54D5605EF8F4">
+				<source xmi:idref="EAID_4D04FA8D_D594_4610_BF75_69D6997A96ED">
+					<model ea_localid="18112" type="Class" name="Kpi"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type multiplicity="0..*" aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_07971335_D3C0_44e5_ADF0_B467AA0A1B19">
+					<model ea_localid="18105" type="Class" name="MeasureEvaluation"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="composite" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="15688"/>
+				<properties ea_type="Aggregation" subtype="Strong" stereotype="D2Relation" direction="Source -&gt; Destination"/>
+				<modifiers isRoot="false" isLeaf="false"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels lb="0..*" mb=" &#xA;«D2Relation»"/>
+				<extendedProperties conditional=" &#xA;«D2Relation»" virtualInheritance="0"/>
+				<style/>
+				<xrefs value="$XREFPROP=$XID={251B756C-0897-47ee-B524-D2AFF154309B}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=D2Relation;GUID={099D085B-C773-43b3-B30A-8D036F699B6E};FQName=UML Profile for DATEX II::D2Relation;@ENDSTEREO;$DES;$CLT={750E14FF-0AFB-4aab-9791-54D5605EF8F4}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<tags>
+					<tag xmi:id="EAID_0818D9FC_00A6_cf00_BAE5_07C45482F574" name="order" value="1"/>
+					<tag xmi:id="EAID_465BEE89_CF73_66cf_90CB_39F38B9527E4" name="definition"/>
+					<tag xmi:id="EAID_8D3D7693_541D_3154_AB06_08C61BC69347" name="regulatoryContext"/>
+				</tags>
+			</connector>
+			<connector xmi:idref="EAID_42456CE6_9554_4c06_B638_1DD51F2EE2DC">
+				<source xmi:idref="EAID_E5B7C3C6_EEA2_43b9_B57F_191E84D486CF">
+					<model ea_localid="18113" type="Class" name="KpiDetails"/>
+					<role name="withResponse" visibility="Public" targetScope="instance"/>
+					<type multiplicity="1" aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_4D04FA8D_D594_4610_BF75_69D6997A96ED">
+					<model ea_localid="18112" type="Class" name="Kpi"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="composite" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="15689"/>
+				<properties ea_type="Aggregation" subtype="Strong" stereotype="D2Relation" direction="Source -&gt; Destination"/>
+				<modifiers isRoot="false" isLeaf="false"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels lb="1" lt="+withResponse" mb=" &#xA;«D2Relation»"/>
+				<extendedProperties conditional=" &#xA;«D2Relation»" virtualInheritance="0"/>
+				<style/>
+				<xrefs value="$XREFPROP=$XID={AF659B9F-8F3B-423f-AB09-A644CB4741EB}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=D2Relation;GUID={099D085B-C773-43b3-B30A-8D036F699B6E};FQName=UML Profile for DATEX II::D2Relation;@ENDSTEREO;$DES;$CLT={42456CE6-9554-4c06-B638-1DD51F2EE2DC}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<tags>
+					<tag xmi:id="EAID_0818D9FC_00A6_cf00_B4A9_EFD6002714C7" name="order" value="1"/>
+					<tag xmi:id="EAID_465BEE89_CF73_66cf_B0E6_40D4AC953327" name="definition" value="Evaluation results for the scenario that the response measure is in effect"/>
+					<tag xmi:id="EAID_8D3D7693_541D_3154_BB5F_89B02CE14639" name="regulatoryContext"/>
+				</tags>
+			</connector>
+			<connector xmi:idref="EAID_9B9B363F_B283_4c9b_8615_0D389E839BAD">
+				<source xmi:idref="EAID_DEAD8BA0_FF56_44fd_8BAC_196565D92D1F">
+					<model ea_localid="18115" type="Note"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_4D04FA8D_D594_4610_BF75_69D6997A96ED">
+					<model ea_localid="18112" type="Class" name="Kpi"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="15691"/>
+				<properties ea_type="NoteLink" direction="Source -&gt; Destination"/>
+				<modifiers isRoot="false" isLeaf="false"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_D5EBF80F_FA9B_4933_8D54_02875251E67C">
+				<source xmi:idref="EAID_E5B7C3C6_EEA2_43b9_B57F_191E84D486CF">
+					<model ea_localid="18113" type="Class" name="KpiDetails"/>
+					<role name="withoutResponse" visibility="Public" targetScope="instance"/>
+					<type multiplicity="1" aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_4D04FA8D_D594_4610_BF75_69D6997A96ED">
+					<model ea_localid="18112" type="Class" name="Kpi"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="composite" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="15690"/>
+				<properties ea_type="Aggregation" subtype="Strong" stereotype="D2Relation" direction="Source -&gt; Destination"/>
+				<modifiers isRoot="false" isLeaf="false"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels lb="1" lt="+withoutResponse" mb=" &#xA;«D2Relation»"/>
+				<extendedProperties conditional=" &#xA;«D2Relation»" virtualInheritance="0"/>
+				<style/>
+				<xrefs value="$XREFPROP=$XID={09B38F9F-4FF2-47bb-BDA4-4C2EDFB3D764}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=D2Relation;GUID={099D085B-C773-43b3-B30A-8D036F699B6E};FQName=UML Profile for DATEX II::D2Relation;@ENDSTEREO;$DES;$CLT={D5EBF80F-FA9B-4933-8D54-02875251E67C}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<tags>
+					<tag xmi:id="EAID_0818D9FC_00A6_cf00_9CEC_60FA9BC008D8" name="order" value="2"/>
+					<tag xmi:id="EAID_465BEE89_CF73_66cf_AB41_C4F571AE66F0" name="definition" value="Evaluation results for the scenario that the response measure is not in effect"/>
+					<tag xmi:id="EAID_8D3D7693_541D_3154_BB1E_3669EE363D7C" name="regulatoryContext"/>
+				</tags>
+			</connector>
+			<connector xmi:idref="EAID_8C970384_6320_4866_86C8_4C3BE20B7B4A">
+				<source xmi:idref="EAID_DEAD8BA0_FF56_44fd_8BAC_196565D92D1F">
+					<model ea_localid="18115" type="Note"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_E5B7C3C6_EEA2_43b9_B57F_191E84D486CF">
+					<model ea_localid="18113" type="Class" name="KpiDetails"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="15692"/>
+				<properties ea_type="NoteLink" direction="Source -&gt; Destination"/>
+				<modifiers isRoot="false" isLeaf="false"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_870E5DC7_204B_4072_8FAE_5921C8143909">
+				<source xmi:idref="EAID_07971335_D3C0_44e5_ADF0_B467AA0A1B19">
+					<model ea_localid="18105" type="Class" name="MeasureEvaluation"/>
+					<role name="usedMeasures" visibility="Public" targetScope="instance"/>
+					<type multiplicity="0..*" aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_5454DD3B_B26C_4454_A229_524E42AAB33F">
+					<model ea_localid="18104" type="Class" name="ResponseEvaluation"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="composite" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="15685"/>
+				<properties ea_type="Aggregation" subtype="Strong" stereotype="D2Relation" direction="Source -&gt; Destination"/>
+				<modifiers isRoot="false" isLeaf="false"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels lb="0..*" lt="+usedMeasures" mb=" &#xA;«D2Relation»"/>
+				<extendedProperties conditional=" &#xA;«D2Relation»" virtualInheritance="0"/>
+				<style/>
+				<xrefs value="$XREFPROP=$XID={A966AA5A-07CE-4075-AB83-48FE7E306C28}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=D2Relation;GUID={099D085B-C773-43b3-B30A-8D036F699B6E};FQName=UML Profile for DATEX II::D2Relation;@ENDSTEREO;$DES;$CLT={870E5DC7-204B-4072-8FAE-5921C8143909}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<tags>
+					<tag xmi:id="EAID_0818D9FC_00A6_cf00_A616_9F2E2491BD29" name="order" value="1"/>
+					<tag xmi:id="EAID_465BEE89_CF73_66cf_9DE5_F36D7ACAA7DF" name="definition" value="The evaluation results for response measures that are included in the set that produced the best combined utility. If all combinations of measures have been evaluated to be worse than making no response, this will be empty."/>
+					<tag xmi:id="EAID_8D3D7693_541D_3154_9A7C_AE1CABF600AC" name="regulatoryContext"/>
+				</tags>
+			</connector>
+			<connector xmi:idref="EAID_E03B1033_2624_4477_8FAF_A9D51E502768">
+				<source xmi:idref="EAID_07971335_D3C0_44e5_ADF0_B467AA0A1B19">
+					<model ea_localid="18105" type="Class" name="MeasureEvaluation"/>
+					<role name="unusedMeasures" visibility="Public" targetScope="instance"/>
+					<type multiplicity="0..*" aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_5454DD3B_B26C_4454_A229_524E42AAB33F">
+					<model ea_localid="18104" type="Class" name="ResponseEvaluation"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="composite" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="15686"/>
+				<properties ea_type="Aggregation" subtype="Strong" stereotype="D2Relation" direction="Source -&gt; Destination"/>
+				<modifiers isRoot="false" isLeaf="false"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels lb="0..*" lt="+unusedMeasures" mb=" &#xA;«D2Relation»"/>
+				<extendedProperties conditional=" &#xA;«D2Relation»" virtualInheritance="0"/>
+				<style/>
+				<xrefs value="$XREFPROP=$XID={795272D5-31D7-4b7c-B843-2564C2007965}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=D2Relation;GUID={099D085B-C773-43b3-B30A-8D036F699B6E};FQName=UML Profile for DATEX II::D2Relation;@ENDSTEREO;$DES;$CLT={E03B1033-2624-4477-8FAF-A9D51E502768}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<tags>
+					<tag xmi:id="EAID_0818D9FC_00A6_cf00_B1E4_BB5E5F5824EA" name="order" value="2"/>
+					<tag xmi:id="EAID_465BEE89_CF73_66cf_B2F7_FE317098685A" name="definition" value="The evaluation results for response measures that are not included in the set that produced the best combined utility – i.e. the responses which, if added to the best set, would make things worse."/>
+					<tag xmi:id="EAID_8D3D7693_541D_3154_8441_9ADD81A3AFAE" name="regulatoryContext"/>
+				</tags>
+			</connector>
+			<connector xmi:idref="EAID_D2A2CB07_D7F7_4cea_B67D_0FB50AAD7575">
+				<source xmi:idref="EAID_BCB2A033_0658_47fb_BF23_38BBE357E1E6">
+					<model ea_localid="18120" type="Class" name="PollutionExtended"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_890BB8E3_8CFE_4524_9D3D_9DDE17CE1B1D">
+					<model ea_localid="17171" type="Class" name="Pollution"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="15707"/>
+				<properties ea_type="Generalization" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_A96E50D2_5922_44b2_AF51_73C7A309979F">
+				<source xmi:idref="EAID_5454DD3B_B26C_4454_A229_524E42AAB33F">
+					<model ea_localid="18104" type="Class" name="ResponseEvaluation"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type multiplicity="1" aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_BAAD1988_574E_42ad_87AC_75EDD47CBE73">
+					<model ea_localid="18125" type="Class" name="EvaluationResultsPublication"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="composite" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="15699"/>
+				<properties ea_type="Aggregation" subtype="Strong" stereotype="D2Relation" direction="Source -&gt; Destination"/>
+				<modifiers isRoot="false" isLeaf="false"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels lb="1" mb=" &#xA;«D2Relation»"/>
+				<extendedProperties conditional=" &#xA;«D2Relation»" virtualInheritance="0"/>
+				<style/>
+				<xrefs value="$XREFPROP=$XID={B64CD481-E734-49de-943A-8856E8236BB2}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=D2Relation;GUID={099D085B-C773-43b3-B30A-8D036F699B6E};FQName=UML Profile for DATEX II::D2Relation;@ENDSTEREO;$DES;$CLT={A96E50D2-5922-44b2-AF51-73C7A309979F}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<tags>
+					<tag xmi:id="EAID_0818D9FC_00A6_cf00_97B1_6FA4FFEB5EDD" name="order" value="1"/>
+					<tag xmi:id="EAID_465BEE89_CF73_66cf_BAEA_DD3025F2524F" name="definition"/>
+					<tag xmi:id="EAID_8D3D7693_541D_3154_BEE1_D45FCD73744F" name="regulatoryContext"/>
+				</tags>
+			</connector>
+			<connector xmi:idref="EAID_EA77FBC1_F945_4cb4_9628_2B60BA1A8DE1">
+				<source xmi:idref="EAID_5454DD3B_B26C_4454_A229_524E42AAB33F">
+					<model ea_localid="18104" type="Class" name="ResponseEvaluation"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type multiplicity="0..*" aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Navigable;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_CE1D655C_F357_4e1f_9565_C48F4A4C993D">
+					<model ea_localid="18102" type="Class" name="EvaluatedActionsPublication"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="composite" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;Owned=0;Navigable=Unspecified;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="15701"/>
+				<properties ea_type="Aggregation" subtype="Strong" stereotype="D2Relation" direction="Source -&gt; Destination"/>
+				<modifiers isRoot="false" isLeaf="false"/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels lb="0..*" mb=" &#xA;«D2Relation»"/>
+				<extendedProperties conditional=" &#xA;«D2Relation»" virtualInheritance="0"/>
+				<style/>
+				<xrefs value="$XREFPROP=$XID={BF2F8E4B-C292-4469-9F55-79FF0F56EF6B}$XID;$NAM=Stereotypes$NAM;$TYP=connector property$TYP;$VIS=Public$VIS;$PAR=0$PAR;$DES=@STEREO;Name=D2Relation;GUID={099D085B-C773-43b3-B30A-8D036F699B6E};FQName=UML Profile for DATEX II::D2Relation;@ENDSTEREO;$DES;$CLT={EA77FBC1-F945-4cb4-9628-2B60BA1A8DE1}$CLT;$SUP=&lt;none&gt;$SUP;$ENDXREF;"/>
+				<tags>
+					<tag xmi:id="EAID_0818D9FC_00A6_cf00_AADA_1EF76EDAC150" name="order" value="1"/>
+					<tag xmi:id="EAID_465BEE89_CF73_66cf_A6BB_4380DB7C64CF" name="definition"/>
+					<tag xmi:id="EAID_8D3D7693_541D_3154_86A5_2D8B2030B088" name="regulatoryContext"/>
+				</tags>
+			</connector>
+			<connector xmi:idref="EAID_43B48F52_EE59_49e5_9D2B_BE39B7F8548A">
+				<source xmi:idref="EAID_6C9E978A_D363_48d7_B414_9E4A4CF634B2">
+					<model ea_localid="18122" type="DataType" name="AmountOfMoney"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_6594CF20_4A46_49cf_8682_CDF7A3370A8B">
+					<model ea_localid="17250" type="DataType" name="Decimal"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="15704"/>
+				<properties ea_type="Generalization" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_A8C61FF1_A069_4255_BB41_1807CA7B8097">
+				<source xmi:idref="EAID_AF17E1DD_C630_4739_86DF_C7CC30BA3409">
+					<model ea_localid="18124" type="DataType" name="Kilograms"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_6D9A1FCE_0D84_4c83_9683_2AE099B41685">
+					<model ea_localid="17234" type="DataType" name="Float"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="15702"/>
+				<properties ea_type="Generalization" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_A6AAB926_E501_48b6_93BB_15130B2EFFE1">
+				<source xmi:idref="EAID_A63B7C97_DE4F_4bb7_8C1A_E4C3A3513549">
+					<model ea_localid="18123" type="DataType" name="VehicleHours"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_6D9A1FCE_0D84_4c83_9683_2AE099B41685">
+					<model ea_localid="17234" type="DataType" name="Float"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="15703"/>
+				<properties ea_type="Generalization" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_EA5895D4_3566_4840_8641_0A7A2A66B4C1">
+				<source xmi:idref="EAID_CE1D655C_F357_4e1f_9565_C48F4A4C993D">
+					<model ea_localid="18102" type="Class" name="EvaluatedActionsPublication"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_BD02A0FE_482D_4bc0_ADA1_B01FBC4C0BD8">
+					<model ea_localid="17845" type="Class" name="SituationPublication"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="15706"/>
+				<properties ea_type="Generalization" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+			<connector xmi:idref="EAID_342D874B_8FA3_42ec_925C_BE203B411979">
+				<source xmi:idref="EAID_BAAD1988_574E_42ad_87AC_75EDD47CBE73">
+					<model ea_localid="18125" type="Class" name="EvaluationResultsPublication"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="false"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</source>
+				<target xmi:idref="EAID_D4561516_6FE3_4481_BBFB_71ED4D598378">
+					<model ea_localid="17155" type="Class" name="GenericPublication"/>
+					<role visibility="Public" targetScope="instance"/>
+					<type aggregation="none" containment="Unspecified"/>
+					<constraints/>
+					<modifiers isOrdered="false" changeable="none" isNavigable="true"/>
+					<style value="Union=0;Derived=0;AllowDuplicates=0;"/>
+					<documentation/>
+					<xrefs/>
+					<tags/>
+				</target>
+				<model ea_localid="15705"/>
+				<properties ea_type="Generalization" direction="Source -&gt; Destination"/>
+				<parameterSubstitutions/>
+				<documentation/>
+				<appearance linemode="3" linecolor="-1" linewidth="0" seqno="0" headStyle="0" lineStyle="0"/>
+				<labels/>
+				<extendedProperties virtualInheritance="0"/>
+				<style/>
+				<xrefs/>
+				<tags/>
+			</connector>
+		</connectors>
+		<primitivetypes>
+			<packagedElement xmi:type="uml:Package" xmi:id="EAPrimitiveTypesPackage" name="EA_PrimitiveTypes_Package" visibility="public"/>
+		</primitivetypes>
+		<profiles>
+			<uml:Profile xmi:version="2.1" xmlns:uml="http://schema.omg.org/spec/UML/2.1/" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmi:id="58A528D2-C" nsPrefix="UML_Profile_for_DATEX_II" name="UML Profile for DATEX II" metamodelReference="mmref01">
+				<ownedComment xmi:type="uml:Comment" xmi:id="comment01" annotatedElement="58A528D2-C">
+					<body>UML Profile for DATEX II Version:1.0</body>
+				</ownedComment>
+				<packageImport xmi:id="mmref01">
+					<importedPackage href="http://schema.omg.org/spec/UML/2.1/"/>
+				</packageImport>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="D2Identifiable" name="D2Identifiable">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="D2Identifiable-base_Class" name="base_Class" association="Class_D2Identifiable">
+						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="D2Identifiable-regulatoryContext" name="regulatoryContext">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="D2Identifiable-definition" name="definition">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Class_D2Identifiable" name="A_Class_D2Identifiable" memberEnd="extension_D2Identifiable D2Identifiable-base_Class">
+					<ownedEnd xmi:id="extension_D2Identifiable" name="extension_D2Identifiable" type="D2Identifiable" isComposite="true" lower="0" upper="1" memberEnd="extension_D2Identifiable D2Identifiable-base_Class"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="ExternalClass" name="ExternalClass">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ExternalClass-base_Class" name="base_Class" association="Class_ExternalClass">
+						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ExternalClass-schemaName" name="schemaName">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ExternalClass-description" name="description">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Class_ExternalClass" name="A_Class_ExternalClass" memberEnd="extension_ExternalClass ExternalClass-base_Class">
+					<ownedEnd xmi:id="extension_ExternalClass" name="extension_ExternalClass" type="ExternalClass" isComposite="true" lower="0" upper="1" memberEnd="extension_ExternalClass ExternalClass-base_Class"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="ExternalNamespace" name="ExternalNamespace">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ExternalNamespace-base_Package" name="base_Package" association="Package_ExternalNamespace">
+						<type href="http://schema.omg.org/spec/UML/2.1/Package"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ExternalNamespace-prefix" name="prefix">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ExternalNamespace-schemaLocation" name="schemaLocation">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ExternalNamespace-namespaceUri" name="namespaceUri">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ExternalNamespace-description" name="description">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Package_ExternalNamespace" name="A_Package_ExternalNamespace" memberEnd="extension_ExternalNamespace ExternalNamespace-base_Package">
+					<ownedEnd xmi:id="extension_ExternalNamespace" name="extension_ExternalNamespace" type="ExternalNamespace" isComposite="true" lower="0" upper="1" memberEnd="extension_ExternalNamespace ExternalNamespace-base_Package"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="D2Namespace" name="D2Namespace">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="D2Namespace-base_Package" name="base_Package" association="Package_D2Namespace">
+						<type href="http://schema.omg.org/spec/UML/2.1/Package"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="D2Namespace-version" name="version">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="D2Namespace-definition" name="definition">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="D2Namespace-prefix" name="prefix">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Package_D2Namespace" name="A_Package_D2Namespace" memberEnd="extension_D2Namespace D2Namespace-base_Package">
+					<ownedEnd xmi:id="extension_D2Namespace" name="extension_D2Namespace" type="D2Namespace" isComposite="true" lower="0" upper="1" memberEnd="extension_D2Namespace D2Namespace-base_Package"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="D2VersionedIdentifiable" name="D2VersionedIdentifiable">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="D2VersionedIdentifiable-base_Class" name="base_Class" association="Class_D2VersionedIdentifiable">
+						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="D2VersionedIdentifiable-regulatoryContext" name="regulatoryContext">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="D2VersionedIdentifiable-definition" name="definition">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Class_D2VersionedIdentifiable" name="A_Class_D2VersionedIdentifiable" memberEnd="extension_D2VersionedIdentifiable D2VersionedIdentifiable-base_Class">
+					<ownedEnd xmi:id="extension_D2VersionedIdentifiable" name="extension_D2VersionedIdentifiable" type="D2VersionedIdentifiable" isComposite="true" lower="0" upper="1" memberEnd="extension_D2VersionedIdentifiable D2VersionedIdentifiable-base_Class"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="D2Relation" name="D2Relation">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="D2Relation-base_Composition" name="base_Composition" association="Composition_D2Relation">
+						<type href="http://schema.omg.org/spec/UML/2.1/Composition"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="D2Relation-regulatoryContext" name="regulatoryContext">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="D2Relation-definition" name="definition">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="D2Relation-order" name="order">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Composition_D2Relation" name="A_Composition_D2Relation" memberEnd="extension_D2Relation D2Relation-base_Composition">
+					<ownedEnd xmi:id="extension_D2Relation" name="extension_D2Relation" type="D2Relation" isComposite="true" lower="0" upper="1" memberEnd="extension_D2Relation D2Relation-base_Composition"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="D2LevelBExtension" name="D2LevelBExtension">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="D2LevelBExtension-base_Generalization" name="base_Generalization" association="Generalization_D2LevelBExtension">
+						<type href="http://schema.omg.org/spec/UML/2.1/Generalization"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Generalization_D2LevelBExtension" name="A_Generalization_D2LevelBExtension" memberEnd="extension_D2LevelBExtension D2LevelBExtension-base_Generalization">
+					<ownedEnd xmi:id="extension_D2LevelBExtension" name="extension_D2LevelBExtension" type="D2LevelBExtension" isComposite="true" lower="0" upper="1" memberEnd="extension_D2LevelBExtension D2LevelBExtension-base_Generalization"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="D2Package" name="D2Package">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="D2Package-base_Package" name="base_Package" association="Package_D2Package">
+						<type href="http://schema.omg.org/spec/UML/2.1/Package"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="D2Package-definition" name="definition">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Package_D2Package" name="A_Package_D2Package" memberEnd="extension_D2Package D2Package-base_Package">
+					<ownedEnd xmi:id="extension_D2Package" name="extension_D2Package" type="D2Package" isComposite="true" lower="0" upper="1" memberEnd="extension_D2Package D2Package-base_Package"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="D2Class" name="D2Class">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="D2Class-base_Class" name="base_Class" association="Class_D2Class">
+						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="D2Class-regulatoryContext" name="regulatoryContext">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="D2Class-definition" name="definition">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Class_D2Class" name="A_Class_D2Class" memberEnd="extension_D2Class D2Class-base_Class">
+					<ownedEnd xmi:id="extension_D2Class" name="extension_D2Class" type="D2Class" isComposite="true" lower="0" upper="1" memberEnd="extension_D2Class D2Class-base_Class"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="D2ModelRoot" name="D2ModelRoot">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="D2ModelRoot-base_Class" name="base_Class" association="Class_D2ModelRoot">
+						<type href="http://schema.omg.org/spec/UML/2.1/Class"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="D2ModelRoot-regulatoryContext" name="regulatoryContext">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="D2ModelRoot-version" name="version">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="D2ModelRoot-definition" name="definition">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="D2ModelRoot-profileVersion" name="profileVersion">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="D2ModelRoot-extensionVersion" name="extensionVersion">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="D2ModelRoot-extensionName" name="extensionName">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="D2ModelRoot-profileName" name="profileName">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="D2ModelRoot-modelBaseVersion" name="modelBaseVersion">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="D2ModelRoot-rootElement" name="rootElement">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Class_D2ModelRoot" name="A_Class_D2ModelRoot" memberEnd="extension_D2ModelRoot D2ModelRoot-base_Class">
+					<ownedEnd xmi:id="extension_D2ModelRoot" name="extension_D2ModelRoot" type="D2ModelRoot" isComposite="true" lower="0" upper="1" memberEnd="extension_D2ModelRoot D2ModelRoot-base_Class"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="ExternalType" name="ExternalType">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ExternalType-base_DataType" name="base_DataType" association="DataType_ExternalType">
+						<type href="http://schema.omg.org/spec/UML/2.1/DataType"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ExternalType-schemaName" name="schemaName">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="ExternalType-description" name="description">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="DataType_ExternalType" name="A_DataType_ExternalType" memberEnd="extension_ExternalType ExternalType-base_DataType">
+					<ownedEnd xmi:id="extension_ExternalType" name="extension_ExternalType" type="ExternalType" isComposite="true" lower="0" upper="1" memberEnd="extension_ExternalType ExternalType-base_DataType"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="D2Attribute" name="D2Attribute">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="D2Attribute-base_Attribute" name="base_Attribute" association="Attribute_D2Attribute">
+						<type href="http://schema.omg.org/spec/UML/2.1/Attribute"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="D2Attribute-regulatoryContext" name="regulatoryContext">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="D2Attribute-definition" name="definition">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="D2Attribute-schemaAttribute" name="schemaAttribute">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="D2Attribute-targetClass" name="targetClass">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="D2Attribute-order" name="order">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="D2Attribute-schemaName" name="schemaName">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Attribute_D2Attribute" name="A_Attribute_D2Attribute" memberEnd="extension_D2Attribute D2Attribute-base_Attribute">
+					<ownedEnd xmi:id="extension_D2Attribute" name="extension_D2Attribute" type="D2Attribute" isComposite="true" lower="0" upper="1" memberEnd="extension_D2Attribute D2Attribute-base_Attribute"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="D2Literal" name="D2Literal">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="D2Literal-base_Attribute" name="base_Attribute" association="Attribute_D2Literal">
+						<type href="http://schema.omg.org/spec/UML/2.1/Attribute"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="D2Literal-regulatoryContext" name="regulatoryContext">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="D2Literal-definition" name="definition">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="D2Literal-order" name="order">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Attribute_D2Literal" name="A_Attribute_D2Literal" memberEnd="extension_D2Literal D2Literal-base_Attribute">
+					<ownedEnd xmi:id="extension_D2Literal" name="extension_D2Literal" type="D2Literal" isComposite="true" lower="0" upper="1" memberEnd="extension_D2Literal D2Literal-base_Attribute"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="D2Datatype" name="D2Datatype">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="D2Datatype-base_DataType" name="base_DataType" association="DataType_D2Datatype">
+						<type href="http://schema.omg.org/spec/UML/2.1/DataType"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="D2Datatype-regulatoryContext" name="regulatoryContext">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="D2Datatype-definition" name="definition">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="D2Datatype-schemaType" name="schemaType">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="D2Datatype-facets" name="facets">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="D2Datatype-schemaTypeInclude" name="schemaTypeInclude">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="DataType_D2Datatype" name="A_DataType_D2Datatype" memberEnd="extension_D2Datatype D2Datatype-base_DataType">
+					<ownedEnd xmi:id="extension_D2Datatype" name="extension_D2Datatype" type="D2Datatype" isComposite="true" lower="0" upper="1" memberEnd="extension_D2Datatype D2Datatype-base_DataType"/>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Stereotype" xmi:id="D2Enumeration" name="D2Enumeration">
+					<ownedAttribute xmi:type="uml:Property" xmi:id="D2Enumeration-base_Enumeration" name="base_Enumeration" association="Enumeration_D2Enumeration">
+						<type href="http://schema.omg.org/spec/UML/2.1/Enumeration"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="D2Enumeration-regulatoryContext" name="regulatoryContext">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+					<ownedAttribute xmi:type="uml:Property" xmi:id="D2Enumeration-definition" name="definition">
+						<type href="http://schema.omg.org/spec/UML/2.1/String"/>
+					</ownedAttribute>
+				</packagedElement>
+				<packagedElement xmi:type="uml:Extension" xmi:id="Enumeration_D2Enumeration" name="A_Enumeration_D2Enumeration" memberEnd="extension_D2Enumeration D2Enumeration-base_Enumeration">
+					<ownedEnd xmi:id="extension_D2Enumeration" name="extension_D2Enumeration" type="D2Enumeration" isComposite="true" lower="0" upper="1" memberEnd="extension_D2Enumeration D2Enumeration-base_Enumeration"/>
+				</packagedElement>
+			</uml:Profile>
+		</profiles>
+		<diagrams>
+			<diagram xmi:id="EAID_A82CF330_647A_4498_A51C_8272E1C5AEFE">
+				<model package="EAPK_9A5C7AFB_B8F0_42a6_8819_5904121F5C60" localID="3063" owner="EAPK_9A5C7AFB_B8F0_42a6_8819_5904121F5C60"/>
+				<properties name="ResponseEvaluation" type="Logical"/>
+				<project author="COR19759" version="1.0" created="2018-04-04 00:00:00" modified="2018-04-05 16:19:14"/>
+				<style1 value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=827;DocSize.cy=1169;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=9;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;ShowShape=1;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
+				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;ProfileData=;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;Theme=:119;SaveTag=7459DE31;"/>
+				<swimlanes value="locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;cls=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;"/>
+				<matrixitems value="locked=false;matrixactive=false;swimlanesactive=true;kanbanactive=false;width=1;clrLine=0;"/>
+				<extendedProperties/>
+				<elements>
+					<element geometry="Left=42;Top=149;Right=215;Bottom=219;" subject="EAID_5CE506F1_CAA6_42f0_8744_2DE52E5301B4" seqno="1" style=" DUID=19AD3C12;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;HideIcon=0;"/>
+					<element geometry="Left=46;Top=258;Right=222;Bottom=328;" subject="EAID_E37BFB5C_DF65_4cb9_A64F_91C50C763BA2" seqno="2" style=" DUID=69532E5F;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;HideIcon=0;"/>
+					<element geometry="Left=483;Top=151;Right=603;Bottom=245;" subject="EAID_FB84F054_CA05_4d85_AA7D_C676FEB1F6BF" seqno="3" style=" DUID=50A14E80;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;HideIcon=0;"/>
+					<element geometry="Left=287;Top=150;Right=420;Bottom=340;" subject="EAID_20576AC2_BA92_471b_9799_4ABB4BBD3C63" seqno="4" style=" DUID=2732FD84;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;HideIcon=0;"/>
+				</elements>
+			</diagram>
+			<diagram xmi:id="EAID_FEA4C787_9218_4667_A3EA_2628D31973D2">
+				<model package="EAPK_20576AC2_BA92_471b_9799_4ABB4BBD3C63" localID="3064" owner="EAPK_20576AC2_BA92_471b_9799_4ABB4BBD3C63"/>
+				<properties name="ResponseEvaluation classes" type="Logical"/>
+				<project author="COR19759" version="1.0" created="2018-04-04 00:00:00" modified="2018-04-09 15:21:10"/>
+				<style1 value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=827;DocSize.cy=1169;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=9;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;ShowShape=1;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
+				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;ProfileData=;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;Theme=:119;SaveTag=9FAB85A1;"/>
+				<swimlanes value="locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;cls=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;"/>
+				<matrixitems value="locked=false;matrixactive=false;swimlanesactive=true;kanbanactive=false;width=1;clrLine=0;"/>
+				<extendedProperties/>
+				<elements>
+					<element geometry="Left=561;Top=600;Right=729;Bottom=676;" subject="EAID_BCB2A033_0658_47fb_BF23_38BBE357E1E6" seqno="1" style="DUID=21C0FE6D;HideIcon=0;"/>
+					<element geometry="Left=726;Top=417;Right=847;Bottom=493;" subject="EAID_118EAE62_649C_46de_98C6_0B7AFA55F8A3" seqno="2" style="DUID=00E3E74E;HideIcon=0;"/>
+					<element geometry="Left=310;Top=515;Right=421;Bottom=558;" subject="EAID_8E688F6C_55D8_4072_A46E_C8E82936C9E8" seqno="3" style="DUID=C978E1FA;"/>
+					<element geometry="Left=459;Top=517;Right=590;Bottom=559;" subject="EAID_0B1996D6_E1E6_42ac_B4DE_EDD7A2EC4E97" seqno="4" style="DUID=200A029C;"/>
+					<element geometry="Left=458;Top=412;Right=548;Bottom=482;" subject="EAID_4458F944_FEFA_4456_892F_936C87AD30DD" seqno="5" style="DUID=D349A2AB;HideIcon=0;"/>
+					<element geometry="Left=489;Top=108;Right=674;Bottom=196;" subject="EAID_DEAD8BA0_FF56_44fd_8BAC_196565D92D1F" seqno="6" style="DUID=D65F2731;"/>
+					<element geometry="Left=314;Top=179;Right=429;Bottom=234;" subject="EAID_58043B3D_9AD9_4039_BB7C_B312AFC3322E" seqno="7" style="DUID=2C32B809;"/>
+					<element geometry="Left=643;Top=265;Right=847;Bottom=341;" subject="EAID_E5B7C3C6_EEA2_43b9_B57F_191E84D486CF" seqno="8" style="DUID=C86C01C0;HideIcon=0;"/>
+					<element geometry="Left=385;Top=264;Right=497;Bottom=340;" subject="EAID_4D04FA8D_D594_4610_BF75_69D6997A96ED" seqno="9" style="DUID=B78D289C;HideIcon=0;"/>
+					<element geometry="Left=276;Top=598;Right=466;Bottom=674;" subject="EAID_890BB8E3_8CFE_4524_9D3D_9DDE17CE1B1D" seqno="10" style="DUID=FFDB6D4A;NSL=0;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;HideIcon=0;BCol=13434828;"/>
+					<element geometry="Left=594;Top=417;Right=697;Bottom=487;" subject="EAID_6ADADB04_4333_4e66_9FA3_6AF48699394F" seqno="11" style="DUID=EE0765E2;HideIcon=0;"/>
+					<element geometry="Left=273;Top=411;Right=427;Bottom=487;" subject="EAID_EA327FC7_4C90_443e_9E12_627BA77FA33C" seqno="12" style="DUID=38D78629;HideIcon=0;"/>
+					<element geometry="Left=65;Top=262;Right=285;Bottom=364;" subject="EAID_07971335_D3C0_44e5_ADF0_B467AA0A1B19" seqno="13" style="DUID=64268E36;HideIcon=0;"/>
+					<element geometry="Left=65;Top=75;Right=300;Bottom=164;" subject="EAID_5454DD3B_B26C_4454_A229_524E42AAB33F" seqno="14" style="DUID=D71450CE;HideIcon=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_566F9E83_3636_4682_AB39_FE74F820C1A5" style="Mode=3;EOID=D349A2AB;SOID=200A029C;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_51D3B26C_B401_49da_B500_0FCD78B84009" style="Mode=3;EOID=B78D289C;SOID=D349A2AB;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_8C970384_6320_4866_86C8_4C3BE20B7B4A" style="Mode=3;EOID=C86C01C0;SOID=D65F2731;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=3;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_9B9B363F_B283_4c9b_8615_0D389E839BAD" style="Mode=3;EOID=B78D289C;SOID=D65F2731;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=0;SY=-23;EX=0;EY=-23;EDGE=4;$LLB=CX=6:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LLT=CX=88:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LMT=;LMB=CX=65:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_D5EBF80F_FA9B_4933_8D54_02875251E67C" style="Mode=3;EOID=B78D289C;SOID=C86C01C0;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=-4;SY=21;EX=-4;EY=21;EDGE=4;$LLB=CX=6:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LLT=CX=72:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LMT=;LMB=CX=65:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_42456CE6_9554_4c06_B638_1DD51F2EE2DC" style="Mode=3;EOID=B78D289C;SOID=C86C01C0;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=4;$LLB=CX=17:CY=13:OX=-2:OY=-19:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LLT=;LMT=;LMB=CX=65:CY=13:OX=2:OY=1:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_750E14FF_0AFB_4aab_9791_54D5605EF8F4" style="Mode=3;EOID=64268E36;SOID=B78D289C;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_6DE624DE_B03A_4761_A845_74A04B5D05D1" style="Mode=3;EOID=C86C01C0;SOID=EE0765E2;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=0;SY=1;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_77F122C4_B249_4c3e_8D78_1BE7FF2A20C8" style="Mode=3;EOID=B78D289C;SOID=38D78629;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=37;SY=50;EX=31;EY=-43;EDGE=1;$LLB=CX=17:CY=13:OX=-23:OY=-2:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LLT=CX=87:CY=13:OX=91:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LMT=;LMB=CX=65:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_E03B1033_2624_4477_8FAF_A9D51E502768" style="Mode=3;EOID=D71450CE;SOID=64268E36;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=-52;SY=50;EX=-59;EY=-44;EDGE=1;$LLB=CX=17:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LLT=CX=75:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LMT=;LMB=CX=65:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_870E5DC7_204B_4072_8FAE_5921C8143909" style="Mode=3;EOID=D71450CE;SOID=64268E36;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=CX=17:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LLT=;LMT=;LMB=CX=65:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_10758CD4_74F8_47d4_92B6_0739D27395D0" style="Mode=3;EOID=EE0765E2;SOID=21C0FE6D;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=4;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_D2A2CB07_D7F7_4cea_B67D_0FB50AAD7575" style="Mode=3;EOID=FFDB6D4A;SOID=21C0FE6D;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_824EF445_5CE2_4079_9400_301A60FCB7D0" style="Mode=3;EOID=C86C01C0;SOID=00E3E74E;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_72D934F2_DA97_4345_AE70_7CD57E265B48" style="Mode=3;EOID=38D78629;SOID=C978E1FA;Color=-1;LWidth=0;Hidden=0;"/>
+				</elements>
+			</diagram>
+			<diagram xmi:id="EAID_DF6502AD_4DBA_4cf6_ADCA_A43B48EDF09F">
+				<model package="EAPK_FB84F054_CA05_4d85_AA7D_C676FEB1F6BF" localID="3067" owner="EAPK_FB84F054_CA05_4d85_AA7D_C676FEB1F6BF"/>
+				<properties name="DataTypes" type="Logical"/>
+				<project author="COR19759" version="1.0" created="2018-04-05 11:54:19" modified="2018-04-05 12:01:29"/>
+				<style1 value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=827;DocSize.cy=1169;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=9;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;ShowShape=1;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
+				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;ProfileData=;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;Theme=:119;SaveTag=692509B8;"/>
+				<swimlanes value="locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;cls=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;"/>
+				<matrixitems value="locked=false;matrixactive=false;swimlanesactive=true;kanbanactive=false;width=1;clrLine=0;"/>
+				<extendedProperties/>
+				<elements>
+					<element geometry="Left=193;Top=55;Right=283;Bottom=125;" subject="EAID_6D9A1FCE_0D84_4c83_9683_2AE099B41685" seqno="1" style="DUID=B51CC39A;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;HideIcon=0;"/>
+					<element geometry="Left=440;Top=51;Right=530;Bottom=121;" subject="EAID_6594CF20_4A46_49cf_8682_CDF7A3370A8B" seqno="2" style="DUID=8D932516;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;HideIcon=0;"/>
+					<element geometry="Left=279;Top=183;Right=369;Bottom=253;" subject="EAID_A63B7C97_DE4F_4bb7_8C1A_E4C3A3513549" seqno="3" style="DUID=7F7DFC56;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;HideIcon=0;"/>
+					<element geometry="Left=110;Top=181;Right=200;Bottom=251;" subject="EAID_AF17E1DD_C630_4739_86DF_C7CC30BA3409" seqno="4" style="DUID=512B7098;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;HideIcon=0;"/>
+					<element geometry="Left=444;Top=183;Right=534;Bottom=253;" subject="EAID_6C9E978A_D363_48d7_B414_9E4A4CF634B2" seqno="5" style="DUID=6BBC8056;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;HideIcon=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_A6AAB926_E501_48b6_93BB_15130B2EFFE1" style="Mode=3;EOID=B51CC39A;SOID=7F7DFC56;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_A8C61FF1_A069_4255_BB41_1807CA7B8097" style="Mode=3;EOID=B51CC39A;SOID=512B7098;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_43B48F52_EE59_49e5_9D2B_BE39B7F8548A" style="Mode=3;EOID=8D932516;SOID=6BBC8056;Color=-1;LWidth=0;Hidden=0;"/>
+				</elements>
+			</diagram>
+			<diagram xmi:id="EAID_B26215CF_627E_4472_9F79_62D8B8976EB7">
+				<model package="EAPK_5CE506F1_CAA6_42f0_8744_2DE52E5301B4" localID="3066" owner="EAPK_5CE506F1_CAA6_42f0_8744_2DE52E5301B4"/>
+				<properties name="EvaluatedActionsPublication" type="Logical"/>
+				<project author="COR19759" version="1.0" created="2018-04-04 17:37:11" modified="2018-04-09 15:22:01"/>
+				<style1 value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=827;DocSize.cy=1169;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=9;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;ShowShape=1;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
+				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;ProfileData=;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;Theme=:119;SaveTag=5B6DC0B8;"/>
+				<swimlanes value="locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;cls=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;"/>
+				<matrixitems value="locked=false;matrixactive=false;swimlanesactive=true;kanbanactive=false;width=1;clrLine=0;"/>
+				<extendedProperties/>
+				<elements>
+					<element geometry="Left=399;Top=272;Right=634;Bottom=361;" subject="EAID_5454DD3B_B26C_4454_A229_524E42AAB33F" seqno="1" style="DUID=D2578051;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;HideIcon=0;"/>
+					<element geometry="Left=105;Top=113;Right=299;Bottom=184;" subject="EAID_BD02A0FE_482D_4bc0_ADA1_B01FBC4C0BD8" seqno="2" style="DUID=42C96B74;NSL=0;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;HideIcon=0;BCol=13434828;"/>
+					<element geometry="Left=132;Top=282;Right=273;Bottom=352;" subject="EAID_CE1D655C_F357_4e1f_9565_C48F4A4C993D" seqno="3" style="DUID=28646428;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;HideIcon=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=4;$LLB=CX=17:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LLT=;LMT=;LMB=CX=65:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_EA77FBC1_F945_4cb4_9628_2B60BA1A8DE1" style="Mode=3;EOID=28646428;SOID=D2578051;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_EA5895D4_3566_4840_8641_0A7A2A66B4C1" style="Mode=3;EOID=42C96B74;SOID=28646428;Color=-1;LWidth=0;Hidden=0;"/>
+				</elements>
+			</diagram>
+			<diagram xmi:id="EAID_5C2C07E6_7615_4493_BBA4_F28142F0B7B1">
+				<model package="EAPK_E37BFB5C_DF65_4cb9_A64F_91C50C763BA2" localID="3065" owner="EAPK_E37BFB5C_DF65_4cb9_A64F_91C50C763BA2"/>
+				<properties name="EvaluationResultsPublication" type="Logical"/>
+				<project author="COR19759" version="1.0" created="2018-04-04 17:35:30" modified="2018-04-09 15:22:01"/>
+				<style1 value="ShowPrivate=1;ShowProtected=1;ShowPublic=1;HideRelationships=0;Locked=0;Border=1;HighlightForeign=1;PackageContents=1;SequenceNotes=0;ScalePrintImage=0;PPgs.cx=1;PPgs.cy=1;DocSize.cx=827;DocSize.cy=1169;ShowDetails=0;Orientation=P;Zoom=100;ShowTags=0;OpParams=1;VisibleAttributeDetail=0;ShowOpRetType=1;ShowIcons=1;CollabNums=0;HideProps=0;ShowReqs=0;ShowCons=0;PaperSize=9;HideParents=0;UseAlias=0;HideAtts=0;HideOps=0;HideStereo=0;HideElemStereo=0;ShowTests=0;ShowMaint=0;ConnectorNotation=UML 2.1;ExplicitNavigability=0;ShowShape=1;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;ShowNotes=0;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;"/>
+				<style2 value="ExcludeRTF=0;DocAll=0;HideQuals=0;AttPkg=1;ShowTests=0;ShowMaint=0;SuppressFOC=1;MatrixActive=0;SwimlanesActive=1;KanbanActive=0;MatrixLineWidth=1;MatrixLineClr=0;MatrixLocked=0;TConnectorNotation=UML 2.1;TExplicitNavigability=0;AdvancedElementProps=1;AdvancedFeatureProps=1;AdvancedConnectorProps=1;m_bElementClassifier=1;ProfileData=;MDGDgm=;STBLDgm=;ShowNotes=0;VisibleAttributeDetail=0;ShowOpRetType=1;SuppressBrackets=0;SuppConnectorLabels=0;PrintPageHeadFoot=0;ShowAsList=0;SuppressedCompartments=;Theme=:119;SaveTag=32B82538;"/>
+				<swimlanes value="locked=false;orientation=0;width=0;inbar=false;names=false;color=-1;bold=false;fcol=0;tcol=-1;ofCol=-1;ufCol=-1;hl=0;ufh=0;cls=0;SwimlaneFont=lfh:-10,lfw:0,lfi:0,lfu:0,lfs:0,lfface:Calibri,lfe:0,lfo:0,lfchar:1,lfop:0,lfcp:0,lfq:0,lfpf=0,lfWidth=0;"/>
+				<matrixitems value="locked=false;matrixactive=false;swimlanesactive=true;kanbanactive=false;width=1;clrLine=0;"/>
+				<extendedProperties/>
+				<elements>
+					<element geometry="Left=420;Top=250;Right=655;Bottom=339;" subject="EAID_5454DD3B_B26C_4454_A229_524E42AAB33F" seqno="1" style="DUID=38559C03;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;HideIcon=0;"/>
+					<element geometry="Left=114;Top=87;Right=290;Bottom=179;" subject="EAID_D4561516_6FE3_4481_BBFB_71ED4D598378" seqno="2" style="DUID=906E543F;NSL=0;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;HideIcon=0;BCol=13434828;"/>
+					<element geometry="Left=128;Top=260;Right=270;Bottom=330;" subject="EAID_BAAD1988_574E_42ad_87AC_75EDD47CBE73" seqno="3" style="DUID=09810353;NSL=0;BCol=-1;BFol=-1;LCol=-1;LWth=-1;fontsz=0;bold=0;black=0;italic=0;ul=0;charset=0;pitch=0;HideIcon=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=4;$LLB=CX=6:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LLT=;LMT=;LMB=CX=65:CY=13:OX=0:OY=0:HDN=0:BLD=0:ITA=0:UND=0:CLR=-1:ALN=1:DIR=0:ROT=0;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_A96E50D2_5922_44b2_AF51_73C7A309979F" style="Mode=3;EOID=09810353;SOID=38559C03;Color=-1;LWidth=0;Hidden=0;"/>
+					<element geometry="SX=0;SY=0;EX=0;EY=0;EDGE=1;$LLB=;LLT=;LMT=;LMB=;LRT=;LRB=;IRHS=;ILHS=;Path=;" subject="EAID_342D874B_8FA3_42ec_925C_BE203B411979" style="Mode=3;EOID=906E543F;SOID=09810353;Color=-1;LWidth=0;Hidden=0;"/>
+				</elements>
+			</diagram>
+		</diagrams>
+		<EAStub xmi:id="EAID_4E6BDBFC_6A87_45b3_B2B3_A62D0F0B1D72" name="VehiclesPerHour" UMLType="DataType"/>
+		<EAStub xmi:id="EAID_2F116A16_BB10_47f1_8AA1_CCD87CF38625" name="Reference" UMLType="DataType"/>
+		<EAStub xmi:id="EAID_DD0FAA46_EDB3_4ba6_A191_377D87F4D303" name="String" UMLType="DataType"/>
+	</xmi:Extension>
+</xmi:XMI>

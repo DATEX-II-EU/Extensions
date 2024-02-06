@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<xs:schema elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:eval="http://levelC/schema/3/responseEvaluation" version="3.0" targetNamespace="http://levelC/schema/3/responseEvaluation" xmlns:com="http://levelC/schema/3/common" xmlns:sit="http://levelC/schema/3/situation" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://levelC/schema/3/situation" schemaLocation="LevelC_3_Situation.xsd" />
+  <xs:import namespace="http://levelC/schema/3/common" schemaLocation="LevelC_3_Common.xsd" />
+  <xs:complexType name="_OperatorActionReference">
+    <xs:complexContent>
+      <xs:extension base="com:Reference">
+        <xs:attribute name="targetClass" type="xs:string" use="required" fixed="sit:OperatorAction" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AirQualityKpi">
+    <xs:complexContent>
+      <xs:extension base="eval:Kpi">
+        <xs:sequence>
+          <xs:element name="_airQualityKpiExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AirQualityKpiDetails">
+    <xs:complexContent>
+      <xs:extension base="eval:KpiDetails">
+        <xs:sequence>
+          <xs:element name="pollutionExtended" type="eval:PollutionExtended" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="_airQualityKpiDetailsExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="AmountOfMoney">
+    <xs:restriction base="com:Decimal" />
+  </xs:simpleType>
+  <xs:complexType name="DelayKpi">
+    <xs:complexContent>
+      <xs:extension base="eval:Kpi">
+        <xs:sequence>
+          <xs:element name="detourDelay" type="eval:VehicleHours" minOccurs="1" maxOccurs="1" />
+          <xs:element name="_delayKpiExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DelayKpiDetails">
+    <xs:complexContent>
+      <xs:extension base="eval:KpiDetails">
+        <xs:sequence>
+          <xs:element name="delay" type="eval:VehicleHours" minOccurs="1" maxOccurs="1" />
+          <xs:element name="_delayKpiDetailsExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EvaluatedActionsPublication">
+    <xs:complexContent>
+      <xs:extension base="sit:SituationPublication">
+        <xs:sequence>
+          <xs:element name="responseEvaluation" type="eval:ResponseEvaluation" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="_evaluatedActionsPublicationExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EvaluationResultsPublication">
+    <xs:complexContent>
+      <xs:extension base="com:GenericPublication">
+        <xs:sequence>
+          <xs:element name="responseEvaluation" type="eval:ResponseEvaluation" />
+          <xs:element name="_evaluationResultsPublicationExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="Kilograms">
+    <xs:restriction base="com:Float" />
+  </xs:simpleType>
+  <xs:complexType name="Kpi" abstract="true">
+    <xs:sequence>
+      <xs:element name="withResponse" type="eval:KpiDetails" />
+      <xs:element name="withoutResponse" type="eval:KpiDetails" />
+      <xs:element name="_kpiExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="KpiDetails">
+    <xs:sequence>
+      <xs:element name="monetaryCost" type="eval:AmountOfMoney" minOccurs="0" maxOccurs="1" />
+      <xs:element name="_kpiDetailsExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MeasureEvaluation">
+    <xs:sequence>
+      <xs:element name="changeInDemand" type="com:VehiclesPerHour" minOccurs="0" maxOccurs="1" />
+      <xs:element name="measureId" type="eval:_OperatorActionReference" minOccurs="1" maxOccurs="1" />
+      <xs:element name="utility" type="eval:AmountOfMoney" minOccurs="0" maxOccurs="1" />
+      <xs:element name="kpi" type="eval:Kpi" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="_measureEvaluationExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PollutionExtended">
+    <xs:complexContent>
+      <xs:extension base="com:Pollution">
+        <xs:sequence>
+          <xs:element name="absoluteEmissions" type="eval:Kilograms" minOccurs="1" maxOccurs="1" />
+          <xs:element name="_pollutionExtendedExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ResponseEvaluation">
+    <xs:sequence>
+      <xs:element name="bestCombinedUtility" type="eval:AmountOfMoney" minOccurs="0" maxOccurs="1" />
+      <xs:element name="evaluationSource" type="com:String" minOccurs="1" maxOccurs="1" />
+      <xs:element name="usedMeasures" type="eval:MeasureEvaluation" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="unusedMeasures" type="eval:MeasureEvaluation" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="_responseEvaluationExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="VehicleHours">
+    <xs:restriction base="com:Float" />
+  </xs:simpleType>
+</xs:schema>

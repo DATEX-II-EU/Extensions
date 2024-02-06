@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<xs:schema elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:raz="http://levelC/schema/3/regulatedAccesZone" version="1" targetNamespace="http://levelC/schema/3/regulatedAccesZone" xmlns:com="http://levelC/schema/3/common" xmlns:loc="http://levelC/schema/3/locationReferencing" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://levelC/schema/3/locationReferencing" schemaLocation="LevelC_3_LocationReferencing.xsd" />
+  <xs:import namespace="http://levelC/schema/3/common" schemaLocation="LevelC_3_Common.xsd" />
+  <xs:complexType name="_EuSpecialPurposeVehicleEnum">
+    <xs:simpleContent>
+      <xs:extension base="raz:EuSpecialPurposeVehicleEnum">
+        <xs:attribute name="_extendedValue" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="_EuVehicleCategoryEnum">
+    <xs:simpleContent>
+      <xs:extension base="raz:EuVehicleCategoryEnum">
+        <xs:attribute name="_extendedValue" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="_RestrictionActivationTypeEnum">
+    <xs:simpleContent>
+      <xs:extension base="raz:RestrictionActivationTypeEnum">
+        <xs:attribute name="_extendedValue" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="DynamicExemption">
+    <xs:complexContent>
+      <xs:extension base="raz:Exemption">
+        <xs:sequence>
+          <xs:element name="dynamicActivationPublicationSource" type="com:String" minOccurs="1" maxOccurs="1" />
+          <xs:element name="_dynamicExemptionExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="EuSpecialPurposeVehicleEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="motorCaravan" />
+      <xs:enumeration value="armouredVehicle" />
+      <xs:enumeration value="ambulance" />
+      <xs:enumeration value="hearse" />
+      <xs:enumeration value="trailerCaravan" />
+      <xs:enumeration value="mobileCrane" />
+      <xs:enumeration value="otherSpecialPurposeVehicle" />
+      <xs:enumeration value="wheelChairAccessibleVehicle" />
+      <xs:enumeration value="_extended" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EuVehicleCategoryEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="m" />
+      <xs:enumeration value="m1" />
+      <xs:enumeration value="m2" />
+      <xs:enumeration value="m3" />
+      <xs:enumeration value="n" />
+      <xs:enumeration value="n1" />
+      <xs:enumeration value="n2" />
+      <xs:enumeration value="n3" />
+      <xs:enumeration value="o" />
+      <xs:enumeration value="o1" />
+      <xs:enumeration value="o2" />
+      <xs:enumeration value="o3" />
+      <xs:enumeration value="o4" />
+      <xs:enumeration value="_extended" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="Exemption">
+    <xs:sequence>
+      <xs:element name="exemptedLocation" type="loc:LocationReference" minOccurs="0" />
+      <xs:element name="exemptedVehicle" type="com:VehicleCharacteristics" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="_exemptionExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required" />
+    <xs:attribute name="version" type="xs:string" use="required" />
+  </xs:complexType>
+  <xs:complexType name="ExemptionWithPermit">
+    <xs:complexContent>
+      <xs:extension base="raz:Exemption">
+        <xs:sequence>
+          <xs:element name="whereToApplyForPermit" type="com:Url" minOccurs="1" maxOccurs="1" />
+          <xs:element name="locationRelatedPermit" type="com:Boolean" minOccurs="1" maxOccurs="1" />
+          <xs:element name="maxDurationOfPermit" type="com:Float" minOccurs="1" maxOccurs="1" />
+          <xs:element name="_exemptionWithPermitExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="LinearLocationExtended">
+    <xs:sequence>
+      <xs:element name="openLrLinearAsBinary" type="com:String" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OpenlrAreaExtended">
+    <xs:sequence>
+      <xs:element name="openLrAreaAsBinary" type="com:String" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OpenlrPointExtended">
+    <xs:sequence>
+      <xs:element name="openLrPointAsBinary" type="com:String" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PermanentExemption">
+    <xs:complexContent>
+      <xs:extension base="raz:Exemption">
+        <xs:sequence>
+          <xs:element name="_permanentExemptionExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RazTablePublication">
+    <xs:sequence>
+      <xs:element name="headerInformation" type="com:HeaderInformation" />
+      <xs:element name="regulatedAccessZoneTable" type="raz:RegulatedAccessZoneTable" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RegulatedAccessZone">
+    <xs:sequence>
+      <xs:element name="regulatedAccessZoneName" type="com:MultilingualString" minOccurs="0" maxOccurs="1" />
+      <xs:element name="regulatedAccessZoneDescription" type="com:MultilingualString" minOccurs="0" maxOccurs="1" />
+      <xs:element name="regulatedAccessZoneRecordVersionTime" type="com:DateTime" minOccurs="1" maxOccurs="1" />
+      <xs:element name="urlForFurtherInformation" type="com:Url" minOccurs="0" maxOccurs="1" />
+      <xs:element name="validityOfRegulation" type="com:OverallPeriod" />
+      <xs:element name="regulatedAccessZoneRestriction" type="raz:RegulatedAccessZoneRestriction" maxOccurs="unbounded" />
+      <xs:element name="_regulatedAccessZoneExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required" />
+    <xs:attribute name="version" type="xs:string" use="required" />
+  </xs:complexType>
+  <xs:complexType name="RegulatedAccessZoneRestriction">
+    <xs:sequence>
+      <xs:element name="applicableLocation" type="loc:AreaLocation" maxOccurs="unbounded" />
+      <xs:element name="accessProhibitedTo" type="raz:TrafficRestriction" minOccurs="0" />
+      <xs:element name="_regulatedAccessZoneRestrictionExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required" />
+    <xs:attribute name="version" type="xs:string" use="required" />
+  </xs:complexType>
+  <xs:complexType name="RegulatedAccessZoneTable">
+    <xs:sequence>
+      <xs:element name="regulatedAccessZoneTableName" type="com:MultilingualString" minOccurs="0" maxOccurs="1" />
+      <xs:element name="tableVersionTime" type="com:DateTime" minOccurs="1" maxOccurs="1" />
+      <xs:element name="informationManager" type="com:InternationalIdentifier" minOccurs="0" />
+      <xs:element name="regulatedAccessZone" type="raz:RegulatedAccessZone" maxOccurs="unbounded" />
+      <xs:element name="_regulatedAccessZoneTableExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="RestrictionActivationTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="dynamicallyActivated" />
+      <xs:enumeration value="permanent" />
+      <xs:enumeration value="_extended" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="TrafficRestriction">
+    <xs:sequence>
+      <xs:element name="restrictionActivationType" type="raz:_RestrictionActivationTypeEnum" minOccurs="1" maxOccurs="1" />
+      <xs:element name="dynamicActivationPublicationSource" type="com:String" minOccurs="0" maxOccurs="1" />
+      <xs:element name="validity" type="com:Validity" />
+      <xs:element name="applicableToVehicleWithCharacteristic" type="com:VehicleCharacteristics" maxOccurs="unbounded" />
+      <xs:element name="exemption" type="raz:Exemption" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="_trafficRestrictionExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
