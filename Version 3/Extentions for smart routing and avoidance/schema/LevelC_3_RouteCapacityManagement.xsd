@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<xs:schema elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:rcm="http://levelC/schema/3/routeCapacityManagement" version="0.1" targetNamespace="http://levelC/schema/3/routeCapacityManagement" xmlns:rer="http://levelC/schema/3/reroutingManagement2" xmlns:com="http://levelC/schema/3/common" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://levelC/schema/3/common" schemaLocation="LevelC_3_Common.xsd" />
+  <xs:import namespace="http://levelC/schema/3/reroutingManagement2" schemaLocation="LevelC_3_ReroutingManagement2.xsd" />
+  <xs:complexType name="NetworkManagementExtendedSocrates">
+    <xs:sequence>
+      <xs:element name="reroutingServiceActionInformation" type="rer:ReroutingServiceActionInformation" />
+      <xs:element name="routeCapacityManagementMeasure" type="rer:RouteCapacityManagementMeasure" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

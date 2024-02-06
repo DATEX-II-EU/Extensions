@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<xs:schema elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:rer="http://levelC/schema/3/reroutingManagement2" version="00-06-00" targetNamespace="http://levelC/schema/3/reroutingManagement2" xmlns:com="http://levelC/schema/3/common" xmlns:loc="http://levelC/schema/3/locationReferencing" xmlns:roa="http://levelC/schema/3/roadTrafficData" xmlns:sit="http://levelC/schema/3/situation" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://levelC/schema/3/situation" schemaLocation="LevelC_3_Situation.xsd" />
+  <xs:import namespace="http://levelC/schema/3/roadTrafficData" schemaLocation="LevelC_3_RoadTrafficData.xsd" />
+  <xs:import namespace="http://levelC/schema/3/locationReferencing" schemaLocation="LevelC_3_LocationReferencing.xsd" />
+  <xs:import namespace="http://levelC/schema/3/common" schemaLocation="LevelC_3_Common.xsd" />
+  <xs:complexType name="_IncentiveLevelEnum">
+    <xs:simpleContent>
+      <xs:extension base="rer:IncentiveLevelEnum">
+        <xs:attribute name="_extendedValue" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="_ReroutingActionEnum">
+    <xs:simpleContent>
+      <xs:extension base="rer:ReroutingActionEnum">
+        <xs:attribute name="_extendedValue" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="_RouteCapacityManagementActionTypeEnum">
+    <xs:simpleContent>
+      <xs:extension base="rer:RouteCapacityManagementActionTypeEnum">
+        <xs:attribute name="_extendedValue" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="_RouteCapacityManagementMeasureTypeEnum">
+    <xs:simpleContent>
+      <xs:extension base="rer:RouteCapacityManagementMeasureTypeEnum">
+        <xs:attribute name="_extendedValue" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="_RouteInformationIndexRouteAllocation">
+    <xs:sequence>
+      <xs:element name="routeAllocation" type="rer:RouteAllocation" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+    <xs:attribute name="index" type="xs:int" use="required" />
+  </xs:complexType>
+  <xs:complexType name="_RouteProcessingInstructionEnum">
+    <xs:simpleContent>
+      <xs:extension base="rer:RouteProcessingInstructionEnum">
+        <xs:attribute name="_extendedValue" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="_StrengthOfServiceEnum">
+    <xs:simpleContent>
+      <xs:extension base="rer:StrengthOfServiceEnum">
+        <xs:attribute name="_extendedValue" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="AlternativeService">
+    <xs:sequence>
+      <xs:element name="alternativeServiceLocation" type="loc:PointLocation" />
+      <xs:element name="forTrafficOriginatingFrom" type="rer:Origin" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="_alternativeServiceExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="IncentiveLevelEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="none" />
+      <xs:enumeration value="low" />
+      <xs:enumeration value="high" />
+      <xs:enumeration value="mandatory" />
+      <xs:enumeration value="_extended" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="LinearLocationExtended">
+    <xs:sequence>
+      <xs:element name="openLrLinearAsBinary" type="com:String" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="NetworkManagementExtended">
+    <xs:sequence>
+      <xs:element name="reroutingManagement2" type="rer:ReroutingManagement2" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OpenlrAreaExtended">
+    <xs:sequence>
+      <xs:element name="openLrAreaAsBinary" type="com:String" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OpenlrPointExtended">
+    <xs:sequence>
+      <xs:element name="openLrPointAsBinary" type="com:String" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Origin">
+    <xs:sequence>
+      <xs:element name="_originExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PointOrigin">
+    <xs:complexContent>
+      <xs:extension base="rer:Origin">
+        <xs:sequence>
+          <xs:element name="pointLocation" type="loc:PointLocation" />
+          <xs:element name="_pointOriginExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="ReroutingActionEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="avoidOriginalRoute" />
+      <xs:enumeration value="useAlternativeRoute" />
+      <xs:enumeration value="noReroutingAction" />
+      <xs:enumeration value="prioritiseRouteInNavigation" />
+      <xs:enumeration value="_extended" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ReroutingManagement2">
+    <xs:sequence>
+      <xs:element name="nameOfReroutingManagement" type="com:MultilingualString" minOccurs="0" maxOccurs="1" />
+      <xs:element name="preventiveMeasure" type="com:Boolean" minOccurs="1" maxOccurs="1" />
+      <xs:element name="bindingTrafficRegulation" type="com:Boolean" minOccurs="1" maxOccurs="1" />
+      <xs:element name="routingOrigin" type="rer:Origin" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="routingDestination" type="loc:Destination" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="originalRouteInformation" type="rer:RouteInformation" minOccurs="0" />
+      <xs:element name="alternativeRouteInformation" type="rer:RouteInformation" maxOccurs="unbounded" />
+      <xs:element name="_reroutingManagement2Extension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ReroutingServiceActionInformation">
+    <xs:sequence>
+      <xs:element name="reroutingInstruction" type="rer:_ReroutingActionEnum" minOccurs="0" maxOccurs="1" />
+      <xs:element name="strengthOfService" type="rer:_StrengthOfServiceEnum" minOccurs="0" maxOccurs="1" />
+      <xs:element name="routeProcessingInstruction" type="rer:_RouteProcessingInstructionEnum" minOccurs="0" maxOccurs="1" />
+      <xs:element name="impactIncentive" type="rer:_IncentiveLevelEnum" minOccurs="0" maxOccurs="1" />
+      <xs:element name="_reroutingServiceActionInformationExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RouteAllocation">
+    <xs:sequence>
+      <xs:element name="routeProportion" type="com:Percentage" minOccurs="0" maxOccurs="1" />
+      <xs:element name="reroutingAdvice" type="sit:_ReroutingManagementTypeEnum" minOccurs="0" maxOccurs="1" />
+      <xs:element name="validForVehiclesWithCharacteristics" type="com:VehicleCharacteristics" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="validForVehiclesWithoutCharacteristics" type="com:VehicleCharacteristics" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="_routeAllocationExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="RouteCapacityManagementActionTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="openedExtraLane" />
+      <xs:enumeration value="modifiedGreenPeriod" />
+      <xs:enumeration value="modifiedCycleLength" />
+      <xs:enumeration value="synchronizedTrafficSignals" />
+      <xs:enumeration value="alteredSignalPhasing" />
+      <xs:enumeration value="other" />
+      <xs:enumeration value="_extended" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="RouteCapacityManagementMeasure">
+    <xs:sequence>
+      <xs:element name="measureType" type="rer:_RouteCapacityManagementMeasureTypeEnum" minOccurs="1" maxOccurs="1" />
+      <xs:element name="description" type="com:MultilingualString" minOccurs="0" maxOccurs="1" />
+      <xs:element name="recommendedSpeed" type="com:KilometresPerHour" minOccurs="0" maxOccurs="1" />
+      <xs:element name="actionType" type="rer:_RouteCapacityManagementActionTypeEnum" minOccurs="0" maxOccurs="1" />
+      <xs:element name="_routeCapacityManagementMeasureExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="RouteCapacityManagementMeasureTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="inflowReduction" />
+      <xs:enumeration value="outflowIncrease" />
+      <xs:enumeration value="capacityIncrease" />
+      <xs:enumeration value="reducingLocalAccess" />
+      <xs:enumeration value="additionalParkingBan" />
+      <xs:enumeration value="_extended" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="RouteInformation">
+    <xs:sequence>
+      <xs:element name="nameOfRoute" type="com:MultilingualString" minOccurs="0" maxOccurs="1" />
+      <xs:element name="reroutingItineraryDescription" type="com:MultilingualString" minOccurs="0" maxOccurs="1" />
+      <xs:element name="signedRerouting" type="com:Boolean" minOccurs="0" maxOccurs="1" />
+      <xs:element name="routeCompletelyBlocked" type="com:Boolean" minOccurs="0" maxOccurs="1" />
+      <xs:element name="abnormalTrafficType" type="sit:_AbnormalTrafficTypeEnum" minOccurs="0" maxOccurs="1" />
+      <xs:element name="itinerary" type="loc:Itinerary" />
+      <xs:element name="travelTimeData" type="roa:TravelTimeData" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="routeAllocation" type="rer:_RouteInformationIndexRouteAllocation" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="routeCapacityManagementMeasure" type="rer:RouteCapacityManagementMeasure" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="reroutingServiceActionInformation" type="rer:ReroutingServiceActionInformation" minOccurs="0" />
+      <xs:element name="_routeInformationExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="RouteProcessingInstructionEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="informDriverAboutRoute" />
+      <xs:enumeration value="processRouteInNavigation" />
+      <xs:enumeration value="_extended" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ServiceDisruptionExtended">
+    <xs:sequence>
+      <xs:element name="alternativeService" type="rer:AlternativeService" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="StrengthOfServiceEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="weak" />
+      <xs:enumeration value="medium" />
+      <xs:enumeration value="strong" />
+      <xs:enumeration value="ultimate" />
+      <xs:enumeration value="_extended" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

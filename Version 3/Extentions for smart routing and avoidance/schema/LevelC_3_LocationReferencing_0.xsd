@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<xs:schema elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:loc="http://levelC/schema/3/locationReferencing" version="3.0" targetNamespace="http://levelC/schema/3/locationReferencing" xmlns:com="http://levelC/schema/3/common" xmlns:rer="http://levelC/schema/3/reroutingManagement2" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://levelC/schema/3/reroutingManagement2" schemaLocation="LevelC_3_ReroutingManagement2.xsd" />
+  <xs:import namespace="http://levelC/schema/3/common" schemaLocation="LevelC_3_Common.xsd" />
+  <xs:complexType name="_AlertCDirectionEnum">
+    <xs:simpleContent>
+      <xs:extension base="loc:AlertCDirectionEnum">
+        <xs:attribute name="_extendedValue" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="_AreaLocationExtensionType">
+    <xs:sequence>
+      <xs:element name="openlrAreaExtended" type="rer:OpenlrAreaExtended" minOccurs="0" />
+      <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="_LinearDirectionEnum">
+    <xs:simpleContent>
+      <xs:extension base="loc:LinearDirectionEnum">
+        <xs:attribute name="_extendedValue" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="_LinearLocationExtensionType">
+    <xs:sequence>
+      <xs:element name="linearLocationExtended" type="rer:LinearLocationExtended" minOccurs="0" />
+      <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="_LocationContainedInItinerary">
+    <xs:sequence>
+      <xs:element name="location" type="loc:Location" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+    <xs:attribute name="index" type="xs:int" use="required" />
+  </xs:complexType>
+  <xs:complexType name="_OpenlrFormOfWayEnum">
+    <xs:simpleContent>
+      <xs:extension base="loc:OpenlrFormOfWayEnum">
+        <xs:attribute name="_extendedValue" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="_OpenlrFunctionalRoadClassEnum">
+    <xs:simpleContent>
+      <xs:extension base="loc:OpenlrFunctionalRoadClassEnum">
+        <xs:attribute name="_extendedValue" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="_PointLocationExtensionType">
+    <xs:sequence>
+      <xs:element name="openlrPointExtended" type="rer:OpenlrPointExtended" minOccurs="0" />
+      <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AlertCDirection">
+    <xs:sequence>
+      <xs:element name="alertCDirectionCoded" type="loc:_AlertCDirectionEnum" minOccurs="1" maxOccurs="1" />
+      <xs:element name="alertCDirectionNamed" type="com:MultilingualString" minOccurs="0" maxOccurs="1" />
+      <xs:element name="alertCAffectedDirection" type="loc:_LinearDirectionEnum" minOccurs="1" maxOccurs="1" />
+      <xs:element name="_alertCDirectionExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="AlertCDirectionEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="negative" />
+      <xs:enumeration value="positive" />
+      <xs:enumeration value="_extended" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AlertCLinear" abstract="true">
+    <xs:sequence>
+      <xs:element name="alertCLocationCountryCode" type="com:String" minOccurs="1" maxOccurs="1" />
+      <xs:element name="alertCLocationTableNumber" type="com:String" minOccurs="1" maxOccurs="1" />
+      <xs:element name="alertCLocationTableVersion" type="com:String" minOccurs="1" maxOccurs="1" />
+      <xs:element name="_alertCLinearExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AlertCLinearByCode">
+    <xs:complexContent>
+      <xs:extension base="loc:AlertCLinear">
+        <xs:sequence>
+          <xs:element name="alertCDirection" type="loc:AlertCDirection" />
+          <xs:element name="locationCodeForLinearLocation" type="loc:AlertCLocation" />
+          <xs:element name="_alertCLinearByCodeExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AlertCLocation">
+    <xs:sequence>
+      <xs:element name="alertCLocationName" type="com:MultilingualString" minOccurs="0" maxOccurs="1" />
+      <xs:element name="specificLocation" type="loc:AlertCLocationCode" minOccurs="1" maxOccurs="1" />
+      <xs:element name="_alertCLocationExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="AlertCLocationCode">
+    <xs:restriction base="com:NonNegativeInteger">
+      <xs:minInclusive value="1" />
+      <xs:maxInclusive value="63487" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AreaDestination">
+    <xs:complexContent>
+      <xs:extension base="loc:Destination">
+        <xs:sequence>
+          <xs:element name="areaLocation" type="loc:AreaLocation" />
+          <xs:element name="_areaDestinationExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AreaLocation">
+    <xs:complexContent>
+      <xs:extension base="loc:Location">
+        <xs:sequence>
+          <xs:element name="gmlMultiPolygon" type="loc:GmlMultiPolygon" minOccurs="0" />
+          <xs:element name="openlrAreaLocationReference" type="loc:OpenlrAreaLocationReference" minOccurs="0" />
+          <xs:element name="_areaLocationExtension" type="loc:_AreaLocationExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Destination" abstract="true">
+    <xs:sequence>
+      <xs:element name="_destinationExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GmlLinearRing">
+    <xs:complexContent>
+      <xs:extension base="loc:GmlLineString">
+        <xs:sequence>
+          <xs:element name="_gmlLinearRingExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="GmlLineString">
+    <xs:sequence>
+      <xs:element name="posList" type="loc:GmlPosList" minOccurs="1" maxOccurs="1" />
+      <xs:element name="_gmlLineStringExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+    <xs:attribute name="srsDimension" type="com:NonNegativeInteger" use="optional" />
+    <xs:attribute name="srsName" type="com:String" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="GmlMultiPolygon">
+    <xs:sequence>
+      <xs:element name="gmlAreaName" type="com:MultilingualString" minOccurs="0" maxOccurs="1" />
+      <xs:element name="gmlPolygon" type="loc:GmlPolygon" maxOccurs="unbounded" />
+      <xs:element name="_gmlMultiPolygonExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GmlPolygon">
+    <xs:sequence>
+      <xs:element name="exterior" type="loc:GmlLinearRing" />
+      <xs:element name="interior" type="loc:GmlLinearRing" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="_gmlPolygonExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="GmlPosList">
+    <xs:restriction base="com:LongString">
+      <xs:pattern value="[-+]?[0-9]*\.?[0-9]+(\s[-+]?[0-9]*\.?[0-9]+){3,}" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="Itinerary" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="loc:LocationReference">
+        <xs:sequence>
+          <xs:element name="routeDestination" type="loc:Destination" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="_itineraryExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ItineraryByIndexedLocations">
+    <xs:complexContent>
+      <xs:extension base="loc:Itinerary">
+        <xs:sequence>
+          <xs:element name="locationContainedInItinerary" type="loc:_LocationContainedInItinerary" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="_itineraryByIndexedLocationsExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="LinearDirectionEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="both" />
+      <xs:enumeration value="opposite" />
+      <xs:enumeration value="aligned" />
+      <xs:enumeration value="unknown" />
+      <xs:enumeration value="_extended" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="LinearLocation">
+    <xs:complexContent>
+      <xs:extension base="loc:NetworkLocation">
+        <xs:sequence>
+          <xs:element name="openlrLinear" type="loc:OpenlrLinear" minOccurs="0" />
+          <xs:element name="gmlLineString" type="loc:GmlLineString" minOccurs="0" />
+          <xs:element name="_linearLocationExtension" type="loc:_LinearLocationExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Location" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="loc:LocationReference">
+        <xs:sequence>
+          <xs:element name="_locationExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="LocationReference" abstract="true">
+    <xs:sequence>
+      <xs:element name="_locationReferenceExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="NetworkLocation" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="loc:Location">
+        <xs:sequence>
+          <xs:element name="supplementaryPositionalDescription" type="loc:SupplementaryPositionalDescription" minOccurs="0" />
+          <xs:element name="_networkLocationExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OpenlrAreaLocationReference" abstract="true">
+    <xs:sequence>
+      <xs:element name="_openlrAreaLocationReferenceExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OpenlrBaseReferencePoint" abstract="true">
+    <xs:sequence>
+      <xs:element name="openlrCoordinates" type="loc:PointCoordinates" />
+      <xs:element name="openlrLineAttributes" type="loc:OpenlrLineAttributes" />
+      <xs:element name="_openlrBaseReferencePointExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OpenlrCircleLocationReference">
+    <xs:complexContent>
+      <xs:extension base="loc:OpenlrAreaLocationReference">
+        <xs:sequence>
+          <xs:element name="openlrRadius" type="com:MetresAsNonNegativeInteger" minOccurs="1" maxOccurs="1" />
+          <xs:element name="openlrGeoCoordinate" type="loc:OpenlrGeoCoordinate" />
+          <xs:element name="_openlrCircleLocationReferenceExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OpenlrClosedLineLocationReference">
+    <xs:complexContent>
+      <xs:extension base="loc:OpenlrAreaLocationReference">
+        <xs:sequence>
+          <xs:element name="openlrLocationReferencePoint" type="loc:OpenlrLocationReferencePoint" maxOccurs="unbounded" />
+          <xs:element name="openlrLastLine" type="loc:OpenlrLastLocationReferencePoint" />
+          <xs:element name="_openlrClosedLineLocationReferenceExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="OpenlrFormOfWayEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="undefined" />
+      <xs:enumeration value="motorway" />
+      <xs:enumeration value="multipleCarriageway" />
+      <xs:enumeration value="singleCarriageway" />
+      <xs:enumeration value="roundabout" />
+      <xs:enumeration value="slipRoad" />
+      <xs:enumeration value="trafficSquare" />
+      <xs:enumeration value="other" />
+      <xs:enumeration value="_extended" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="OpenlrFunctionalRoadClassEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="frc0" />
+      <xs:enumeration value="frc1" />
+      <xs:enumeration value="frc2" />
+      <xs:enumeration value="frc3" />
+      <xs:enumeration value="frc4" />
+      <xs:enumeration value="frc5" />
+      <xs:enumeration value="frc6" />
+      <xs:enumeration value="frc7" />
+      <xs:enumeration value="_extended" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="OpenlrGeoCoordinate">
+    <xs:complexContent>
+      <xs:extension base="loc:OpenlrPointLocationReference">
+        <xs:sequence>
+          <xs:element name="_openlrGeoCoordinateExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OpenlrGridLocationReference">
+    <xs:complexContent>
+      <xs:extension base="loc:OpenlrAreaLocationReference">
+        <xs:sequence>
+          <xs:element name="openlrNumColumns" type="com:NonNegativeInteger" minOccurs="1" maxOccurs="1" />
+          <xs:element name="openlrNumRows" type="com:NonNegativeInteger" minOccurs="1" maxOccurs="1" />
+          <xs:element name="openlrRectangle" type="loc:OpenlrRectangle" />
+          <xs:element name="_openlrGridLocationReferenceExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OpenlrLastLocationReferencePoint">
+    <xs:complexContent>
+      <xs:extension base="loc:OpenlrBaseReferencePoint">
+        <xs:sequence>
+          <xs:element name="_openlrLastLocationReferencePointExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OpenlrLinear">
+    <xs:sequence>
+      <xs:element name="firstDirection" type="loc:OpenlrLineLocationReference" />
+      <xs:element name="oppositeDirection" type="loc:OpenlrLineLocationReference" minOccurs="0" />
+      <xs:element name="_openlrLinearExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OpenlrLineAttributes">
+    <xs:sequence>
+      <xs:element name="openlrFunctionalRoadClass" type="loc:_OpenlrFunctionalRoadClassEnum" minOccurs="1" maxOccurs="1" />
+      <xs:element name="openlrFormOfWay" type="loc:_OpenlrFormOfWayEnum" minOccurs="1" maxOccurs="1" />
+      <xs:element name="openlrBearing" type="com:AngleInDegrees" minOccurs="1" maxOccurs="1" />
+      <xs:element name="_openlrLineAttributesExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OpenlrLineLocationReference">
+    <xs:sequence>
+      <xs:element name="openlrLocationReferencePoint" type="loc:OpenlrLocationReferencePoint" maxOccurs="unbounded" />
+      <xs:element name="openlrLastLocationReferencePoint" type="loc:OpenlrLastLocationReferencePoint" />
+      <xs:element name="openlrOffsets" type="loc:OpenlrOffsets" minOccurs="0" />
+      <xs:element name="_openlrLineLocationReferenceExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OpenlrLocationReferencePoint">
+    <xs:complexContent>
+      <xs:extension base="loc:OpenlrBaseReferencePoint">
+        <xs:sequence>
+          <xs:element name="openlrPathAttributes" type="loc:OpenlrPathAttributes" />
+          <xs:element name="_openlrLocationReferencePointExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OpenlrOffsets">
+    <xs:sequence>
+      <xs:element name="openlrPositiveOffset" type="com:MetresAsNonNegativeInteger" minOccurs="0" maxOccurs="1" />
+      <xs:element name="openlrNegativeOffset" type="com:MetresAsNonNegativeInteger" minOccurs="0" maxOccurs="1" />
+      <xs:element name="_openlrOffsetsExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OpenlrPathAttributes">
+    <xs:sequence>
+      <xs:element name="openlrLowestFrcToNextLRPoint" type="loc:_OpenlrFunctionalRoadClassEnum" minOccurs="1" maxOccurs="1" />
+      <xs:element name="openlrDistanceToNextLRPoint" type="com:NonNegativeInteger" minOccurs="1" maxOccurs="1" />
+      <xs:element name="_openlrPathAttributesExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OpenlrPointLocationReference" abstract="true">
+    <xs:sequence>
+      <xs:element name="_openlrPointLocationReferenceExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OpenlrPolygonCorners">
+    <xs:sequence>
+      <xs:element name="openlrCoordinates" type="loc:PointCoordinates" minOccurs="3" maxOccurs="unbounded" />
+      <xs:element name="_openlrPolygonCornersExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OpenlrPolygonLocationReference">
+    <xs:complexContent>
+      <xs:extension base="loc:OpenlrAreaLocationReference">
+        <xs:sequence>
+          <xs:element name="openlrPolygonCorners" type="loc:OpenlrPolygonCorners" />
+          <xs:element name="_openlrPolygonLocationReferenceExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OpenlrRectangle">
+    <xs:sequence>
+      <xs:element name="openlrLowerLeft" type="loc:PointCoordinates" />
+      <xs:element name="openlrUpperRight" type="loc:PointCoordinates" />
+      <xs:element name="_openlrRectangleExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OpenlrRectangleLocationReference">
+    <xs:complexContent>
+      <xs:extension base="loc:OpenlrAreaLocationReference">
+        <xs:sequence>
+          <xs:element name="openlrRectangle" type="loc:OpenlrRectangle" />
+          <xs:element name="_openlrRectangleLocationReferenceExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PointByCoordinates">
+    <xs:sequence>
+      <xs:element name="bearing" type="com:AngleInDegrees" minOccurs="0" maxOccurs="1" />
+      <xs:element name="pointCoordinates" type="loc:PointCoordinates" />
+      <xs:element name="_pointByCoordinatesExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PointCoordinates">
+    <xs:sequence>
+      <xs:element name="latitude" type="com:Float" minOccurs="1" maxOccurs="1" />
+      <xs:element name="longitude" type="com:Float" minOccurs="1" maxOccurs="1" />
+      <xs:element name="_pointCoordinatesExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PointDestination">
+    <xs:complexContent>
+      <xs:extension base="loc:Destination">
+        <xs:sequence>
+          <xs:element name="pointLocation" type="loc:PointLocation" />
+          <xs:element name="_pointDestinationExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PointLocation">
+    <xs:complexContent>
+      <xs:extension base="loc:NetworkLocation">
+        <xs:sequence>
+          <xs:element name="pointByCoordinates" type="loc:PointByCoordinates" minOccurs="0" />
+          <xs:element name="_pointLocationExtension" type="loc:_PointLocationExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SingleRoadLinearLocation">
+    <xs:complexContent>
+      <xs:extension base="loc:LinearLocation">
+        <xs:sequence>
+          <xs:element name="alertCLinear" type="loc:AlertCLinear" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="_singleRoadLinearLocationExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SupplementaryPositionalDescription">
+    <xs:sequence>
+      <xs:element name="locationDescription" type="com:MultilingualString" minOccurs="0" maxOccurs="1" />
+      <xs:element name="_supplementaryPositionalDescriptionExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
