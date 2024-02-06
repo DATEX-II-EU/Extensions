@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<xs:schema elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:ev="http://datex2.eu/schema/3/emergencyVehicleObstructionExtension" version="1" targetNamespace="http://datex2.eu/schema/3/emergencyVehicleObstructionExtension" xmlns:loc="http://datex2.eu/schema/3/locationReferencing" xmlns:com="http://datex2.eu/schema/3/common" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://datex2.eu/schema/3/common" schemaLocation="DATEXII_3_Common.xsd" />
+  <xs:import namespace="http://datex2.eu/schema/3/locationReferencing" schemaLocation="DATEXII_3_LocationReferencing.xsd" />
+  <xs:complexType name="_AssignmentStatusEnum">
+    <xs:simpleContent>
+      <xs:extension base="ev:AssignmentStatusEnum">
+        <xs:attribute name="_extendedValue" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="_EmergencyVehicleInstructions">
+    <xs:simpleContent>
+      <xs:extension base="ev:EmergencyVehicleInstructions">
+        <xs:attribute name="_extendedValue" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="_EmergencyVehicleTypeEnum">
+    <xs:simpleContent>
+      <xs:extension base="ev:EmergencyVehicleTypeEnum">
+        <xs:attribute name="_extendedValue" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="AssignmentStatusEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="arrived" />
+      <xs:enumeration value="cancelled" />
+      <xs:enumeration value="enRoute" />
+      <xs:enumeration value="_extended" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EmergencyVehicleInstructions">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="keepLeft" />
+      <xs:enumeration value="keepRight" />
+      <xs:enumeration value="leaveMiddleLane" />
+      <xs:enumeration value="leaveShoulder" />
+      <xs:enumeration value="_extended" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="EmergencyVehicleObstructionExtension">
+    <xs:sequence>
+      <xs:element name="assignmentStatus" type="ev:_AssignmentStatusEnum" minOccurs="1" maxOccurs="1" />
+      <xs:element name="audioSignalsOn" type="com:Boolean" minOccurs="0" maxOccurs="1" />
+      <xs:element name="bearing" type="com:Integer" minOccurs="0" maxOccurs="1" />
+      <xs:element name="emergencyVehicleType" type="ev:_EmergencyVehicleTypeEnum" minOccurs="1" maxOccurs="1" />
+      <xs:element name="instructionToOtherTraffic" type="ev:_EmergencyVehicleInstructions" minOccurs="0" maxOccurs="1" />
+      <xs:element name="priority" type="com:Integer" minOccurs="0" maxOccurs="1" />
+      <xs:element name="visualSignalsOn" type="com:Boolean" minOccurs="0" maxOccurs="1" />
+      <xs:element name="destination" type="loc:PointLocation" minOccurs="0" />
+      <xs:element name="probableRoute" type="loc:LinearLocation" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="EmergencyVehicleTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ambulance" />
+      <xs:enumeration value="civilEmergencyVehicle" />
+      <xs:enumeration value="fireCommandCar" />
+      <xs:enumeration value="fireEngine" />
+      <xs:enumeration value="fireLadderLorry" />
+      <xs:enumeration value="lifeguardVehicle" />
+      <xs:enumeration value="motorcycleAmbulance" />
+      <xs:enumeration value="mountainRescueVehicle" />
+      <xs:enumeration value="other" />
+      <xs:enumeration value="parkRangerCar" />
+      <xs:enumeration value="policeBicycle" />
+      <xs:enumeration value="policeCar" />
+      <xs:enumeration value="policeMotorcycle" />
+      <xs:enumeration value="rapidResponseVehicle" />
+      <xs:enumeration value="_extended" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
