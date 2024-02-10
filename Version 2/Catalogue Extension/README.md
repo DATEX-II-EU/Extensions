@@ -1,3 +1,5 @@
+# Catalogue Extension
+
 Submitted by thilo.schoen on Monday, 3 August, 2009 - 17:24
 
 Status definition refers to ISO 14817
