@@ -1,3 +1,5 @@
+# LineString extension
+
 Submitted by jaderberg on Thursday, 22 March, 2012 - 10:08
 
 Status definition refers to ISO 14817
