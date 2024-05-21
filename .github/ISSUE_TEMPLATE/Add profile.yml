@@ -55,7 +55,7 @@ body:
       label: Country / Region
       description: Which country is the profile associated with
       options:
-      - 'd'
+        - ''
         - Albania (AL)
         - Andorra (AD)
         - Armenia (AM)
