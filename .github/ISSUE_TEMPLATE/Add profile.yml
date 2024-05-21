@@ -53,7 +53,7 @@ body:
     id: country
     attributes:
       label: Country / Region
-      description: What version of DATEX?
+      description: Which country is the profile associated with
       options:
         - Albania (AL)
         - Andorra (AD)
@@ -104,7 +104,8 @@ body:
         - Turkey (TR)
         - Ukraine (UA)
         - United Kingdom (GB)
-        - Vatican City (VA) 
+        - Vatican City (VA)
+    default: -1
     validations:
       required: true
   - type: textarea
