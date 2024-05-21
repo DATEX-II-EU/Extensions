@@ -105,7 +105,7 @@ body:
         - Ukraine (UA)
         - United Kingdom (GB)
         - Vatican City (VA)
-    default: -1
+      default: -1
     validations:
       required: true
   - type: textarea
