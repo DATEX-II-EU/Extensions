@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<xs:schema elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:cie="http://levelC/schema/3/cItsExtension" version="1.0" targetNamespace="http://levelC/schema/3/cItsExtension" xmlns:loc="http://levelC/schema/3/locationReferencing" xmlns:com="http://levelC/schema/3/common" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://levelC/schema/3/common" schemaLocation="LevelC_3_Common.xsd" />
+  <xs:import namespace="http://levelC/schema/3/locationReferencing" schemaLocation="LevelC_3_LocationReferencing.xsd" />
+  <xs:complexType name="_StandardLength3bTypeEnum">
+    <xs:simpleContent>
+      <xs:extension base="cie:StandardLength3bTypeEnum">
+        <xs:attribute name="_extendedValue" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CItsDenmLocationExtended">
+    <xs:annotation>
+      <xs:documentation>Network location extended to manage C ITS related information</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="cItsDenmSection" type="cie:CItsDenmSection" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CItsDenmSection">
+    <xs:annotation>
+      <xs:documentation>A functional section of the overall location to support C ITS message delivery. e.g. multiple DENM for a linear location longer then a single DENM allows.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="index" type="com:NonNegativeInteger" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>index used to specify the section on the road along the linear location one after the other starting with 1</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="offset" type="com:MetresAsFloat" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>the offset of the section based on the first initial position of the network location </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="awarenessDistance" type="cie:_StandardLength3bTypeEnum" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>the coded value of relevance distance extent from which the event is to be considered by the DENM user or vehicle</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="bearingConfidence" type="com:NonNegativeInteger" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>bearing confidence expressed in degree (0..360) decimals, i.e. 1 is equivalent to 1 decimal of degrees, 10 is equivalent to 1 degree  Note that according to C ITS semantic 126 is out of range</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="citsDenmEventEnd" type="loc:PointByCoordinates" minOccurs="0" />
+      <xs:element name="citsDenmEventPosition" type="loc:PointByCoordinates" />
+      <xs:element name="citsDenmEventZone" type="loc:GmlLineString" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>the Event History dataset associated to the DENM section</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="citsDenmDetectionZonesToEventPosition:" type="loc:GmlLineString" minOccurs="0" maxOccurs="7">
+        <xs:annotation>
+          <xs:documentation>an associaton to a GML string representing the traces leading to event position as requested by C ITS specification (e.g. DENM traces)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="_cItsDenmSectionExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CItsIvimLocationByGroup">
+    <xs:annotation>
+      <xs:documentation>Class to manage the C-ITS IVIM location extension through the definition of the detection, awareness and relevance zones (without the definition of CItsZoneGroup(s)</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="cie:CItsIVIMNetworkLocationExtended">
+        <xs:sequence>
+          <xs:element name="cItsAwarenessZoneId" type="cie:CItsZoneId" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>reference to associated awareness C ITSZone Id within the group</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="cItsDetectionZoneId" type="cie:CItsZoneId" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>reference to associated detection C ITSZone Id within the group</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="cItsRelevanceZoneId" type="cie:CItsZoneId" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>reference to associated relevance C ITSZone Id within the group</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="cItsZoneGroupReference" type="cie:CItsZoneGroupId" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>reference to the C ITS Zone group referred by the C ITS zone id associated to the section</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="cItsZoneGroup" type="cie:CItsZoneGroup" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="_cItsIvimLocationByGroupExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CItsIvimLocationByZone">
+    <xs:annotation>
+      <xs:documentation>Class to manage the C-ITS IVIM location extension through the definition of the detection, awareness and relevance zones (without the definition of a C-ITS Zone Group)</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="cie:CItsIVIMNetworkLocationExtended">
+        <xs:sequence>
+          <xs:element name="detectionZone" type="cie:CItsZone" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>identifies the detection zone for a network location</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="relevanceZone" type="cie:CItsZone" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>identifies the relevance zone for a network location</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="awarenessZone" type="cie:CItsZone" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>identifies the awareness zone for a network location</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="_cItsIvimLocationByZoneExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CItsIVIMNetworkLocationExtended">
+    <xs:annotation>
+      <xs:documentation>Network location extended to manage C ITS related information</xs:documentation>
+    </xs:annotation>
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="CItsOtfLaneExtended">
+    <xs:annotation>
+      <xs:documentation>C-ITS extension of OtfClmLane for the definition of zones identifiers</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="cItsAwarenessZoneId" type="com:NonNegativeInteger" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>A reference fot he lane to associated awareness C ITSZone Id within the group</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="cItsDetectionZoneId" type="com:NonNegativeInteger" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>A reference for the lane to associated detection C ITSZone Id within the group</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="cItsRelevanceZoneId" type="com:NonNegativeInteger" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>A reference for the lane to associated relevance C ITSZone Id within the group</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CItsOtfSubSegmentExtended">
+    <xs:annotation>
+      <xs:documentation>C-ITS extension of OtfClmSubsegment for the definition of zones identifiers and reference to the C-ITS zone group</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="cItsAwarenessZoneId" type="com:NonNegativeInteger" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>reference to associated awareness C ITSZone Id within the group</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="cItsDetectionZoneId" type="com:NonNegativeInteger" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>reference to associated detection C ITSZone Id within the group</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="cItsRelevanceZoneId" type="com:NonNegativeInteger" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>reference to associated relevance C ITSZone Id within the group</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="cItsZoneGroupReference" type="com:NonNegativeInteger" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>reference to the C ITS Zone group referred by the C ITS zone id associated to the section</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CItsOtfZoneExtended">
+    <xs:annotation>
+      <xs:documentation>C-ITS extension of OtfClmDescription for the linage of CitsZoneGroup(s)</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="cItsZoneGroup" type="cie:CItsZoneGroup" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CItsZone">
+    <xs:annotation>
+      <xs:documentation>class to express location information for detection, relevance and awareness zones as defined in C ITS IVIM message</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="zoneId" type="cie:CItsZoneId" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>the zone identification code used in C ITS messages as zone id</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="laneWidth" type="com:MetresAsFloat" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>lane width which is set in case of Zone related to a single lane</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="laneNumber" type="loc:_LaneEnum" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>lane associated to the C ITS zone when it describes a lane</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="gmlLineString" type="loc:GmlLineString" minOccurs="0" />
+      <xs:element name="_cItsZoneExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CItsZoneGroup">
+    <xs:annotation>
+      <xs:documentation>a group of one or more C-ITS zones to  be referenced in segments, section or lanes, which is equivalent to information managed in Geografic Location Container in C ITS IVIM message</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="CItsZoneGroupReferenceIndex" type="cie:CItsZoneGroupId" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>an index used as a reference for the C ITS Zone group </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="referencePosition" type="loc:PointByCoordinates">
+        <xs:annotation>
+          <xs:documentation>reference position for C ITS Zone group as by C ITS Geografic Location Container specifications</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="cItsZone" type="cie:CItsZone" maxOccurs="16" />
+      <xs:element name="_cItsZoneGroupExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="CItsZoneGroupId">
+    <xs:annotation>
+      <xs:documentation>Identifier of a C-ITS zone group (must be NonNegativeInteger)</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="com:NonNegativeInteger" />
+  </xs:simpleType>
+  <xs:simpleType name="CItsZoneId">
+    <xs:annotation>
+      <xs:documentation>Identifier of a C-ITS zone (must be NonNegativeInteger)</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="com:NonNegativeInteger" />
+  </xs:simpleType>
+  <xs:complexType name="LaneCItsExtended">
+    <xs:annotation>
+      <xs:documentation>C-ITS extension of Lane for the definition of relevance, awareness, detection zones identifiers</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="cItsAwarenessZoneId" type="cie:CItsZoneId" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>A reference fot he lane to associated awareness C ITSZone Id within the group</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="cItsDetectionZoneId" type="cie:CItsZoneId" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>A reference for the lane to associated detection C ITSZone Id within the group</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="cItsRelevanceZoneId" type="cie:CItsZoneId" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>A reference for the lane to associated relevance C ITSZone Id within the group</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SectionCItsExtended">
+    <xs:annotation>
+      <xs:documentation>C-ITS extension of Section for the definition of relevance, awareness, detection zones identifiers and the reference to a C-ITS Zone Group</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="cItsAwarenessZoneId" type="cie:CItsZoneId" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>reference to associated awareness C ITSZone Id within the group</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="cItsDetectionZoneId" type="cie:CItsZoneId" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>reference to associated detection C ITSZone Id within the group</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="cItsRelevanceZoneId" type="cie:CItsZoneId" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>reference to associated relevance C ITSZone Id within the group</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="cItsZoneGroupReference" type="cie:CItsZoneGroupId" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>reference to the C ITS Zone group referred by the C ITS zone id associated to the section</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="StandardLength3bTypeEnum">
+    <xs:annotation>
+      <xs:documentation>the list of possible values for relevance distance attributes as derived by ETSI C ITS specifications</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="lessThan50m">
+        <xs:annotation>
+          <xs:documentation>less than 50 m</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="lessThan100m">
+        <xs:annotation>
+          <xs:documentation>less than 100 m</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="lessThan200m">
+        <xs:annotation>
+          <xs:documentation>less than 200m</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="lessThan500m">
+        <xs:annotation>
+          <xs:documentation>less than 500 m</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="lessThan1000m">
+        <xs:annotation>
+          <xs:documentation>less than 1000 m</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="lessThan5km">
+        <xs:annotation>
+          <xs:documentation>less than 5000 m</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="lessThan10km">
+        <xs:annotation>
+          <xs:documentation>less than 10000 m</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="over10km">
+        <xs:annotation>
+          <xs:documentation>over 10000 m</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="_extended" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ZoneCItsExtended">
+    <xs:annotation>
+      <xs:documentation>C-ITS extension of Zone for the linkage to CItsZoneGroup(s)</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="cItsZoneGroup" type="cie:CItsZoneGroup" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
